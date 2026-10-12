@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 10月12日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月12日</h1><div class="sub">2026 年 10 月 12 日 · 数据采集于今晚 21:05（周期新增星数口径）</div></header>
+<div><section><h2>🔥 重点深挖</h2>
+<div class="card"><h3><a href="https://github.com/morluto/rea">morluto/rea</a></h3>
+<div><span class="badge">日榜第 1</span><span class="badge">TypeScript</span></div>
+<div class="stats">今日 <b>+45,495</b> 星 · 总 132,041 星</div>
+<p>10 月 7 日发布，一周狂揽 13 万星。定位很精准：<b>把反编译能力交给 AI agent</b>。它是一个 MCP server + 命令行工具，一句 <code>npx rea-agents setup</code> 就能接入 Claude Code、Cursor、Codex 等 12 种 agent。</p>
+<p>工作流是三步循环：反编译恢复可读代码 → 追踪执行解释功能 → 帮你复刻逻辑，而且每个结论都附证据和置信度说明。4.1 版刚加上 Android APK（JADX）、固件（Binwalk/Unblob）分析和 IDA Pro 后端。关键设计是<b>全本地运行</b>，被分析的二进制不上传，信任模型很加分。</p>
+<p>作者 morluto 来头不小，和合作者 N0zoM1z0 一起解决了悬置 33 年的 Erdős #81 数学难题——而 N0zoM1z0 今天也在开发者榜上。</p>
+<div class="verdict">💡 点评：agent 工具链正在从&quot;写代码&quot;延伸到&quot;读懂没有源码的软件&quot;，这是一个新品类。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/storytold/artcraft">storytold/artcraft</a></h3>
+<div><span class="badge">Rust</span></div>
+<div class="stats">今日 <b>+4,106</b> 星 · 总 19,934 星</div>
+<p>自称&quot;给艺术家、设计师和电影人的 intentional crafting 引擎&quot;。有意思的是它在 HN 上的讨论画风：被当成 <b>Adobe 全家桶的 clean-room Rust 重写版</b>在围观，作者 8 个月前就 Show HN 过一个 Rust 写的 AI 电影制作引擎。</p>
+<div class="verdict">💡 点评：创意工具 × 本地 AI × Rust 重写商业软件，三重叙事一次叠满，想不火都难。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></h3>
+<div><span class="badge">HTML</span></div>
+<div class="stats">今日 <b>+2,100</b> 星 · 总 51,659 星</div>
+<p>42+ 种图表类型，专为 Claude Code、Codex、Copilot 等 agent 准备的&quot;编辑级&quot;图表设计，自包含 HTML+SVG，口号是 <b>&quot;No Mermaid slop&quot;</b>。</p>
+<div class="verdict">💡 点评：agent 生成内容正在从&quot;能画出来&quot;内卷到&quot;画得好看&quot;，审美开始变成 agent 工具的竞争力，这个仓库就是信号。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/microsoft/BitNet">microsoft/BitNet</a></h3>
+<div><span class="badge">C++</span></div>
+<div class="stats">今日 <b>+195</b> 星 · 总 40,735 星</div>
+<p>微软 1-bit 大模型的官方推理框架。今日增量不大，但 1-bit 推理是端侧和低功耗这条线的关键技术，值得长期跟踪。</p>
+</div>
+</section>
+<section><h2>📋 日榜其余 · 一句话</h2>
+<ul class="tight">
+<li><a href="https://github.com/bilawalsidhu/gods-eye-view">gods-eye-view</a> — 浏览器里的间谍卫星模拟器，5.2 万星，纯技术炫技+好玩。</li>
+<li><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a> — 给 AI 编程 agent 做上下文窗口优化，走 MCP+hooks 路线。</li>
+<li><a href="https://github.com/lyogavin/airllm">lyogavin/airllm</a> — 号称单块 4GB 显存跑 70B 推理，分层卸载的老思路做到极致。</li>
+<li><a href="https://github.com/open-webui/open-webui">open-webui</a> — 老牌本地 AI 对话前端，15.4 万星，榜单常客。</li>
+<li><a href="https://github.com/Alishahryar1/free-claude-code">free-claude-code</a> — 聚合&quot;免费&quot;用 Claude Code/Codex 的方案，这类项目火，说明 API 价格依然是痛点。</li>
+</ul>
+</section>
+<section><h2>📊 周榜 / 月榜值得看</h2>
+<ul class="tight">
+<li>周榜：<a href="https://github.com/boykopovar/AnyPS5">AnyPS5</a>（PS5 可执行文件自动移植到 Linux/Windows，一周 +25,151）、<a href="https://github.com/mattpocock/skills">mattpocock/skills</a>（28.7 万星的 agent skills 合集）、<a href="https://github.com/thedotmack/claude-mem">claude-mem</a>（agent 跨会话记忆）。</li>
+<li>月榜：阿里出品的 <a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a>；<a href="https://github.com/debpalash/VoiceStudio">VoiceStudio</a> 一个月涨 3.6 万星，做声音方向的，明天可以深挖。</li>
+</ul>
+</section>
+<section><h2>👨‍💻 开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/morluto">morluto</a> — rea 作者</li>
+<li><a href="https://github.com/N0zoM1z0">N0zoM1z0</a> — Erdős 难题合作者，代表作 dx-ball</li>
+<li><a href="https://github.com/Cyan4973">Cyan4973</a> — xxHash 作者，性能圈传奇</li>
+</ul>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
