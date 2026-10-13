@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 10月13日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月13日</h1><div class="sub">2026 年 10 月 13 日 · 数据采集于今晨 08:21（周期新增星数口径）</div></header>
+<div><section><h2>🔥 重点深挖</h2>
+<div class="card"><h3><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></h3>
+<div><span class="badge">日榜第 3</span><span class="badge">TypeScript</span><span class="badge">Elastic-2.0（非 OSI 开源）</span></div>
+<div class="stats">今日 <b>+246</b> 星 · 总 <b>27,275</b> 星 · 周新增 4,706</div>
+<p>专治 AI 编程 agent 的上下文窗口焦虑。核心招式是把工具原始输出&quot;沙箱化&quot;——号称削减 98%，一次 56KB 的 Playwright 快照不再直接灌进上下文；另有可跨 /compact 和版本升级存活的持久会话记忆，以及 BM25+重排混合检索的本地 FTS5 知识库。靠 MCP + hooks 打法覆盖了 Claude Code、Cursor、Codex、Copilot 等 15–17 个平台，本地运行、零遥测，2228 次提交、195 个 release，工程活跃度是真的。</p>
+<p>作者 mksglu 是自述&quot;One dev&quot;的个人开发者，在 X 上晒过 70 天 18632 次输出捕获、14MB 内容挡在上下文之外的实测数据，高频自我推广。身份履历无可靠来源。</p>
+<div class="verdict">💡 点评：agent 基础设施开始卷&quot;token 经济学&quot;了。context-mode 和 claude-mem 一攻输出、一攻记忆，分属同一条赛道。注意许可证是 Elastic-2.0，商用集成前请法务看一眼。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+<div><span class="badge">周榜第 5</span><span class="badge">TypeScript</span><span class="badge">Apache-2.0</span></div>
+<div class="stats">本周 <b>+3,762</b> 星 · 总 <b>100,089</b> 星</div>
+<p>给 agent 的&quot;海马体&quot;：用 SessionStart / UserPromptSubmit / PostToolUse 等 5 个生命周期钩子自动记录 agent 在会话里干过什么，压缩后存入 SQLite + Chroma 向量库，新会话开始时再按需注入。检索走三层渐进式——search 先拿索引（50–100 token）、timeline 看前后因果、get_observations 只对感兴趣的 ID 取全文，号称比全量取节约约 10 倍 token。</p>
+<p>它直接装到 Claude Code、OpenCode、OpenClaw、Codex、Gemini 乃至 Pi 的原生 harness 里，支持 <code>&lt;private&gt;</code> 标签排除敏感内容，还有云同步和 Web 观察面板。3,327 次提交、363 个 release，更新节奏凶猛。</p>
+<div class="verdict">💡 点评：context-mode 负责&quot;省&quot;，claude-mem 负责&quot;记&quot;，agent 记忆层正在从个人习惯变成标配组件。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></h3>
+<div><span class="badge">周榜第 3</span><span class="badge">Shell</span><span class="badge">MIT</span></div>
+<div class="stats">本周 <b>+11,139</b> 星 · 总 <b>287,946</b> 星 · 半年涨约 10 倍</div>
+<p>Matt Pocock 把自己的 <code>.agents</code> 目录整个开源了：一批把真实工程实践写成可组合 markdown 工作流的 agent skills——/grill-me（动手前拷问式对齐需求）、/tdd（红绿重构）、/diagnosing-bug（纪律化排障）、/to-prd 等。口号是&quot;做真工程，不是 vibe coding&quot;，安装只有一句 <code>npx skills@latest add mattpocock/skills</code>。</p>
+<p>作者 Matt Pocock 是英国教育者，Total TypeScript 与 AI Hero 创始人，前 Vercel 开发者布道师（Turborepo/Turbopack）、XState 核心成员，自称 newsletter 约 6 万订阅。内容源头是经典工程方法（tracer bullet、Kent Beck 的 TDD、Eric Evans 的统一语言）。每个技能配人类可读文档和&quot;什么会坏&quot;的诚实说明。</p>
+<div class="verdict">💡 点评：从&quot;一次性 prompt&quot;到&quot;可复用工作流&quot;的范式转移，这个仓库就是风向标。市场上已出现非官方镜像，请认准 mattpocock 本人仓库。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a></h3>
+<div><span class="badge">周榜第 1</span><span class="badge">C++</span><span class="badge">GPL-2.0</span></div>
+<div class="stats">本周 <b>+27,263</b> 星 · 总 <b>32,860</b> 星</div>
+<p>&quot;PlayStation 版 Proton&quot;：把 PS5 游戏可执行文件自动转成 Linux/Windows 原生程序，不做模拟——relinker 重链格式、自研系统 PRX 库实现动态链接，转完的游戏就是普通进程。关键 insight 是 PS5 CPU 本来就是 AMD Zen 2（x86-64），代码能原生跑，真正的活儿在重实现索尼系统库（图形/音频/手柄等，已知函数 3052/3535 实现约 86%），着色器重编译为 SPIR-V 走 Vulkan。</p>
+<p>近期里程碑：GPU 着色器指令覆盖率 100%（1166 条 RDNA1/RDNA2 指令）、首个可玩验证（2D 平台跳跃 Dreaming Sarah，GTX 1050 Ti 上 60FPS），TechSpot、GIGAZINE 报道后登顶周榜。发起人 boykopovar 身份未公开，100 多位贡献者参与。项目不含游戏、密钥、固件，需自备合法获取的游戏文件。</p>
+<div class="verdict">💡 点评：兼容性清单目前只验证了 1 款游戏，离&quot;能玩&quot;还远；版权维度 clean-room 状态未经验证——技术值得看，期望值请按 alpha 管理。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a></h3>
+<div><span class="badge">日榜第 2</span><span class="badge">JavaScript</span><span class="badge">MIT</span></div>
+<div class="stats">今日 <b>+1,895</b> 星 · 总 <b>53,641</b> 星 · 月新增 24,627</div>
+<p>浏览器里的&quot;间谍卫星模拟器&quot;——但数据是真的。CesiumJS 渲染照片级 3D 地球，把航班应答机（ADS-B）、船舶 AIS、轨道要素、地震仪、野火和公共摄像头等公开信号汇到同一张图上，还能用实时 AI agent 语音&quot;Talk to It&quot;。README 那句口号很准：&quot;一半的魔力是它看起来像被禁的驾驶舱，另一半是每一行代码都能审查&quot;。</p>
+<p>作者 bilawalsidhu 是 YouTuber，God&#x27;s Eye View 系列视频（原名 WorldView）在 YouTube 500 万+播放、全网 2500 万+播放，8 月曾登顶 GitHub 日榜+周榜第一，还拿了 Product Hunt 当日第 8，Brendan Eich 评价&quot;pretty cool&quot;。本地运行、无需 API key。</p>
+<div class="verdict">💡 点评：把公共数据做成&quot;电影级仪表盘&quot;，演示工程的天花板级案例；也适合用来教育大众：公共信号已经能讲出这么多故事。</div>
+</div>
+</section>
+<section><h2>📋 日榜其余 · 一句话</h2>
+<ul class="tight">
+<li><a href="https://github.com/morluto/rea">rea</a> — 日榜第一，今日 +45,327 星、总 15.6 万星，&quot;把反编译交给 agent&quot;，双用途工具，注意合规边界。</li>
+<li><a href="https://github.com/storytold/artcraft">artcraft</a> — 纯 Rust 的 AI 创意应用全家桶，今日 +4,095 星；&quot;被 Adobe 拒了于是重写 Creative Suite&quot;的复仇叙事仍在发酵。</li>
+<li><a href="https://github.com/cathrynlavery/diagram-design">diagram-design</a> — agent 的&quot;编辑级&quot;图表设计，42+ 图表类型，&quot;No Mermaid slop&quot;。</li>
+<li><a href="https://github.com/Alishahryar1/free-claude-code">free-claude-code</a> — 聚合&quot;免费&quot;用多家 coding harness 的方案，今日 +626 星，API 价格依然是痛点。</li>
+<li><a href="https://github.com/lyogavin/airllm">airllm</a> — 号称单块 4GB 显存跑 2.8T 参数推理（实际为分层卸载），今日 +879 星。</li>
+<li><a href="https://github.com/open-webui/open-webui">open-webui</a> — 本地 AI 对话前端老将，15.5 万星，榜单常客。</li>
+<li><a href="https://github.com/microsoft/BitNet">BitNet</a> — 微软 1-bit 模型官方推理框架，端侧路线长期跟踪。</li>
+</ul>
+</section>
+<section><h2>📊 周榜 / 月榜值得看</h2>
+<ul class="tight">
+<li>榜单连续两天未换血：GitHub 热榜页面更新节奏较慢，今日日榜 9 条、周榜 11 条与昨日完全一致，仅周期星数有微调。</li>
+<li>周榜：<a href="https://github.com/boykopovar/AnyPS5">AnyPS5</a> 登顶（+2.7 万/周）；<a href="https://github.com/mattpocock/skills">mattpocock/skills</a> 28.8 万星继续稳榜；<a href="https://github.com/thedotmack/claude-mem">claude-mem</a> 10 万星俱乐部；健身自托管 <a href="https://github.com/DuarteSantos8/openGym">openGym</a> 一周 +6,621 星，工具类黑马；<a href="https://github.com/tester-army/e2e">e2e</a> 新一代 e2e 测试框架起量中（+5,582/周）。</li>
+<li>月榜：阿里 <a href="https://github.com/alibaba/open-code-review">open-code-review</a>（确定性流水线 + LLM Agent 的混合代码评审，月 +2.4 万）；<a href="https://github.com/debpalash/VoiceStudio">VoiceStudio</a> 开源 ElevenLabs 平替，月 +3.7 万星，声音赛道持续吸星；<a href="https://github.com/JustVugg/colibri">colibri</a> 纯 C 跑前沿 MoE（专家从磁盘流式加载），月 +1.3 万；NSA 的 <a href="https://github.com/NationalSecurityAgency/ghidra">ghidra</a> 因 rea 的逆向热潮被顺带翻红（月 +9,722）。</li>
+<li>分语言榜：Python 榜 <a href="https://github.com/hugohe3/ppt-master">ppt-master</a>（AI 生成原生 PPTX）与 <a href="https://github.com/calesthio/OpenMontage">OpenMontage</a>（agent 视频制作系统）值得瞄一眼；Go 榜仍是 ollama 等老面孔。</li>
+</ul>
+</section>
+<section><h2>👨‍💻 开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/morluto">morluto</a> — rea 作者，连着两天霸榜。</li>
+<li><a href="https://github.com/N0zoM1z0">N0zoM1z0</a> — Erdős 难题 #81 合作者，代表作 dx-ball。</li>
+<li><a href="https://github.com/Cyan4973">Cyan4973</a> — xxHash 作者，性能圈传奇。</li>
+</ul>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
