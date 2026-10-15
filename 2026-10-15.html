@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 10月15日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月15日</h1><div class="sub">2026 年 10 月 15 日 · 数据采集于今晨 08:21（Asia/Shanghai，周期新增星数口径）</div></header>
+<div><section><h2>🔥 重点深挖</h2>
+<div class="card"><h3><a href="https://github.com/ifixai-ai/iFixAi">ifixai-ai/iFixAi</a></h3>
+<div><span class="badge">日榜第 7 · 新面孔</span><span class="badge">Python</span><span class="badge">Apache-2.0</span></div>
+<div class="stats">今日 <b>+2,109</b> 星 · 总 <b>27,380</b> 星</div>
+<p>给 AI agent 做&quot;独立体检&quot;的审计引擎，一句话 slogan 就是&quot;你的 agent 真的在按要求干活吗？120 秒内给答案&quot;。用法极简单：<code>pip install &quot;ifixai[openai]&quot;</code>，可以人跑、也可以 agent 自己跑自己（self-audit）。开源版含 60 项检查（inspection），按 B01–B32 等类别映射到对齐、安全、合规多维度；付费版 iFixAi Pro 扩展到 400 项检查，并附运营保障 + 合规两份报告和 &quot;Audited by iFixAi&quot; 徽章。方法论有点意思：审计不止看漏洞和是否完成任务，还把 AI 红队、治理、运维保障、哲学/伦理/社会学视角拼在一起，评估 agent 在业务语境下的错位（misalignment）。项目 2026 年 4 月 27 日创建，在 GitTrend 日榜已连续露面 113 天、10 月 1 日冲到第 5，持久力惊人。注意它默认发伪匿名遥测（可关：<code>--no-telemetry</code> 或环境变量），审计结论对敏感链路请自行验证。</p>
+<div class="verdict">💡 点评：agent 遍地跑，&quot;谁审计 agent&quot; 是刚需生态位，开源+付费审计服务的打法和代码审计行业的商业化路径很像。把 agent 交到生产环境前，值得先跑一遍。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/vxcontrol/pentagi">vxcontrol/pentagi</a></h3>
+<div><span class="badge">日榜第 8</span><span class="badge">Go</span><span class="badge">许可证请以仓库为准（仓库附 EULA）</span></div>
+<div class="stats">今日 <b>+1,025</b> 星 · 总 <b>29,431</b> 星</div>
+<p>&quot;渗透测试 AGI&quot;——全自主的多 agent 渗透测试系统：你只管给目标，它自己规划、自己执行、自己出报告。架构是 supervisor + worker：主管定策略选工具，工人跑扫描/利用/写报告；所有动作都在隔离的 Docker 沙箱里，20+ 专业工具（Nmap、Metasploit、sqlmap、Nuclei、Burp 等）自动编排。记忆系统是亮点：Graphiti 知识图谱（Neo4j）+ 向量记忆存下每次测试的经验和成功打法，长测试链用链式摘要防止上下文爆掉；内置浏览器爬取目标情报，Tavily/Perplexity 等搜索 API 补实时数据；报告带 PoC 和修复建议，存 Postgres + pgvector 可语义检索，还有 Grafana 看板。模型端支持 OpenAI、Anthropic、Gemini、Bedrock 和 Ollama 本地模型，Web UI 一键部署。VXControl 2025 年初开源。双用途工具属性极强，仅限授权测试场景使用。</p>
+<div class="verdict">💡 点评：安全攻防的 agent 化和昨天 rea 带起的逆向 agent 化是同一波浪潮。红队自动化、SRC 常态化评估的团队可以研究架构，合规边界自行把握。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a></h3>
+<div><span class="badge">周榜第 4 · 月榜第 6</span><span class="badge">TypeScript</span><span class="badge">Apache-2.0</span></div>
+<div class="stats">本周 <b>+5,123</b> 星 · 本月 <b>+13,722</b> 星 · 总 <b>63,688</b> 星</div>
+<p>HeyGen 开源的&quot;给 agent 的视频渲染引擎&quot;，口号三句话：Write HTML. Render video. Built for agents。核心洞察是：让 agent 写标准 HTML（加 <code>data-*</code> 时间轴属性），而不是 JSON 配置或专有 DSL——因为模型真正&quot;理解&quot; CSS 布局，能推理画面长什么样（visual grounding），这正是 agent 做视频的最大能力缺口。管线是 headless Chrome 逐帧确定性抓取 + FFmpeg 编码，同一份输入每次渲染结果完全一致，可进 CI、可版本管理；GSAP、Lottie、Three.js、WebGL 着色器都能跑，&quot;浏览器能显示什么，它就能渲染什么&quot;。配套很全：CLI、Studio 可视化编辑器、无头 SDK、MCP 连接器、150+ 预置动画块，渲染目标覆盖本机、AWS Lambda、GCP Cloud Run。2026 年 3 月首提交、4 月 17 日公开，两个月冲 3 万星；同年 7 月引擎被收进 HeyGen 付费产品 Video Agent，开源与商业并行。许可证无席位限制。</p>
+<div class="verdict">💡 点评：Remotion 的 agent 原生挑战者。需要&quot;视频即代码&quot;管线（批量生成营销视频、数据可视化短片）的团队可以直接试，deterministic render 是生产级管线的入场券。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/K-Dense-AI/scientific-agent-skills">K-Dense-AI/scientific-agent-skills</a></h3>
+<div><span class="badge">日榜第 5 · 新面孔</span><span class="badge">Python</span><span class="badge">许可证请以仓库为准</span></div>
+<div class="stats">今日 <b>+163</b> 星 · 总 <b>49,315</b> 星</div>
+<p>把任意 AI agent 变成&quot;AI 科学家&quot;的技能库：177 个开箱即用的科研 skill + 100+ 科学数据库，覆盖生物、化学、医学、药物发现（癌症基因组学、药物-靶点结合、分子动力学、RNA 速率、地理空间科学、时间序列预测等），兼容开放的 Agent Skills 标准，可在 Cursor、Claude Code、Codex、Antigravity 等平台调用。前身叫 Claude Scientific Skills，现已扩展到所有支持该标准的 agent。作者是 K-Dense 公司（k-dense.ai），还顺手开源了 K-Dense BYOK——一个跑在本地桌面的免费&quot;AI 联合科学家&quot;，自带 key、40+ 模型可选，数据不出本机，算力不够可扩展到 Modal 云。项目自称全球 25 万+ 科学家在使用（此为项目口径，未见第三方验证）。</p>
+<div class="verdict">💡 点评：skills 生态正从&quot;给码农提效&quot;蔓延到垂直科研场景。做生物信息、药物研发且已经在用 coding agent 的团队，这个库可能是最短的&quot;科研 agent&quot;捷径。</div>
+</div>
+</section>
+<section><h2>📋 日榜其余 · 一句话</h2>
+<ul class="tight">
+<li><a href="https://github.com/morluto/rea">morluto/rea</a> — 日榜第 1，今日 +41,034 星，总 24.1 万；逆向 agent 工具昨日已深挖，连续多日霸榜，总星数又比昨天多了约 3.5 万。</li>
+<li><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a> — 日榜第 2，今日 +3,538 星；本地 ElevenLabs 平替昨日已深挖，本月已 +3.7 万星。</li>
+<li><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a> — 日榜第 3，今日 +947 星；agent 上下文优化器昨日已深挖，月榜也 +6,067 星。</li>
+<li><a href="https://github.com/nvm-sh/nvm">nvm-sh/nvm</a> — 日榜第 4；Node 版本管理器老面孔回榜，9.5 万星基本盘。</li>
+<li><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a> — 日榜第 6；&quot;让所有软件 agent 原生&quot;，CLI-Hub 生态，5.2 万星。</li>
+<li><a href="https://github.com/xtool-org/xtool">xtool-org/xtool</a> — 日榜第 10，今日 +1,502 星；跨平台 Xcode 替代昨日已深挖，继续吸星。</li>
+<li><a href="https://github.com/ntdevlabs/tiny11builder">ntdevlabs/tiny11builder</a> — 日榜第 11；WinUI 精简 Windows 11 镜像工具，老牌实用项目。</li>
+<li><a href="https://github.com/rust-lang/rust">rust-lang/rust</a> — 日榜第 9；语言本体回榜，12 万星。</li>
+<li><a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a> — 日榜第 12，今日 +1,008 星；NSA 逆向框架被 agent 逆向热潮持续带飞，月榜也 +1.1 万星。</li>
+</ul>
+</section>
+<section><h2>📊 周榜 / 月榜值得看</h2>
+<ul class="tight">
+<li>周榜：<a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a> 本周 +28,240 星继续领跑，PS5 转制工具昨日已深挖；<a href="https://github.com/mattpocock/skills">mattpocock/skills</a>（周 +12,292，总 29.1 万星）稳居前三，skills 生态头部效应明显；<a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a>（周 +10,706，&quot;No Mermaid slop&quot; 的编辑级图表）新面孔强势；<a href="https://github.com/EpicGames/raddebugger">EpicGames/raddebugger</a> 与 <a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a>（周 +3,371，总 10 万星）在线；<a href="https://github.com/tester-army/e2e">tester-army/e2e</a>（新一代 Web/移动端 e2e 测试框架）、<a href="https://github.com/earthtojake/text-to-cad">earthtojake/text-to-cad</a>（给 agent 的 CAD 超能力）、<a href="https://github.com/twostraws/SwiftUI-Agent-Skill">twostraws/SwiftUI-Agent-Skill</a> 是周榜新面孔。</li>
+<li>月榜：<a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（月 +37,181）反超登顶声音赛道；<a href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a>（Agent Memory That Learns，月 +26,274）与 claude-mem 遥相呼应，agent 记忆是本月暗线；阿里 <a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a>（月 +23,047）与 <a href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a>（月 +21,643）紧随；新面孔 <a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a>（月 +22,689，总 27.9 万星，agent harness 性能优化系统）与 <a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a>（月 +12,981，总 10.6 万星，生产级工程 skills）值得展开；腾讯 <a href="https://github.com/Tencent/WeKnora">Tencent/WeKnora</a>（月 +11,112，RAG 知识平台）与 <a href="https://github.com/TencentCloud/Octop">TencentCloud/Octop</a>（月 +7,717）双双在列；<a href="https://github.com/NVIDIA/OpenShell">NVIDIA/OpenShell</a>（月 +7,698，agent 安全运行时）、<a href="https://github.com/tashfeenahmed/freellmapi">tashfeenahmed/freellmapi</a>（月 +9,154，免费 LLM API 聚合）、<a href="https://github.com/rohitg00/ai-engineering-from-scratch">rohitg00/ai-engineering-from-scratch</a>（月 +14,754，AI 工程从零学）也在前列；Anthropic 官方 <a href="https://github.com/anthropics/financial-services">financial-services</a> 与 <a href="https://github.com/anthropics/knowledge-work-plugins">knowledge-work-plugins</a> 继续上榜。</li>
+</ul>
+</section>
+<section><h2>👨‍💻 开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/morluto">morluto</a> — rea 作者，连续霸榜，一己之力带起逆向 agent 赛道。</li>
+<li><a href="https://github.com/hiyouga">hiyouga</a> — LlamaFactory 作者，LLM 微调圈知名华人开发者。</li>
+<li><a href="https://github.com/frankbria">frankbria</a> — 代表作 ralph-claude-code，agent 工作流方法论方向。</li>
+</ul>
+</section>
+<section><h2>🗂 分语言榜亮点</h2>
+<ul class="tight">
+<li>Python 榜：<a href="https://github.com/Alishahryar1/free-claude-code">Alishahryar1/free-claude-code</a>（多 harness&quot;免费&quot;用方案，+540 星），API 价格依然是痛点；<a href="https://github.com/MakazhanAlpamys/Soup">MakazhanAlpamys/Soup</a>（一个 YAML 微调 LLM，8B 模型 4GB 显存可训，+247 星）值得玩模型的瞄一眼。</li>
+<li>TypeScript 榜：<a href="https://github.com/stablyai/orca">stablyai/orca</a>（并行 agent 舰队的 ADE，用自己的订阅跑任意 coding agent，+919 星）；<a href="https://github.com/OpenCut-app/OpenCut">OpenCut-app/OpenCut</a>（开源 CapCut 平替，+301 星）。</li>
+<li>Rust 榜：<a href="https://github.com/storytold/artcraft">storytold/artcraft</a>（纯 Rust AI 创意应用全家桶，+2,909 星）继续发酵。</li>
+<li>Go 榜：<a href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a>（&quot;洞穴人&quot;式省 token 代理，号称省 65% token，总 11.1 万星）依旧魔性；<a href="https://github.com/Tencent/WeKnora">Tencent/WeKnora</a>（+242 星）、<a href="https://github.com/maximhq/bifrost">maximhq/bifrost</a>（AI 网关，万模型统一入口）值得 infra 侧关注。</li>
+</ul>
+<p>数据口径：未登录抓取 github.com/trending HTML，4 次指数退避重试；采集于 2026-10-15 08:21（Asia/Shanghai），本轮采集成功、无错误。周期星数（日/周/月新增）为页面标注口径；不同追踪器口径可能不一致，仅作量级参考。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
