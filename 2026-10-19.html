@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 10月19日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月19日</h1><div class="sub">今日主题：插件三国杀——Cursor 官方插件库杀入日榜，官方市场集体上桌；求职焦虑继续屠榜；AI 视频工具另开一局。</div></header>
+<div><section><h2>重点项目</h2>
+<div class="card"><h3><a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></h3>
+<div><span class="badge">求职</span><span class="badge">Claude Code</span><span class="badge">MIT</span><span class="badge">Python</span></div>
+<div class="stats">日榜 <b>+2,232</b> 星（今日增速第一），周榜新面孔 <b>+5,742</b>，总星 <b>53,119</b>，fork <b>17,364</b></div>
+<p>把 Claude Code 变成全栈求职助手的开源框架，作者 Mads Lorentzen 本职是地球物理学家，2025 年底被裁后给自己做了这套流水线：<code>/setup</code> 建档案、<code>/scrape</code> 抓招聘网站、<code>/apply &lt;链接&gt;</code> 评估匹配度并用 LaTeX 定制简历求职信（写手 + 审稿人双 agent 流程）、<code>/interview</code> 按真实材料准备面试、<code>/outcome</code> 追踪投递结果。README 里晒出了他的实战 funnel：69 份定制申请、20 场一面、签下一份合同，2026 年 6 月入职做 AI 工程师——&quot;它让我找到了工作&quot;。核心逻辑语言和国家无关，但默认的抓取 skills 面向丹麦招聘站，需要自己替换本地站源；仓库同时兼容 Claude Code / Codex / Antigravity，提醒自用者用私有库而不是直接 fork（fork 必然公开，你的简历和薪资期望会写进跟踪文件）。</p>
+<div class="verdict">💡 点评：求职焦虑是最持久的流量密码，但这位的故事比营销文案硬——有完整转化漏斗、坦诚自己是地球物理学家转行。适合正在找工作、又不想把简历贴进网页版 AI 的人；Claude Code 没有免费档，用前先算好订阅成本。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/cursor/plugins">cursor/plugins</a></h3>
+<div><span class="badge">官方市场</span><span class="badge">Cursor</span><span class="badge">TypeScript</span></div>
+<div class="stats">日榜新面孔 <b>+350</b> 星，总星 <b>12,737</b>，fork 1,254；周榜同样是新面孔 <b>+1,717</b></div>
+<p>Cursor 官方的插件规范 + 官方插件仓库，年初 1 月 23 日创建。README 列了上百个官方插件：开发者工具类有 orchestrate（任务扇出到并行云 agent）、thermos（硬核代码评审）、pstack / dyl-stack（agent 工作流方法论）、ralph-loop（Ralph Wiggum 自迭代循环）、cli-for-agent（给 agent 设计 CLI 的规范）、cursor-sdk；生产力类一口气覆盖 Gmail / Drive / 日历 / Docs / Sheets / Slides / Teams / SharePoint；集成类更重：GitHub、Playwright、X、Salesforce、HubSpot、Zoom、BigQuery、S&amp;P Global、Xero、QuickBooks，乃至 Robinhood / Coinbase / Interactive Brokers / eToro 等券商账号。仓库根目录同时放着 <code>.cursor-plugin</code>、<code>.claude-plugin</code>、<code>.codex-plugin</code> 三套清单——Cursor 把插件做成了跨 agent 的标准分发格式。</p>
+<div class="verdict">💡 点评：和 Anthropic 的官方插件目录（昨日重点，今日周榜继续爬到第四）打擂台，插件市场正式进入&quot;官方下场卷生态&quot;阶段。Cursor 用户可以重点看 cli-for-agent 和 agent-compatibility 这两个：一个教你怎么设计 agent 可用的 CLI，一个给仓库做兼容性扫描。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/storytold/artcraft">storytold/artcraft</a></h3>
+<div><span class="badge">AI 艺术</span><span class="badge">艺术家 IDE</span><span class="badge">Apache-2.0/MIT 双许可</span><span class="badge">Rust</span></div>
+<div class="stats">周榜 <b>+16,379</b> 星（第二名），总星 <b>32,711</b>，fork 5,185 —— 本周新增星数占总星数一半</div>
+<p>&quot;The IDE for artists&quot;：一个面向艺术家、设计师、电影人的交互式 AI 图像/视频创作桌面应用。核心理念是把 prompting 变成 crafting——先搭场景再生成：Image to Location（把虚拟演员放到固定场景多机位拍摄）、3D 图像合成（前后景 + 道具分层）、角色摆姿 + 相机预设、kitbashing 场景搭建（组合 3D 素材包控制机位）、角色身份迁移（用摆好姿势的假人引导角色姿态）。模型目录列了 62 个：图像 16 款（Nano Banana 全系、GPT Image、FLUX、Seedream）、视频 25 款（Kling、Veo、Sora、Seedance、MiniMax、Vidu）、音乐 5 款（Suno）、3D 网格 11 款（混元 3D、Tripo3D、Meshy、Rodin）、世界生成 5 款（World Labs Marble）。仓库 2022 年就建了，是老项目转向 AI 创作赛道后的爆发。</p>
+<div class="verdict">💡 点评：今天榜单里难得的非开发者工具爆款——AI 创作工具正在从&quot;提示词彩票&quot;转向&quot;可控制作流程&quot;，这和昨天 CLI-Anything 的&quot;让 agent 操控软件&quot;其实是同一趋势的两面：控制力。做短视频、独立游戏美术、概念设计的可以去 getartcraft.com 下桌面版试玩，Windows/macOS 稳定版，Linux 需源码编译。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a></h3>
+<div><span class="badge">AI 视频</span><span class="badge">程序化渲染</span><span class="badge">Apache-2.0</span><span class="badge">TypeScript</span></div>
+<div class="stats">周榜 <b>+5,883</b> 星，总星 <b>66,728</b>，fork 6,050；月榜 <b>+15,429</b> 星</div>
+<p>HeyGen 开源的框架：&quot;Write HTML. Render video. Built for agents.&quot;——用 HTML/CSS/可寻址动画写视频脚本，渲染成确定性 MP4。技术栈是 Puppeteer + FFmpeg，动画层支持 GSAP / Lottie / Three.js / Anime.js / CSS / WAAPI，讲究&quot;可 seek、确定性&quot;，渲染两次结果一致。配套 21 个 agent skills 按需加载：<code>/hyperframes</code> 是总路由器，创作流有 product-launch-video（产品发布片）、pr-to-video（PR 链接转 changelog 解说视频）、talking-head-recut（口播视频加包装）、music-to-video（音乐卡点）、slideshow 等；还有个 <code>frame.md</code> 概念——把品牌设计规范翻译成&quot;为镜头而写&quot;的版本，让 agent 不用猜尺寸。另外一个细节：README 专门写了 HyperFrames vs Remotion 对比页，目标很明确——抢 Remotion 的&quot;代码做视频&quot;地盘。</p>
+<div class="verdict">💡 点评：和 ArtCraft 恰好互补：一个给艺术家可视化搭场景，一个给 agent 写代码渲视频。做自动化内容管线（PR 自动转解说、数据报表自动转视频）的人值得重点关注；<code>npx hyperframes init</code> 一条命令就能起本地工程。</div>
+</div>
+</section>
+<section><h2>日榜其余一句话</h2>
+<ul class="tight">
+<li><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>：昨日重点，今日日榜 +2,082、月榜 +42,036（月榜增幅断层第一），本地语音工具的热度还在续。</li>
+<li><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a>：开源 coding agent 日增 1,414，总星 21.6 万，稳坐赛道。</li>
+<li><a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a>：Anthropic 官方插件目录日增 1,175、周榜爬到第 4，插件生态的护城河效应肉眼可见。</li>
+<li><a href="https://github.com/stablyai/orca">stablyai/orca</a>：用自己的订阅跑任意 coding agent 的&quot;agent 舰队&quot;工作台，日增 1,146。</li>
+<li><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a>：昨日重点，港大实验室的&quot;让所有软件 agent 化&quot;，日增 589。</li>
+<li><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a>：多智能体 swarm 编排 harness，日增 513。</li>
+<li><a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a>：给 agent CLI 做长期记忆的 Rust 方案，日增 512。</li>
+<li><a href="https://github.com/android/skills">android/skills</a>：Android 官方 skills 仓库日增 375，README 明确&quot;只做 LLM 表现不足的场景&quot;，覆盖 r8-analyzer、CameraX、Jetpack Compose、Wear、TV、XR 等，<code>android skills add --all</code> 一键装。</li>
+<li><a href="https://github.com/Kruk2/jasna">Kruk2/jasna</a>：日榜新面孔，视频修复工具，小而美。</li>
+<li><a href="https://github.com/Comfy-Org/ComfyUI">Comfy-Org/ComfyUI</a>：日榜新面孔，模块化扩散模型 GUI 总星 13.8 万，老树发新芽。</li>
+<li><a href="https://github.com/mlabonne/llm-course">mlabonne/llm-course</a>：日榜新面孔，LLM 入门课路线图 + Colab 笔记本，经典长青款。</li>
+</ul>
+</section>
+<section><h2>周榜 / 月榜动向</h2>
+<ul class="tight">
+<li>周榜：<a href="https://github.com/morluto/rea">morluto/rea</a>（逆向工程 agent）继续断层第一 +229,268，总星 32.2 万；新面孔除了 artcraft，还有 <a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a>（+5,742）和 <a href="https://github.com/cursor/plugins">cursor/plugins</a>（+1,717）；<a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a>（PS5 可执行文件自动移植）+14,224 稳居第三；<a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a> +5,883 新入周榜前十；<a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a>（agent 上下文窗口优化）+4,138。</li>
+<li>月榜：<a href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a>（开源的 agent 管理应用）+23,340 登顶；但增幅最猛的是 <a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a> +42,036；新上榜 <a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a>（+6,015）和 <a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>（+5,415）；<a href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a>（会学习的 agent 记忆）+27,550、<a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a>（agent harness 性能优化）+23,080 继续领跑 agent 基础设施；腾讯 <a href="https://github.com/TencentCloud/Octop">TencentCloud/Octop</a>（自托管多 agent 助手）+6,138。</li>
+</ul>
+</section>
+<section><h2>开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/klauspost">klauspost</a>：klauspost/compress（Go 压缩库）的老牌作者，基础设施老将。</li>
+<li><a href="https://github.com/hrydgard">hrydgard</a>：PPSSPP（PSP 模拟器）作者，模拟器圈的传奇人物。</li>
+<li><a href="https://github.com/poteto">poteto</a>：hiring-without-whiteboards 作者，&quot;不用白板面试&quot;倡导者，和今日求职主题意外呼应。</li>
+</ul>
+</section>
+<section><h2>分语言榜亮点</h2>
+<ul class="tight">
+<li>Python：<a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a> 断层领先（见重点项目）。</li>
+<li>TypeScript：<a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a> +1,414、<a href="https://github.com/stablyai/orca">stablyai/orca</a> +1,146，coding agent 双雄。</li>
+<li>Rust：<a href="https://github.com/xerj-org/xerj">xerj-org/xerj</a>（昨日重点，为 AI 而生的搜索引擎）+835 依然领先；<a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a> +512。</li>
+<li>Go：<a href="https://github.com/alvinunreal/lazyskills">alvinunreal/lazyskills</a>（agent skills 的任务控制台）+138 有亮点；Google 的 <a href="https://github.com/google/ax">google/ax</a>（Agent Executor 运行时）在榜。</li>
+</ul>
+</section>
+<section><h2>数据口径</h2>
+<p>数据来自 github.com/trending 页面未登录抓取（HTML 解析），采集时间 2026-10-19 08:21（Asia/Shanghai）；日榜 13 条、周榜 10 条、月榜 20 条。<code>period_stars</code> 为页面标注的周期新增星数，&quot;日榜 +N&quot;即过去 24 小时新增。项目背景信息经 GitHub README 与公开报道交叉核实，未核实的不写。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
