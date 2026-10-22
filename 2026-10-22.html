@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 10月22日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月22日</h1><div class="sub">Agent 工具继续刷屏：逆向工程 agent 包 morluto/rea 周榜三连冠、单周涨 12.9 万星；Cloudflare 的安全审计 skill 登顶日榜；本地语音工作站 VoiceStudio 月榜第二。</div></header>
+<div><section><h2>今日重点</h2>
+<div class="card"><h3><a href="https://github.com/morluto/rea">morluto/rea</a></h3>
+<div><span class="badge">Agent</span><span class="badge">逆向工程</span><span class="badge">周榜第1</span></div>
+<div class="stats">周新增 +129,417｜总星 357,702｜连续三天周榜第一</div>
+<div class="verdict">💡 逆向工程的 agent 化工具包：以 MCP server + CLI 形式把 Claude Code、Codex、Cursor 等 coding agent 接到 Ghidra、IDA Pro、JADX、Binwalk 等成熟反编译工具上，能啃原生二进制、Electron 应用、.NET 程序集、安卓 APK、固件和网站。核心流程是&quot;反编译→追踪执行→重现逻辑&quot;，结论附证据与置信度标注，分析全在本地完成（MIT 许可）。火因是 10 月 7 日前后的病毒式传播：10 月 6 日还不足 1 万星，10 月 14 日已超 23 万星，是 GitHub 历史级的增速曲线，10 月 18 日刚发 6.7.0。适合安全研究员、恶意软件分析师和想让 agent 看懂别人二进制的开发者。注意作者 morluto 是化名，真名和公司背景未核实。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h3>
+<div><span class="badge">安全审计</span><span class="badge">Agent Skill</span><span class="badge">日榜第1</span></div>
+<div class="stats">日新增 +2,012｜月新增 +16,694｜总星 36,434</div>
+<div class="verdict">💡 Cloudflare 官方（9 月 14 日，MIT 许可）发布的编码 agent 安全审计 skill，回应&quot;agent 写代码、谁来审代码&quot;的痛点。它不是软件而是 markdown 指令集加两个零依赖 JS 校验器：把 agent 变成&quot;审计负责人&quot;，按六阶段（侦察→覆盖率驱动狩猎→候选验证→结构化输出→独立复核→报告）跑完整审计。技术亮点有三：找 bug 的 hunter 和负责证伪的 verifier 严格分离；每个结论按 confirmed / needs_validation / rejected 分档，沙盒不足时自动降级；结论必须附完整源码溯源，输出机器可读 findings.json。Cloudflare 称它源自自家内部漏洞挖掘平台，并自述在 25 个开源项目中找出 493 个问题（官方数据，第三方未独立核实）。正在搭 agent 代码流水线的团队值得试用。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/stablyai/orca">stablyai/orca</a></h3>
+<div><span class="badge">Agent 编排</span><span class="badge">日榜第3</span></div>
+<div class="stats">日新增 +1,541｜周新增 +8,705｜总星 101,225</div>
+<div class="verdict">💡 开源（MIT）桌面应用：不是 agent 本身，而是 agent 的&quot;舰队指挥台&quot;。核心玩法是把同一个提示扇出给多个 coding agent（Claude Code、Codex、OpenCode、Grok、Cursor、Copilot、Pi 等），每个 agent 在独立 git worktree 里并行干活，做完后并排对比、只合并优胜者。解决三个现实问题：agent 单次输出不稳定、串行重试烧时间、多家 agent 订阅难管理。还附带手机伴侣 App（推送通知加远程跟进）、SSH 远端 worktree、Claude/Codex 用量与速率限制追踪，支持 macOS/Windows/Linux 和 iOS/Android。作者是 YC 系的 Stably AI（具体 batch 未核实）。适合每天跟多个 agent 打交道、受够了手动对比 diff 的开发者。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></h3>
+<div><span class="badge">本地语音</span><span class="badge">语音克隆</span><span class="badge">月榜第2</span></div>
+<div class="stats">周新增 +15,125｜月新增 +46,590｜总星 80,390</div>
+<div class="verdict">💡 完全本地的 ElevenLabs 替代品：Electron 桌面应用（Python+TypeScript），捆绑 17 个本地 TTS 引擎和 10 种转录方案，集语音克隆（5–15 秒参考音频）、语音设计、视频配音（保留时间轴）、浮动听写、音频书制作于一体，支持 646 种语言（按引擎而异），不要账号、API key 和计量。技术上自己就是一个本地语音服务：对外提供 OpenAI 兼容 API（localhost:3900）、WebSocket 流和 MCP 端点，Claude Code 等 agent 可直接调用；GPU 自动检测 CUDA/Metal/ROCm/CPU。火因是&quot;声音即身份、拒绝按秒租用&quot;的叙事，正中隐私与成本痛点，10 月初单周涨约 1.5 万星。作者是印度独立开发者 Palash Debnath（palash.dev 自述），2026 年 4 月创建，仍处 active beta。注意许可细节：应用代码 AGPL-3.0，Pro/Lifetime 版是另售的闭源商业构建，各模型权重许可另算，商业用途需要自行核查。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></h3>
+<div><span class="badge">Agent 哲学</span><span class="badge">极简主义</span><span class="badge">日榜第5</span></div>
+<div class="stats">日新增 +2,079｜总星 171,607</div>
+<div class="verdict">💡 给 AI coding agent 立规矩的极简主义插件：核心理念是&quot;最优秀的资深开发者是全屋最懒的那个&quot;。agent 写代码前必须沿&quot;决策梯子&quot;从低往高停：先问这代码需要存在吗（YAGNI）、能复用现有代码吗、能用标准库吗、平台原生能力够吗、已装的依赖能顶吗、一行能写完吗，最后才写最少可用的代码；懒于方案但不省校验、错误处理和安全。解决的是 agent 习惯性过度工程（加 wrapper、造抽象、提前引库、写冗余文件）导致的臃肿和 token 浪费。项目自带基准声称代码量降 80–94%、成本降 47–77%（自测数据，未独立核实）。支持约 20 种 agent（Claude Code、Codex、Copilot、Cursor、Gemini CLI、OpenCode 等），版本迭代极快。发布 9 天就涨到 4.4 万星，现在 17 万星。受够了 agent 写&quot;过度防御性样板代码&quot;的人可以直接装。</div>
+</div>
+</section>
+<section><h2>日榜其余点评</h2>
+<ul class="tight">
+<li><a href="https://github.com/vllm-project/vllm">vllm-project/vllm</a>（日榜第2，+441）：LLM 推理服务引擎，94,859 星的常青树，近期持续有更新。</li>
+<li><a href="https://github.com/headroomlabs-ai/headroom">headroomlabs-ai/headroom</a>（日榜第4，+474）：给 LLM 的输入做压缩，号称给 coding agent 省 20% token、JSON 省 60–95%，答案不变；图书馆/MCP/代理三形态。</li>
+<li><a href="https://github.com/Comfy-Org/ComfyUI">Comfy-Org/ComfyUI</a>（日榜第6，+939）：扩散模型节点式工作流，141,502 星，老牌镇场。</li>
+<li><a href="https://github.com/supabase/supabase">supabase/supabase</a>（日榜第7，+504）：Postgres 开发平台，112,991 星。</li>
+<li><a href="https://github.com/twentyhq/twenty">twentyhq/twenty</a>（日榜第8，+112）：自称&quot;为 AI 设计的 Salesforce 开源替代&quot;。</li>
+<li><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a>（日榜第9，+575）：金融市场的&quot;语言基础模型&quot;，国产作者值得一看。</li>
+<li><a href="https://github.com/strelov1/freehire">strelov1/freehire</a>（日榜第10，+360）：求职者用的开源搜索引擎，总星 2,377，小而新的选题。</li>
+<li><a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a>（日榜第11，+286）：给 coding CLI 的长期记忆方案，Rust 实现。</li>
+<li><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a>（日榜第12，+1,433）：把代码库变可查询知识图谱的 agent skill，13 万星新锐，增速不容忽视。</li>
+<li>昨日日榜第一的 MadsLorentzen/ai-job-search 今日掉出榜单，属一日游。</li>
+</ul>
+</section>
+<section><h2>周榜动态</h2>
+<ul class="tight">
+<li>周榜前三基本冻结：<a href="https://github.com/morluto/rea">morluto/rea</a>、<a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a>（+5,703，Anthropic 官方插件目录）、<a href="https://github.com/K-Dense-AI/scientific-agent-skills">K-Dense-AI/scientific-agent-skills</a>（+4,719，177 个科学技能库）延续强势。</li>
+<li>新增亮眼：<a href="https://github.com/android/skills">android/skills</a>（+1,332）进周榜前五，安卓官方的 agent skill，内容详情未核实。</li>
+<li><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a>（+6,545，总星 219,671）继续涨，开源 coding agent 的代表。</li>
+<li><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（+5,740）：&quot;写 HTML、渲染视频、为 agent 而生&quot;，HeyGen 出品。</li>
+</ul>
+</section>
+<section><h2>月榜动态</h2>
+<ul class="tight">
+<li><a href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a>（月增 +24,756，总星 105,675）：&quot;人人都在用的开源 agent 管理应用&quot;，月榜第一。</li>
+<li><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（+46,590）月榜第二，增速仍是头部。</li>
+<li><a href="https://github.com/tashfeenahmed/freellmapi">tashfeenahmed/freellmapi</a>（+11,190）：聚合 34 个免费 LLM 供应商、635 个免费模型端点到一个 /v1 接口，个人实验向。</li>
+<li><a href="https://github.com/rohitg00/ai-engineering-from-scratch">rohitg00/ai-engineering-from-scratch</a>（+17,286）：从零学 AI 工程的教程仓库，学习型内容持续吃香。</li>
+<li><a href="https://github.com/TencentCloud/Octop">TencentCloud/Octop</a>（+6,164）：腾讯云出品的自托管多用户多 agent 助手。</li>
+</ul>
+</section>
+<section><h2>开发者榜</h2>
+<ul class="tight">
+<li>今日榜首 <a href="https://github.com/koala73">koala73</a>（koala73/worldmonitor：实时全球情报仪表盘），第 2 名 <a href="https://github.com/elie222">elie222</a>（elie222/rakazo），第 3 名 <a href="https://github.com/max-sixty">max-sixty</a>（max-sixty/worktrunk）。</li>
+<li>值得一提：<a href="https://github.com/garrytan">garrytan</a> 上榜（gstack，AI 角色技能包作者）；<a href="https://github.com/ruvnet">ruvnet</a> 上榜（ruflo agent harness 作者）；<a href="https://github.com/comfyanonymous">comfyanonymous</a> 上榜（ComfyUI 作者）。</li>
+<li><a href="https://github.com/xiaolai">xiaolai</a>（《自学是门手艺》作者）也出现在开发者榜中。</li>
+</ul>
+</section>
+<section><h2>分语言榜亮点</h2>
+<ul class="tight">
+<li>Python 榜：<a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a>（+1,433）领跑 agent 相关，<a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a>（+426）让 agent 能看全网（含 B 站、小红书）。</li>
+<li>Rust 榜：<a href="https://github.com/xerj-org/xerj">xerj-org/xerj</a>（+770）：本地优先的搜索引擎和 MCP 服务器，单 Rust 二进制索引代码文档日志。</li>
+<li>Go 榜：<a href="https://github.com/strelov1/freehire">strelov1/freehire</a> 领跑；<a href="https://github.com/zhoushoujianwork/easyeda-agent">zhoushoujianwork/easyeda-agent</a>（+26）：给嘉立创 EDA 装&quot;画板的手&quot;，国产硬件 agent 选题。</li>
+<li>TypeScript 榜以 <a href="https://github.com/stablyai/orca">stablyai/orca</a> 领衔，agent 工具占多数。</li>
+</ul>
+<p>数据口径：github.com/trending 未登录抓取解析，日榜约 12 条、周榜约 16 条；周期新增星数为页面标注的 &quot;stars today/this week/this month&quot;；采集时间 2026-10-22 08:21（Asia/Shanghai）；项目背景经仓库 README 及公开报道核实，无法核实的点已单独标注。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
