@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub 热榜解说 · 10月22日</title><style>
+<title>GitHub 热榜解说 · 10月23日</title><style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
 .wrap{max-width:720px;margin:0 auto}
@@ -26,80 +26,77 @@ code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
 footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
 </style></head>
 <body><div class="wrap">
-<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月22日</h1><div class="sub">Agent 工具继续刷屏：逆向工程 agent 包 morluto/rea 周榜三连冠、单周涨 12.9 万星；Cloudflare 的安全审计 skill 登顶日榜；本地语音工作站 VoiceStudio 月榜第二。</div></header>
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月23日</h1><div class="sub">Agent skill 攻守两端发力：Cloudflare 安全审计 skill 登顶日榜、Ponytail 以 17 万星续演极简神话；周榜第一 morluto/rea 单周再涨 10.6 万星，顺带把 NSA 的 Ghidra 也拱回榜单。本地语音站 VoiceStudio 月榜继续飙。</div></header>
 <div><section><h2>今日重点</h2>
-<div class="card"><h3><a href="https://github.com/morluto/rea">morluto/rea</a></h3>
-<div><span class="badge">Agent</span><span class="badge">逆向工程</span><span class="badge">周榜第1</span></div>
-<div class="stats">周新增 +129,417｜总星 357,702｜连续三天周榜第一</div>
-<div class="verdict">💡 逆向工程的 agent 化工具包：以 MCP server + CLI 形式把 Claude Code、Codex、Cursor 等 coding agent 接到 Ghidra、IDA Pro、JADX、Binwalk 等成熟反编译工具上，能啃原生二进制、Electron 应用、.NET 程序集、安卓 APK、固件和网站。核心流程是&quot;反编译→追踪执行→重现逻辑&quot;，结论附证据与置信度标注，分析全在本地完成（MIT 许可）。火因是 10 月 7 日前后的病毒式传播：10 月 6 日还不足 1 万星，10 月 14 日已超 23 万星，是 GitHub 历史级的增速曲线，10 月 18 日刚发 6.7.0。适合安全研究员、恶意软件分析师和想让 agent 看懂别人二进制的开发者。注意作者 morluto 是化名，真名和公司背景未核实。</div>
-</div>
 <div class="card"><h3><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h3>
 <div><span class="badge">安全审计</span><span class="badge">Agent Skill</span><span class="badge">日榜第1</span></div>
-<div class="stats">日新增 +2,012｜月新增 +16,694｜总星 36,434</div>
-<div class="verdict">💡 Cloudflare 官方（9 月 14 日，MIT 许可）发布的编码 agent 安全审计 skill，回应&quot;agent 写代码、谁来审代码&quot;的痛点。它不是软件而是 markdown 指令集加两个零依赖 JS 校验器：把 agent 变成&quot;审计负责人&quot;，按六阶段（侦察→覆盖率驱动狩猎→候选验证→结构化输出→独立复核→报告）跑完整审计。技术亮点有三：找 bug 的 hunter 和负责证伪的 verifier 严格分离；每个结论按 confirmed / needs_validation / rejected 分档，沙盒不足时自动降级；结论必须附完整源码溯源，输出机器可读 findings.json。Cloudflare 称它源自自家内部漏洞挖掘平台，并自述在 25 个开源项目中找出 493 个问题（官方数据，第三方未独立核实）。正在搭 agent 代码流水线的团队值得试用。</div>
+<div class="stats">日新增 +2,979｜月新增 +18,566｜总星 39,542</div>
+<div class="verdict">💡 Cloudflare 官方 9 月 14 日开源（MIT）的编码 agent 安全审计 skill，回答&quot;agent 写代码、谁来审代码&quot;。它不是软件而是 markdown 指令集加两个零依赖 JS 校验器：把 agent 变成&quot;审计负责人&quot;，按六阶段（侦察→覆盖率驱动狩猎→独立猎手分舱并行→证伪验证→结构化输出→报告）跑完整审计。亮点有三：找 bug 的 hunter 与负责证伪的 verifier 严格分离；结论分 confirmed / needs_validation / rejected 三档，沙盒不足时自动降级；输出机器可读 findings.json 附完整源码溯源。Cloudflare 自述该 skill 是其内部漏洞挖掘平台的种子版本，曾在 25 个开源项目找出 493 个问题（官方数据，未独立核实）。正在搭 agent 代码流水线的团队可以一试，注意它烧 token 的量级不小，且不能代替人工复审。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/stablyai/orca">stablyai/orca</a></h3>
-<div><span class="badge">Agent 编排</span><span class="badge">日榜第3</span></div>
-<div class="stats">日新增 +1,541｜周新增 +8,705｜总星 101,225</div>
-<div class="verdict">💡 开源（MIT）桌面应用：不是 agent 本身，而是 agent 的&quot;舰队指挥台&quot;。核心玩法是把同一个提示扇出给多个 coding agent（Claude Code、Codex、OpenCode、Grok、Cursor、Copilot、Pi 等），每个 agent 在独立 git worktree 里并行干活，做完后并排对比、只合并优胜者。解决三个现实问题：agent 单次输出不稳定、串行重试烧时间、多家 agent 订阅难管理。还附带手机伴侣 App（推送通知加远程跟进）、SSH 远端 worktree、Claude/Codex 用量与速率限制追踪，支持 macOS/Windows/Linux 和 iOS/Android。作者是 YC 系的 Stably AI（具体 batch 未核实）。适合每天跟多个 agent 打交道、受够了手动对比 diff 的开发者。</div>
+<div class="card"><h3><a href="https://github.com/morluto/rea">morluto/rea</a></h3>
+<div><span class="badge">逆向工程</span><span class="badge">MCP 工具</span><span class="badge">周榜第1</span></div>
+<div class="stats">周新增 +106,341｜总星 366,163</div>
+<div class="verdict">💡 把逆向工程交给 agent 的开源工具包：以 MCP server + CLI 形式把 Claude Code、Codex、Cursor 等 coding agent 接到 Ghidra、IDA Pro、Hopper、JADX、Binwalk 等成熟分析工具上，能啃原生二进制、Electron 应用、.NET 程序集、安卓 APK、固件和网站。它自己不造新反编译器，只做 agent 与工具之间的证据接口：反编译、追踪函数调用、记录带置信度的证据束。4 月份无人问津的仓库，10 月 6 日还不足 1 万星，随后九天发了八个版本，11 天内冲破 30 万星，已是 GitHub 历史级增速，现在连英文维基百科都有了它的条目。带动的连带效应是 NSA 的 Ghidra 本周也重回周榜（+4,892）。适合安全研究员、恶意软件分析师。注意作者 morluto 是化名、真实背景未核实；分析闭源软件的版权与反规避风险在各国法律下差别很大，自用研究与商业使用是两回事。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/DietrichGebert">DietrichGebert/ponytail</a></h3>
+<div><span class="badge">极简主义</span><span class="badge">Agent 哲学</span><span class="badge">日榜第3</span></div>
+<div class="stats">日新增 +1,948｜总星 173,442</div>
+<div class="verdict">💡 让 AI agent&quot;像全屋最懒的资深开发者那样思考&quot;的开源 skill（MIT）：写代码前必须沿&quot;决策梯子&quot;逐层停靠——这段代码需要存在吗（YAGNI）、能复用现有代码吗、标准库能顶吗、平台原生能力够吗、已装的依赖能顶吗、一行能写完吗，最后才写最少可用的代码；懒于方案、但校验、错误处理和安全不让步。对治的是 agent 的习惯性过度工程：加 wrapper、造抽象、提前引库、写没人提过的冗余文件。单人作者 DietrichGebert 于 6 月 12 日发布，9 天涨到 4.4 万星，现在 17 万星，支持约 20 种 agent。项目自带基准声称代码量降 80–94%、成本降 47–77%（自测数据，未独立核实，第三方博客在一个真实仓库的实测是&quot;少写 54% 代码、省约两成 token&quot;）。受够了 agent 输出臃肿 diff 的开发者可以装一个试试。</div>
 </div>
 <div class="card"><h3><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></h3>
 <div><span class="badge">本地语音</span><span class="badge">语音克隆</span><span class="badge">月榜第2</span></div>
-<div class="stats">周新增 +15,125｜月新增 +46,590｜总星 80,390</div>
-<div class="verdict">💡 完全本地的 ElevenLabs 替代品：Electron 桌面应用（Python+TypeScript），捆绑 17 个本地 TTS 引擎和 10 种转录方案，集语音克隆（5–15 秒参考音频）、语音设计、视频配音（保留时间轴）、浮动听写、音频书制作于一体，支持 646 种语言（按引擎而异），不要账号、API key 和计量。技术上自己就是一个本地语音服务：对外提供 OpenAI 兼容 API（localhost:3900）、WebSocket 流和 MCP 端点，Claude Code 等 agent 可直接调用；GPU 自动检测 CUDA/Metal/ROCm/CPU。火因是&quot;声音即身份、拒绝按秒租用&quot;的叙事，正中隐私与成本痛点，10 月初单周涨约 1.5 万星。作者是印度独立开发者 Palash Debnath（palash.dev 自述），2026 年 4 月创建，仍处 active beta。注意许可细节：应用代码 AGPL-3.0，Pro/Lifetime 版是另售的闭源商业构建，各模型权重许可另算，商业用途需要自行核查。</div>
+<div class="stats">周新增 +13,581｜月新增 +47,620｜总星 81,744</div>
+<div class="verdict">💡 完全本地的 ElevenLabs 替代品，仍是这个月增速最猛的语音项目。桌面应用捆绑 16 种 TTS 引擎、10 种 ASR 方案，集语音克隆（3–15 秒参考音频）、按描述设计新声、视频配音（时间轴对齐、保留说话人音色）、系统级浮动听写、EPUB/PDF 转有声书于一体，号称支持 646 种语言（按引擎而异，实际质量差异大）。技术上它自己就是本地语音服务：对外暴露 OpenAI 兼容 API（localhost:3900）、WebSocket 流和 MCP 端点，agent 可直接调用合成或转写；GPU 自动检测 CUDA/MPS/ROCm/CPU，旧机器也能跑 CPU。火因是&quot;声音不要按秒租、数据不要出机房&quot;的叙事，10 月初单周涨约 1.5 万星。作者是印度独立开发者 Palash Debnath，2026 年 4 月建仓。许可要细看：应用代码 AGPL-3.0，默认引擎权重 CC-BY-NC（商业用途受限），想商用得切换到 Apache-2.0/MIT 引擎并自行核查条款。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></h3>
-<div><span class="badge">Agent 哲学</span><span class="badge">极简主义</span><span class="badge">日榜第5</span></div>
-<div class="stats">日新增 +2,079｜总星 171,607</div>
-<div class="verdict">💡 给 AI coding agent 立规矩的极简主义插件：核心理念是&quot;最优秀的资深开发者是全屋最懒的那个&quot;。agent 写代码前必须沿&quot;决策梯子&quot;从低往高停：先问这代码需要存在吗（YAGNI）、能复用现有代码吗、能用标准库吗、平台原生能力够吗、已装的依赖能顶吗、一行能写完吗，最后才写最少可用的代码；懒于方案但不省校验、错误处理和安全。解决的是 agent 习惯性过度工程（加 wrapper、造抽象、提前引库、写冗余文件）导致的臃肿和 token 浪费。项目自带基准声称代码量降 80–94%、成本降 47–77%（自测数据，未独立核实）。支持约 20 种 agent（Claude Code、Codex、Copilot、Cursor、Gemini CLI、OpenCode 等），版本迭代极快。发布 9 天就涨到 4.4 万星，现在 17 万星。受够了 agent 写&quot;过度防御性样板代码&quot;的人可以直接装。</div>
+<div class="card"><h3><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a></h3>
+<div><span class="badge">知识图谱</span><span class="badge">Agent Skill</span><span class="badge">日榜第4</span></div>
+<div class="stats">日新增 +1,408｜总星 132,929</div>
+<div class="verdict">💡 把任何代码库（连文档、SQL schema、配置和 PDF 一起）变成可查询知识图谱的 agent skill。路线选择很硬核：本地确定性 AST 解析、每条边都给出解释，明确不用向量数据库——赌的是 agent 需要的是可解释的结构而不是语义近似。对接 Claude Code、Cursor、Codex、Gemini CLI，以 <code>/graphify</code> skill 形式装入。13 万星说明&quot;agent 先读懂仓库再动手&quot;的需求真实存在，尤其适合接手陌生大仓库、或想让 agent 生成带引用来源的架构文档的场景。</div>
 </div>
 </section>
 <section><h2>日榜其余点评</h2>
 <ul class="tight">
-<li><a href="https://github.com/vllm-project/vllm">vllm-project/vllm</a>（日榜第2，+441）：LLM 推理服务引擎，94,859 星的常青树，近期持续有更新。</li>
-<li><a href="https://github.com/headroomlabs-ai/headroom">headroomlabs-ai/headroom</a>（日榜第4，+474）：给 LLM 的输入做压缩，号称给 coding agent 省 20% token、JSON 省 60–95%，答案不变；图书馆/MCP/代理三形态。</li>
-<li><a href="https://github.com/Comfy-Org/ComfyUI">Comfy-Org/ComfyUI</a>（日榜第6，+939）：扩散模型节点式工作流，141,502 星，老牌镇场。</li>
-<li><a href="https://github.com/supabase/supabase">supabase/supabase</a>（日榜第7，+504）：Postgres 开发平台，112,991 星。</li>
-<li><a href="https://github.com/twentyhq/twenty">twentyhq/twenty</a>（日榜第8，+112）：自称&quot;为 AI 设计的 Salesforce 开源替代&quot;。</li>
-<li><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a>（日榜第9，+575）：金融市场的&quot;语言基础模型&quot;，国产作者值得一看。</li>
-<li><a href="https://github.com/strelov1/freehire">strelov1/freehire</a>（日榜第10，+360）：求职者用的开源搜索引擎，总星 2,377，小而新的选题。</li>
-<li><a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a>（日榜第11，+286）：给 coding CLI 的长期记忆方案，Rust 实现。</li>
-<li><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a>（日榜第12，+1,433）：把代码库变可查询知识图谱的 agent skill，13 万星新锐，增速不容忽视。</li>
-<li>昨日日榜第一的 MadsLorentzen/ai-job-search 今日掉出榜单，属一日游。</li>
+<li><a href="https://github.com/php/php-src">php/php-src</a>（日榜第1，+287）：PHP 解释器本体，4.1 万星的老将罕见上榜，属生态波动而非爆发。</li>
+<li><a href="https://github.com/anthropics/knowledge-work-plugins">anthropics/knowledge-work-plugins</a>（+303）：Anthropic 官方的知识工作者插件库，配 Claude Cowork 用，月榜也累计 +6,026。</li>
+<li><a href="https://github.com/supabase/supabase">supabase/supabase</a>（+693）：Postgres 开发平台，11.3 万星常青树。</li>
+<li><a href="https://github.com/fastapi/fastapi">fastapi/fastapi</a>（+101）：10.3 万星的 Python 框架，稳定在榜。</li>
+<li><a href="https://github.com/luongnv89/claude-howto">luongnv89/claude-howto</a>（+177）：可视化、案例驱动的 Claude Code 教程，4.3 万星，开箱即用的模板是卖点。</li>
+<li><a href="https://github.com/Meloong-Git/PCL">Meloong-Git/PCL</a>（+119）：国产 Minecraft 启动器 Plain Craft Launcher，VB.NET 编写，8,684 星。</li>
 </ul>
 </section>
 <section><h2>周榜动态</h2>
 <ul class="tight">
-<li>周榜前三基本冻结：<a href="https://github.com/morluto/rea">morluto/rea</a>、<a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a>（+5,703，Anthropic 官方插件目录）、<a href="https://github.com/K-Dense-AI/scientific-agent-skills">K-Dense-AI/scientific-agent-skills</a>（+4,719，177 个科学技能库）延续强势。</li>
-<li>新增亮眼：<a href="https://github.com/android/skills">android/skills</a>（+1,332）进周榜前五，安卓官方的 agent skill，内容详情未核实。</li>
-<li><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a>（+6,545，总星 219,671）继续涨，开源 coding agent 的代表。</li>
-<li><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（+5,740）：&quot;写 HTML、渲染视频、为 agent 而生&quot;，HeyGen 出品。</li>
+<li><a href="https://github.com/morluto/rea">morluto/rea</a>（+106,341）继续断层第一，连续多天领跑。</li>
+<li><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a>（+3,708）进周榜前三，agent 集群编排 harness；<a href="https://github.com/android/skills">android/skills</a>（+1,384）守住前五，安卓官方 agent skill，内容细节未核实。</li>
+<li><a href="https://github.com/stablyai/orca">stablyai/orca</a>（+9,401）：多 agent 并行舰队指挥台，昨日还在日榜重点，今日周涨近万星，势头延续。</li>
+<li>连带效应：<a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a>（+4,892）借 REA 热度重回周榜。</li>
+<li><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（+5,669）、<a href="https://github.com/Comfy-Org/ComfyUI">Comfy-Org/ComfyUI</a>（+4,375）、<a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a>（+3,322，Rust 写的 agent 长期记忆）、<a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a>（+2,271，上下文窗口优化）均保持强势——agent 基础设施整条赛道都在吃水。</li>
 </ul>
 </section>
 <section><h2>月榜动态</h2>
 <ul class="tight">
-<li><a href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a>（月增 +24,756，总星 105,675）：&quot;人人都在用的开源 agent 管理应用&quot;，月榜第一。</li>
-<li><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（+46,590）月榜第二，增速仍是头部。</li>
-<li><a href="https://github.com/tashfeenahmed/freellmapi">tashfeenahmed/freellmapi</a>（+11,190）：聚合 34 个免费 LLM 供应商、635 个免费模型端点到一个 /v1 接口，个人实验向。</li>
-<li><a href="https://github.com/rohitg00/ai-engineering-from-scratch">rohitg00/ai-engineering-from-scratch</a>（+17,286）：从零学 AI 工程的教程仓库，学习型内容持续吃香。</li>
-<li><a href="https://github.com/TencentCloud/Octop">TencentCloud/Octop</a>（+6,164）：腾讯云出品的自托管多用户多 agent 助手。</li>
+<li><a href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a>（月增 +25,127，总星 106,160）：自称&quot;人人都在用的开源 agent 管理应用&quot;，继续月榜第一。</li>
+<li><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（月增 +47,620）：月榜第二，单月增量是 paperclip 的近两倍，增速榜实际第一。</li>
+<li>新上榜亮眼：<a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（+17,770，&quot;写 HTML 渲染视频、为 agent 而生&quot;）；<a href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a>（+28,067，会学习的 agent 记忆层）；<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>（+15,375，让 AI harness 更懂设计的&quot;设计语言&quot;，作者今日也登上开发者榜）。</li>
+<li><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a>（月增 +22,715，总星 286,531）：agent harness 性能优化系统，总星已近 29 万。</li>
+<li><a href="https://github.com/NVIDIA/OpenShell">NVIDIA/OpenShell</a>（+8,473）：英伟达出品的 agent 自治运行安全运行时，Rust 实现。</li>
+<li><a href="https://github.com/tashfeenahmed/freellmapi">tashfeenahmed/freellmapi</a>（+11,569）、<a href="https://github.com/rohitg00/ai-engineering-from-scratch">rohitg00/ai-engineering-from-scratch</a>（+17,286）、<a href="https://github.com/TencentCloud/Octop">TencentCloud/Octop</a>（+6,233，腾讯云自托管多 agent 助手）延续上涨。</li>
 </ul>
 </section>
 <section><h2>开发者榜</h2>
 <ul class="tight">
-<li>今日榜首 <a href="https://github.com/koala73">koala73</a>（koala73/worldmonitor：实时全球情报仪表盘），第 2 名 <a href="https://github.com/elie222">elie222</a>（elie222/rakazo），第 3 名 <a href="https://github.com/max-sixty">max-sixty</a>（max-sixty/worktrunk）。</li>
-<li>值得一提：<a href="https://github.com/garrytan">garrytan</a> 上榜（gstack，AI 角色技能包作者）；<a href="https://github.com/ruvnet">ruvnet</a> 上榜（ruflo agent harness 作者）；<a href="https://github.com/comfyanonymous">comfyanonymous</a> 上榜（ComfyUI 作者）。</li>
-<li><a href="https://github.com/xiaolai">xiaolai</a>（《自学是门手艺》作者）也出现在开发者榜中。</li>
+<li>今日榜首 <a href="https://github.com/elie222">elie222</a>（elie222/rakazo），第 2 名 <a href="https://github.com/shiaho777">shiaho777</a>（shiaho777/web-to-app），第 3 名 <a href="https://github.com/ruvnet">ruvnet</a>（ruflo 作者，昨日第 2 名的 koala73 今日退至第 4）。</li>
+<li>值得一提：<a href="https://github.com/pbakaus">pbakaus</a>（impeccable 作者，月榜增 1.5 万星的项目背后的人）、<a href="https://github.com/garrytan">garrytan</a>（gstack 角色技能包作者）、<a href="https://github.com/comfyanonymous">comfyanonymous</a>（ComfyUI 作者）、<a href="https://github.com/max-sixty">max-sixty</a>（worktrunk，Rust 写的 git worktree 管理）、<a href="https://github.com/doobidoo">doobidoo</a>（mcp-memory-service）、<a href="https://github.com/esengine">esengine</a>（DeepSeek-Reasonix）。</li>
 </ul>
 </section>
 <section><h2>分语言榜亮点</h2>
 <ul class="tight">
-<li>Python 榜：<a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a>（+1,433）领跑 agent 相关，<a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a>（+426）让 agent 能看全网（含 B 站、小红书）。</li>
-<li>Rust 榜：<a href="https://github.com/xerj-org/xerj">xerj-org/xerj</a>（+770）：本地优先的搜索引擎和 MCP 服务器，单 Rust 二进制索引代码文档日志。</li>
-<li>Go 榜：<a href="https://github.com/strelov1/freehire">strelov1/freehire</a> 领跑；<a href="https://github.com/zhoushoujianwork/easyeda-agent">zhoushoujianwork/easyeda-agent</a>（+26）：给嘉立创 EDA 装&quot;画板的手&quot;，国产硬件 agent 选题。</li>
-<li>TypeScript 榜以 <a href="https://github.com/stablyai/orca">stablyai/orca</a> 领衔，agent 工具占多数。</li>
+<li>Python 榜：<a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a>（+1,408）领跑；<a href="https://github.com/headroomlabs-ai/headroom">headroomlabs-ai/headroom</a>（+517）给 LLM 输入做压缩，自称 coding agent 省 20% token；<a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a>（+500）金融市场的&quot;语言基础模型&quot;，国产作者值得一看。</li>
+<li>TypeScript 榜：<a href="https://github.com/stablyai/orca">stablyai/orca</a>（+1,689）居首；<a href="https://github.com/tashfeenahmed/freellmapi">tashfeenahmed/freellmapi</a>（+625）；<a href="https://github.com/genspark-ai/genoffice">genspark-ai/genoffice</a>（+193）开源 AI 办公套件新锐，Docs/Sheets/Slides/PDF 编辑器加内置 agent。</li>
+<li>Rust 榜：<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>（+587）领跑；<a href="https://github.com/NVIDIA/OpenShell">NVIDIA/OpenShell</a>（+211）；<a href="https://github.com/openai/codex">openai/codex</a>（+181）持续在榜。</li>
+<li>Go 榜：<a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a>（+226）阿里出品的混合架构代码评审工具；<a href="https://github.com/Asymptote-Labs/agent-beacon">Asymptote-Labs/agent-beacon</a>（+245）跨 harness 自我改进记忆层；<a href="https://github.com/larksuite/cli">larksuite/cli</a>（+27）飞书官方 CLI，200+ 命令加 20+ agent skill。</li>
 </ul>
-<p>数据口径：github.com/trending 未登录抓取解析，日榜约 12 条、周榜约 16 条；周期新增星数为页面标注的 &quot;stars today/this week/this month&quot;；采集时间 2026-10-22 08:21（Asia/Shanghai）；项目背景经仓库 README 及公开报道核实，无法核实的点已单独标注。</p>
+<p>数据口径：github.com/trending 未登录抓取解析（本次日榜 9 条、周榜 15 条、月榜 20 条）；周期新增星数为页面标注的 &quot;stars today/this week/this month&quot;；采集时间 2026-10-23 08:21（Asia/Shanghai）；项目背景经仓库 README 及公开报道核实，无法核实的点已单独标注。</p>
 </section>
 <footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
 </div></div></body></html>
