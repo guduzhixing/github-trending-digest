@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 10月26日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月26日</h1><div class="sub">每日 GitHub Trending 深度解说 · AI 与开发者工具前沿</div></header>
+<div><section><h2>今日焦点</h2>
+<div class="card"><h3><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h3>
+<div><span class="badge">Agent Skill</span><span class="badge">🏷 安全审计</span><span class="badge">🏷 Cloudflare 出品</span></div>
+<div class="stats">日榜第 10，日新增 <b>2,878</b> 星 · 总星数 46,857 · 周榜第 1，周新增 15,072 星 · 月榜第 3，月新增 24,611 星</div>
+<div class="verdict">💡 本周真正的榜单冠军是它：日榜位置起伏只是快照差异，周榜第一、月榜第三才是真实势头。这是 Cloudflare 开源的 coding-agent 安全审计 skill，源自其内部漏洞发现工具链：六阶段流程——侦察建台账、猎手按台账找漏洞、每条线索交全新验证者证伪、结构化输出 findings.json、独立复核、最后出报告，结论只分 confirmed、needs_validation、rejected 三档。官方坦言单次运行约只能找到多次运行总量的一半，一次干净不等于安全。代价是吃 token、需并行子 agent 与无网络沙盒，适合发布前深审与定期巡检。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></h3>
+<div><span class="badge">本地语音</span><span class="badge">🏷 ElevenLabs 平替</span><span class="badge">🏷 开源桌面应用</span></div>
+<div class="stats">日榜第 3，日新增 <b>1,592</b> 星 · 总星数 86,783 · 月榜第 2，月新增 50,977 星</div>
+<div class="verdict">💡 月增 5 万星说明一件事：大家要的不是语音玩具，而是把声音主权拿回本地。它是开源桌面应用，号称完全本地的 ElevenLabs 平替：声音克隆、设计、视频配音、听写、转写、有声书全在一处，覆盖 646 种语言，默认 OmniVoice 引擎并可切换多引擎。分水岭在连接层：本地 API 与 MCP 让 agent 也能直接调用它生成旁白或转写，音频不出本机。提醒：项目自标 active beta，音质因引擎而异，各引擎商用许可需单独确认，只克隆有授权的声音。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/pollen-robotics/microduck">pollen-robotics/microduck</a></h3>
+<div><span class="badge">具身智能</span><span class="badge">🏷 开源机器人</span><span class="badge">🏷 强化学习</span></div>
+<div class="stats">日榜第 5，日新增 <b>647</b> 星 · 总星数 11,620</div>
+<div class="verdict">💡 一只 25 厘米、800 克的双足鸭子为何最出圈？它来自 Hugging Face 旗下的 Pollen Robotics，Rust 软件栈、Apache-2.0 协议：15 个舵机、50Hz 控制环、RK3566 计算单元。它走路不是手写脚本，而是在 MuJoCo 里用 PPO 强化学习训出策略、导出 ONNX 落到真机，标准 sim2real 路线。开箱会走、坐、踢球、跌倒自起，还能用喙捡东西、换轮滑行。10 月 21 日 GTC Berlin 演示后迅速破圈，预售 399 美元、目标圣诞前交付，适合想动手学具身智能的学生与研究者。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/TauricResearch/TradingAgents">TauricResearch/TradingAgents</a></h3>
+<div><span class="badge">多智能体</span><span class="badge">🏷 量化交易</span><span class="badge">🏷 论文项目</span></div>
+<div class="stats">日榜第 6，日新增 <b>381</b> 星 · 总星数 114,584</div>
+<div class="verdict">💡 这支 2024 年底发表论文的老将（UCLA 与 MIT 团队，arXiv:2412.20138）重回日榜，说明多智能体协作范式仍在被验证。它把交易公司的组织方式搬进 LangGraph：基本面、情绪、新闻、技术分析师先出评估，多空研究员辩论，交易员定方向仓位，风控与组合经理最后审批，全程可复现。近版补了 HTML 报告、回测时点完整性（不偷看未来数据）、批量回测与 SEC EDGAR 基本面。适合量化研究者，但框架自标研究用途、非投资建议，回测好看不等于实盘赚钱。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/Renhuai123/ziwei-doushu">Renhuai123/ziwei-doushu</a></h3>
+<div><span class="badge">中文开源</span><span class="badge">🏷 传统文化数字化</span><span class="badge">🏷 排盘引擎</span></div>
+<div class="stats">日榜第 7，日新增 <b>199</b> 星 · 总星数 7,538</div>
+<div class="verdict">💡 日榜少见的中文传统文化项目，而且给的不是算命服务，是一台可审计的排盘引擎。按仓库自述，它基于倪海厦《天纪》体系，用 TypeScript 实现完整排盘算法，附四化系统、格局知识库与古籍原文数据。价值在工程化：把藏在各家软件黑箱里的历法换算、星曜安放与格局判定变成公开可复现的代码，开发者可在此上做产品、做研究、做流派对比，Fork 数高达 1,542。提醒：排盘是文化与算法兴趣，解读结论不作人生与投资决策的依据。</div>
+</div>
+</section>
+<section><h2>日榜其余</h2>
+<ul class="tight">
+<li><a href="https://github.com/makecindy/cindy">makecindy/cindy</a>：日榜第 1，日增 675 星，总星 4,845——昨日第 10 今日升至第 1，昨日已深度讲过，多 harness 共享工作区的开源 AI agent 控制层。</li>
+<li><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>：日榜第 2，日增 1,317 星，总星 33,725——昨日焦点，反 AI 套路设计 skill，热度未减。</li>
+<li><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>：日榜第 4，日增 1,092 星，总星 87,679——昨日焦点，给 agent 的设计语言，月增 16,493 星。</li>
+<li><a href="https://github.com/JetBrains/thinkrail">JetBrains/thinkrail</a>：日榜第 8，日增 51 星，总星 1,708——JetBrains 出品的轻量 IDE，主打用 Pi 做 vibe coding，增量小但出身值得盯。</li>
+<li><a href="https://github.com/coollabsio/coolify">coollabsio/coolify</a>：日榜第 9，日增 152 星，总星 64,360——开源自托管 PaaS，Vercel 与 Heroku 平替的老将，基本盘稳固。</li>
+<li><a href="https://github.com/AgriciDaniel/claude-seo">AgriciDaniel/claude-seo</a>：日榜第 11，日增 197 星，总星 20,838——SEO skill 合集，26 个子 skill 加 19 个子 agent，agent 技能包的颗粒度越做越细。</li>
+</ul>
+</section>
+<section><h2>周榜 / 月榜动向</h2>
+<ul class="tight">
+<li><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>：周榜第 1，见今日焦点——agent 安全审计仍是本周头号话题。</li>
+<li><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a>：周榜第 2，周增 2,987 星，总星 79,279——多智能体群编排的老牌 harness。</li>
+<li><a href="https://github.com/anthropics/knowledge-work-plugins">anthropics/knowledge-work-plugins</a>：周榜第 3，周增 2,790 星，总星 32,975——Anthropic 面向知识工作者的 Claude Cowork 插件集，周内从第 9 爬升至第 3。</li>
+<li><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a>：周榜第 4，周增 5,921 星，总星 221,514——开源终端 coding agent 的基本盘。</li>
+<li><a href="https://github.com/stablyai/orca">stablyai/orca</a>：周榜第 5，周增 9,622 星，总星 105,804——并行派多个 agent 赛马的编排层，破 10 万星后仍在涨。</li>
+<li><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>：周榜第 6、月榜第 1，周增 5,612、月增 19,211 星，总星 72,149——写 HTML 就能渲染视频，agent 视频生产工具的月度冠军。</li>
+<li><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a>：周榜第 8，周增 6,903 星，总星 135,238——把代码库变成 agent 可查的知识图谱，周内名次继续爬升。</li>
+<li><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a>：周榜新上榜，周增 2,937 星，总星 223,836——一份从 Andrej Karpathy 对 LLM 编码误区的观察提炼出的 CLAUDE.md，体量惊人，说明“一份好规则文件”本身就能成为顶流项目。</li>
+<li><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>：周榜新上榜，周增 1,770 星，总星 30,122——仓库描述为空的新面孔，背景尚待核实，先记一笔。</li>
+<li><a href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a>：月增 24,081 星，总星 107,290——工作中管理 agent 的应用，agent 协作工具产品化加速。</li>
+<li><a href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a>：月增 25,486 星，总星 53,722——会学习的 agent 记忆层，记忆基建仍是热门方向。</li>
+<li><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a>：月增 22,882 星，总星 288,853——agent harness 性能优化系统，调优 agent 本身仍是显学。</li>
+<li><a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a>：月增 14,822 星，总星 94,311——NSA 的逆向框架，逆向热潮外溢到了工具本体。</li>
+<li>月榜本周无新面孔，格局稳定，头部仍由 agent 工具链主导。</li>
+</ul>
+</section>
+<section><h2>开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/mvanhorn">mvanhorn</a>：last30days-skill 作者，把“过去 30 天”做成 agent 可调用的 skill。</li>
+<li><a href="https://github.com/jarrodwatts">jarrodwatts</a>：claude-hud 作者，给 Claude Code 做状态仪表盘的开发者。</li>
+<li><a href="https://github.com/gakonst">gakonst</a>：nanocode 作者，轻量 agent 方向的新面孔。</li>
+</ul>
+</section>
+<section><h2>分语言榜亮点</h2>
+<ul class="tight">
+<li>Python：<a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（见今日焦点）；<a href="https://github.com/TauricResearch/TradingAgents">TauricResearch/TradingAgents</a>（见今日焦点）；<a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a>（日增 111，总星 143,047）百余个 AI agent 与 RAG 应用合集。</li>
+<li>TypeScript：<a href="https://github.com/makecindy/cindy">makecindy/cindy</a>（日榜第 1）；<a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a>（日增 658，总星 108,382）终端 agent 的基本盘。</li>
+<li>Rust：<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>（日榜第 4）；<a href="https://github.com/pollen-robotics/microduck">pollen-robotics/microduck</a>（见今日焦点）；<a href="https://github.com/NVIDIA/OpenShell">NVIDIA/OpenShell</a>（日增 600，总星 19,862）agent 的安全私有运行时。</li>
+<li>Go：<a href="https://github.com/Gaurav-Gosain/tuios">Gaurav-Gosain/tuios</a>（日增 190，总星 5,985）知道你的 agent 在干什么的终端窗口管理器，月榜第 21。</li>
+</ul>
+</section>
+<section><h2>数据口径</h2>
+<p>数据来自 github.com/trending 页面未登录抓取（日榜 11 条、周榜 14 条、月榜 21 条）；“新增星数”为榜单周期内新增，采集时间 2026-10-26 08:21（Asia/Shanghai）；周榜/月榜动向系与 2026-10-25 数据文件对比；项目背景经公开报道与仓库描述交叉核实，未核实的信息未写入。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
