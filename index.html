@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub 热榜解说 · 10月30日</title><style>
+<title>GitHub 热榜解说 · 10月31日</title><style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
 .wrap{max-width:720px;margin:0 auto}
@@ -26,75 +26,74 @@ code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
 footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
 </style></head>
 <body><div class="wrap">
-<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月30日</h1><div class="sub">每日 GitHub Trending 深度解说 · Agent skill 与设计品味仍是主线</div></header>
-<div><section><h2>今日焦点</h2>
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月31日</h1><div class="sub">今日主题只有一个：Agent 的品味、记忆与治理。日榜前排几乎被 Agent 技能与 Agent 同事承包，设计审美第一次以可执行规则的形式登上热榜。</div></header>
+<div><section><h2>重点项目</h2>
 <div class="card"><h3><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></h3>
-<div><span class="badge">Agent 设计词汇</span><span class="badge">🏷 反 AI 套路</span><span class="badge">🏷 Rust</span></div>
-<div class="stats">日榜第 3（昨日第 7），日新增 <b>2,870</b> 星 · 总星数 95,289 · 周增 9,713 星、月增 22,473 星</div>
-<div class="verdict">💡 它是给 coding agent 的设计词汇表：把“好看一点”这种模糊指令翻译成 24 条可执行命令——polish、bolder 管风格走向，critique 打分排优先级，audit 按 P0–P3 查无障碍、性能与响应式；另有 62 条确定性规则的反 AI 套路检测器，无需 LLM 与 API key 就能扫出 Inter 全家桶、紫蓝渐变、卡片套卡片等典型痕迹。一次安装覆盖 Claude Code、Cursor、Codex、Copilot、Pi 等近二十种工具，还能在浏览器里实时换方案并回写源码。适合每天被 agent 交出来的“能用但不好看”的页面折磨的前端与全栈开发者。</div>
+<div><span class="badge">Rust</span><span class="badge">Agent 技能</span><span class="badge">设计评审</span><span class="badge">反 AI 味</span></div>
+<div class="stats">今日新增 2,300 星，总星数 97,042，Fork 5,714；周榜新增 11,323 星，月榜新增 24,624 星，三榜同时在前排</div>
+<p>给编码 Agent 配一套设计词汇：用 <code>polish</code>、<code>bolder</code> 打磨页面，用 <code>critique</code> 做带评分的可用性评审、用 <code>audit</code> 查无障碍与性能，另有 62 条确定性规则的“AI 味”检测器，无需大模型、无需 API Key 即可扫描。它火的原因很直白：Agent 生成的页面越来越像——Inter 字体、紫蓝渐变、卡片套卡片，开发者受够了千篇一律的默认审美。项目同时提供 Claude Code、Cursor、Codex、Copilot 等二十余种工具的安装形态，等于把“品味”做成可复用的技能包。</p>
+<div class="verdict">💡 点评：这不是又一个 UI 组件库，而是把设计评审前置到 Agent 工作流里；做 AI 生成前端的团队值得先跑一遍它的检测器，再谈审美。</div>
 </div>
 <div class="card"><h3><a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a></h3>
-<div><span class="badge">个性化家教</span><span class="badge">🏷 Agent 原生学习</span><span class="badge">🏷 Python</span></div>
-<div class="stats">日榜第 1（昨日第 4），日新增 <b>1,930</b> 星 · 总星数 50,016</div>
-<div class="verdict">💡 HKUDS 团队出品的终身个性化家教：把教材、论文与自己的笔记建成知识库后，聊天、提问、测验、研究、可视化与精通路径共用同一套 agent 运行时；检索横跨 LlamaIndex、PageIndex、GraphRAG、LightRAG，记忆分层且可查看编辑，10 月 28 日刚发的 v1.7.0 又加了模块化安装、块笔记本与有声视频课。连续第二日上榜且登顶，总星刚破 5 万，适合想给自己搭一个可长期陪跑的 AI 学习工作台的学生与自学者。</div>
+<div><span class="badge">Python</span><span class="badge">AI 家教</span><span class="badge">多智能体</span><span class="badge">RAG</span></div>
+<div class="stats">今日新增 2,282 星，总星数 51,764，Fork 6,340；Python 日榜第一</div>
+<p>主打“终身个性化家教”：把教材、笔记建成知识库，让多智能体围绕学习者做阅读、练习、测评与学习路径规划，刚在 10 月 28 日发布 v1.7.0，带来模块化安装、块笔记与可续传的索引检查点。它与通用聊天机器人拉开差距的地方在于学习闭环：不是答完一道题就结束，而是记录掌握程度、安排复习与下一步内容，适合把 AI 当长期学习伙伴而非一次性问答工具的人。</p>
+<div class="verdict">💡 点评：教育类 Agent 正在从“能讲题”走向“能管学习进程”，DeepTutor 的高频发版说明这条路线的迭代速度很快，适合自学者和做教育产品的开发者对照参考。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/JetBrains/thinkrail">JetBrains/thinkrail</a></h3>
-<div><span class="badge">Pi Agent 桌面壳</span><span class="badge">🏷 轻量 IDE</span><span class="badge">🏷 JetBrains 出品</span></div>
-<div class="stats">日榜第 4（昨日第 1），日新增 <b>1,117</b> 星 · 总星数 5,992</div>
-<div class="verdict">💡 JetBrains 围绕开源 Pi agent 打造的轻量 IDE：把 agent 会话放进真正的编辑器工作台，用 git worktree 隔离并行任务，SPEC.md 构成的规格图谱让意图跨会话留存，Monaco 编辑、文件树、终端与 PR 流转都按工作区组织；问答与可视化工具也可单独装回纯终端 Pi。昨日登顶后今日仍居日榜第 4，总星数逼近 6,000，适合正在用 Pi 做 vibe coding、又嫌终端会话难以管理的中重度用户。</div>
+<div class="card"><h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">Agent 记忆</span><span class="badge">会话上下文</span></div>
+<div class="stats">今日新增 1,140 星，总星数 106,226，Fork 9,352；日榜第一，月榜新增 11,124 星</div>
+<p>解决 Agent 最常见的失忆问题：把每次会话中 Agent 的所作所为记录下来，用 AI 压缩成结构化记忆，在未来会话中按需注入。它支持 Claude Code、Codex、Gemini、Copilot、OpenCode 等多种工具，定位是跨工具的“长期记忆层”。当 Agent 开始承担多天、跨项目的连续工作时，上下文窗口再大也装不下全部历史，外部记忆就成了刚需，这正是它总星数破十万的背景。</p>
+<div class="verdict">💡 点评：记忆正在成为 Agent 基础设施的标配层；与其让每个工具各自记，不如先看这种跨工具方案的取舍，留意隐私与记忆污染两道关。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/obra/superpowers">obra/superpowers</a></h3>
-<div><span class="badge">Agentic 方法论</span><span class="badge">🏷 Skill 框架</span><span class="badge">🏷 子 Agent 开发</span></div>
-<div class="stats">日榜第 2（昨日第 3），日新增 <b>1,034</b> 星 · 总星数 308,528</div>
-<div class="verdict">💡 obra 维护的 agent 开发方法论与 skill 套件：先逼 agent 在动手前把需求聊成可审阅的设计，再拆成 2–5 分钟可执行的小任务，用子 agent 分工实现并逐任务评审，全程强制红绿重构、YAGNI 与 DRY；一套 skill 横跨 Claude Code、Codex、Cursor、Gemini、Pi、Muse 等几乎所有主流 harness。总星 30.8 万是今日日榜最高的存量，适合想把“让 agent 自由发挥”升级为可重复流程的团队与独立开发者。</div>
+<div class="card"><h3><a href="https://github.com/CopilotKit/OpenBot">CopilotKit/OpenBot</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">AI 同事</span><span class="badge">AG-UI</span><span class="badge">自托管</span></div>
+<div class="stats">今日新增 706 星，总星数 8,779，Fork 1,107</div>
+<p>开源的“AI 同事”平台：每个同事拥有一台自己的电脑——独立浏览器、独立文件、只被授予的工具；每一次操作都先决策、事后留痕，基于 AG-UI 协议接入 LangGraph、Mastra、CrewAI 等任意 Agent 框架。它的卖点不是更强的模型，而是可治理：数据落在自己的 PostgreSQL，模型自选，动作全部经过统一网关审批与审计。目前仍标注 Beta，官方也直言这是一个“模板而非成品”，需要自己部署改造。</p>
+<div class="verdict">💡 点评：当 Agent 从聊天框走向替你操作系统时，“能不能管住它”比“它有多聪明”更重要；OpenBot 把审计与边界做成一等公民，适合对数据主权敏感的团队评估。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h3>
-<div><span class="badge">Agent 安全审计</span><span class="badge">🏷 Cloudflare 出品</span><span class="badge">🏷 结构化结论</span></div>
-<div class="stats">周榜第 1（蝉联）、月榜第 1（昨日第 2），周新增 <b>14,320</b> 星 · 月新增 29,622 星 · 总星数 52,842</div>
-<div class="verdict">💡 Cloudflare 开源的 agent 安全审计 skill，也是其漏洞发现流水线的单仓起点：侦察、覆盖驱动狩猎、候选验证、结构化输出、独立记录复核与中立报告六阶段走完，结论只分 confirmed、needs_validation 与 rejected 三档，且复核结论的 agent 绝不能是发现它的那个；另有零依赖校验脚本保证台账与结论格式。周榜蝉联、月榜新登顶，适合想让 agent 先做一轮可复核、可追溯的代码安全审计再谈修复的团队。</div>
+<div class="card"><h3><a href="https://github.com/Renhuai123/ziwei-doushu">Renhuai123/ziwei-doushu</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">紫微斗数</span><span class="badge">排盘引擎</span><span class="badge">传统文化数字化</span></div>
+<div class="stats">今日新增 1,126 星，总星数 11,195，Fork 2,233</div>
+<p>开源的紫微斗数排盘引擎，基于倪海厦《天纪》体系，包含完整排盘算法、四化系统、格局知识库与古籍原文数据。它的走红说明开源社区的兴趣并不只在 AI 工具：把一套规则复杂、口传心授的传统推算体系做成可验证、可复用的代码，本身就是有价值的数字化工作。需要注意的是，排盘是命理计算工具，其推算结果不具备科学预测效力，适合当作文化与算法研究项目看待。</p>
+<div class="verdict">💡 点评：传统文化题材 + 扎实的知识库工程，是一条容易被低估的开源路线；对传统文化数字化感兴趣的开发者可以重点看它的数据组织方式。</div>
 </div>
 </section>
-<section><h2>日榜其余</h2>
+<section><h2>日榜其余一句话点评</h2>
 <ul class="tight">
-<li><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a>：日榜第 5（新上榜），日增 1,199 星，总星 7,463——开源 Grok Bot 平替，带可供 bot 使用的虚拟机。</li>
-<li><a href="https://github.com/nightly-labs/openbot">nightly-labs/openbot</a>：日榜第 6（昨日第 9），日增 709 星，总星 3,868——本地优先的多 agent 桌面工作台，可跑 Codex、Claude 与 Grok。</li>
-<li><a href="https://github.com/elayadesign/ai-design-skills">elayadesign/ai-design-skills</a>：日榜第 7（昨日第 2），日增 1,187 星，总星 12,126——落地页设计 skill，热度仍在但名次回落。</li>
-<li><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a>：日榜第 8（新上榜），日增 336 星，总星 104,773——跨会话持久记忆工具，覆盖 Claude Code、Codex、Gemini 等多家 agent。</li>
-<li><a href="https://github.com/CopilotKit/OpenBot">CopilotKit/OpenBot</a>：日榜第 9（新上榜），日增 247 星，总星 8,136——给每个 AI 同事配一台自己的电脑，注意与 nightly-labs 的同名项目区分。</li>
-<li><a href="https://github.com/togg53192-cmd/jailbreaks">togg53192-cmd/jailbreaks</a>：日榜第 10（与昨日持平），日增 1,594 星，总星 9,004——收录各类 jailbreak 的仓库，仅作榜单记录，不展开介绍。</li>
-<li><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a>：日榜第 11（新上榜），日增 353 星，总星 29,163——把 Claude Code 变成游戏开发工作室的 49 agent、72 skill 编排。</li>
-<li>日榜出榜：<a href="https://github.com/macro-inc/macro">macro-inc/macro</a>、<a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>、<a href="https://github.com/makecindy/cindy">makecindy/cindy</a>、<a href="https://github.com/hmjz100/LinkSwift">hmjz100/LinkSwift</a>、<a href="https://github.com/expo/skills">expo/skills</a>、<a href="https://github.com/ruvnet/RuView">ruvnet/RuView</a>、<a href="https://github.com/xiaolai/the-craft-of-selfteaching">xiaolai/the-craft-of-selfteaching</a> 本期掉出日榜。</li>
+<li><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a>：开源版 Grok Bot 替代品，给机器人配一台可用的虚拟机，今日新增 895 星。</li>
+<li><a href="https://github.com/expo/skills">expo/skills</a>：Expo 官方的 Agent 技能合集，帮 Agent 正确调用 Expo 项目与应用服务。</li>
+<li><a href="https://github.com/macro-inc/macro">macro-inc/macro</a>：把邮件、聊天、文档、任务、CRM 统一到一个带共享 AI 记忆的工作区，Rust 编写。</li>
+<li><a href="https://github.com/mattpocock/skills">mattpocock/skills</a>：作者个人 <code>.agents</code> 目录里的工程技能合集，总星数已达 307,470，典型的“个人工作流开源化”案例。</li>
+<li><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>：日榜新增 930 星的老面孔，仓库简介为空，热度更多来自社区传播而非公开说明。</li>
+<li><a href="https://github.com/JetBrains/thinkrail">JetBrains/thinkrail</a>：JetBrains 出品的轻量 IDE，主打“围着你的工作方式定制自己”的 Vibe Coding 体验，面向 Pi 用户。</li>
+<li><a href="https://github.com/togg53192-cmd/jailbreaks">togg53192-cmd/jailbreaks</a>：越狱提示词合集，今日新增 2,055 星，热度高但使用风险自担，不建议用于生产模型。</li>
+<li><a href="https://github.com/obra/superpowers">obra/superpowers</a>：Agent 技能框架与开发方法论，总星数 309,419，是本轮“技能热”里体量最大的项目之一。</li>
+<li><a href="https://github.com/lightpanda-io/browser">lightpanda-io/browser</a>：为 AI 与自动化设计的无头浏览器，Zig 编写，瞄准 Agent 规模化浏览网页的成本与速度问题。</li>
 </ul>
 </section>
-<section><h2>周榜 / 月榜动向</h2>
+<section><h2>周榜与月榜</h2>
 <ul class="tight">
-<li><a href="https://github.com/php/php-src">php/php-src</a>：周榜第 2（新上榜），周增 960 星，总星 41,719——PHP 解释器本体，靠存量规模而非爆发上榜。</li>
-<li><a href="https://github.com/AgriciDaniel/claude-seo">AgriciDaniel/claude-seo</a>：周榜第 3（昨日第 2），周增 4,110 星，总星 23,992——Claude Code 通用 SEO skill，含 26 个子 skill 与 19 个子 agent。</li>
-<li><a href="https://github.com/hugohe3/ppt-master">hugohe3/ppt-master</a>：周榜第 7（新上榜），周增 4,980 星，总星 70,822——AI 把文档或主题转成原生 PPT，含原生形状、动效与图表。</li>
-<li><a href="https://github.com/TauricResearch/TradingAgents">TauricResearch/TradingAgents</a>：周榜第 6（昨日第 5），周增 5,557 星，总星 118,324——多智能体交易框架老将。</li>
-<li><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>：月榜第 2（昨日第 1），月增 21,520 星，总星 75,464——写 HTML 就能渲染视频，让出月榜冠军位。</li>
-<li><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>：月榜第 6（与昨日持平），月增 47,778 星，总星 94,294——本地 ElevenLabs 平替，月增星数仍居月榜首位。</li>
-<li><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>：月榜第 11（昨日第 19），月增 12,501 星，总星 42,083——设计 skill 赛道在月榜上名次大涨。</li>
-<li><a href="https://github.com/flutter/flutter">flutter/flutter</a>：月榜第 14（重新上榜），月增 1,993 星，总星 180,603——Flutter 本体回归月榜。</li>
+<li>周榜第一是 <a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>，周新增 12,838 星：给编码 Agent 的多阶段安全审计技能，输出可机读、可独立验证的审计结论，安全类技能同样搭上了这波技能热。</li>
+<li>月榜最值得注意的是 <a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>，月新增 49,116 星：号称完全本地的 ElevenLabs 替代品，覆盖语音克隆、配音与有声书，本地化语音工具的需求正在爆发。</li>
+<li>月榜另有 <a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（月新增 22,149 星），“写 HTML、渲染视频、为 Agent 而生”，与本系列视频生产方向的思路颇为接近。</li>
 </ul>
 </section>
 <section><h2>开发者榜</h2>
 <ul class="tight">
-<li><a href="https://github.com/lalalune">lalalune</a>：今日开发者榜第 1（昨日第 5），代表作 <a href="https://github.com/lalalune/pumpfun-source">lalalune/pumpfun-source</a>。</li>
-<li><a href="https://github.com/morluto">morluto</a>：开发者榜第 2，代表作 <a href="https://github.com/morluto/rea">morluto/rea</a>。</li>
-<li><a href="https://github.com/vastsa">vastsa</a>：开发者榜第 3，代表作 <a href="https://github.com/vastsa/PI-Desktop">vastsa/PI-Desktop</a>。</li>
+<li><a href="https://github.com/pbakaus">pbakaus</a>：凭借 impeccable 登上开发者榜，设计技能赛道的代表人物。</li>
+<li><a href="https://github.com/mitchellh">mitchellh</a>：代表作 vouch 等，长青的基础设施型开发者。</li>
+<li><a href="https://github.com/poteto">poteto</a>：代表作 hiring-without-whiteboards，关注更人性化的技术招聘方式。</li>
 </ul>
 </section>
 <section><h2>分语言榜亮点</h2>
 <ul class="tight">
-<li>Python：<a href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a>（日增 1,454，总星 56,193）会学习的 agent 记忆工具；<a href="https://github.com/rohitg00/ai-engineering-from-scratch">rohitg00/ai-engineering-from-scratch</a>（日增 443，总星 75,593）从零学 AI 工程的开源教程。</li>
-<li>TypeScript：日榜前列基本被 thinkrail、OpenMausBot 与 openbot 包揽，见今日焦点与日榜其余。</li>
-<li>Rust：<a href="https://github.com/ruvnet/RuView">ruvnet/RuView</a>（日增 849，总星 101,572）用 Wi-Fi 信号做空间感知与体征监测。</li>
-<li>Go：<a href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a>（日增 295，总星 116,099）面向 coding agent 的省 token skill 与代理。</li>
+<li>Python 榜除 DeepTutor 外，记忆类项目扎堆：<a href="https://github.com/MemPalace/mempalace">MemPalace/mempalace</a> 与 <a href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a> 都在做“会学习的 Agent 记忆”，与 claude-mem 形成对照。</li>
+<li>Go 榜出现一匹黑马 <a href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a>：用“穴居人式短句”给 Agent 省 Token 的技能与代理，今日新增 296 星、总星数 116,329，省 Token 也能做成显学。</li>
 </ul>
 </section>
 <section><h2>数据口径</h2>
-<p>数据来自 github.com/trending 页面未登录抓取（日榜 11 条、周榜 12 条、月榜 19 条）；“新增星数”为榜单周期内新增，采集时间 2026-10-30 08:21（Asia/Shanghai）；周榜/月榜动向系与 2026-10-29 数据文件对比；项目背景经仓库 README 与公开描述交叉核实，未核实的信息未写入。</p>
+<p>数据来源为 github.com/trending 未登录抓取的 HTML 解析，采集时间 2026-10-31 08:21（Asia/Shanghai）；日榜 15 条、周榜 13 条、月榜 22 条，开发者榜 25 位；“新增星数”为榜单周期内的新增值，总星数与 Fork 数为采集时刻的仓库数值，未登录抓取的榜单条数有限，仅供参考。</p>
 </section>
 <footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
 </div></div></body></html>
