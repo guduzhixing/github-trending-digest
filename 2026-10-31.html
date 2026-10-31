@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 10月31日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 10月31日</h1><div class="sub">今日主题只有一个：Agent 的品味、记忆与治理。日榜前排几乎被 Agent 技能与 Agent 同事承包，设计审美第一次以可执行规则的形式登上热榜。</div></header>
+<div><section><h2>重点项目</h2>
+<div class="card"><h3><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></h3>
+<div><span class="badge">Rust</span><span class="badge">Agent 技能</span><span class="badge">设计评审</span><span class="badge">反 AI 味</span></div>
+<div class="stats">今日新增 2,300 星，总星数 97,042，Fork 5,714；周榜新增 11,323 星，月榜新增 24,624 星，三榜同时在前排</div>
+<p>给编码 Agent 配一套设计词汇：用 <code>polish</code>、<code>bolder</code> 打磨页面，用 <code>critique</code> 做带评分的可用性评审、用 <code>audit</code> 查无障碍与性能，另有 62 条确定性规则的“AI 味”检测器，无需大模型、无需 API Key 即可扫描。它火的原因很直白：Agent 生成的页面越来越像——Inter 字体、紫蓝渐变、卡片套卡片，开发者受够了千篇一律的默认审美。项目同时提供 Claude Code、Cursor、Codex、Copilot 等二十余种工具的安装形态，等于把“品味”做成可复用的技能包。</p>
+<div class="verdict">💡 点评：这不是又一个 UI 组件库，而是把设计评审前置到 Agent 工作流里；做 AI 生成前端的团队值得先跑一遍它的检测器，再谈审美。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a></h3>
+<div><span class="badge">Python</span><span class="badge">AI 家教</span><span class="badge">多智能体</span><span class="badge">RAG</span></div>
+<div class="stats">今日新增 2,282 星，总星数 51,764，Fork 6,340；Python 日榜第一</div>
+<p>主打“终身个性化家教”：把教材、笔记建成知识库，让多智能体围绕学习者做阅读、练习、测评与学习路径规划，刚在 10 月 28 日发布 v1.7.0，带来模块化安装、块笔记与可续传的索引检查点。它与通用聊天机器人拉开差距的地方在于学习闭环：不是答完一道题就结束，而是记录掌握程度、安排复习与下一步内容，适合把 AI 当长期学习伙伴而非一次性问答工具的人。</p>
+<div class="verdict">💡 点评：教育类 Agent 正在从“能讲题”走向“能管学习进程”，DeepTutor 的高频发版说明这条路线的迭代速度很快，适合自学者和做教育产品的开发者对照参考。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">Agent 记忆</span><span class="badge">会话上下文</span></div>
+<div class="stats">今日新增 1,140 星，总星数 106,226，Fork 9,352；日榜第一，月榜新增 11,124 星</div>
+<p>解决 Agent 最常见的失忆问题：把每次会话中 Agent 的所作所为记录下来，用 AI 压缩成结构化记忆，在未来会话中按需注入。它支持 Claude Code、Codex、Gemini、Copilot、OpenCode 等多种工具，定位是跨工具的“长期记忆层”。当 Agent 开始承担多天、跨项目的连续工作时，上下文窗口再大也装不下全部历史，外部记忆就成了刚需，这正是它总星数破十万的背景。</p>
+<div class="verdict">💡 点评：记忆正在成为 Agent 基础设施的标配层；与其让每个工具各自记，不如先看这种跨工具方案的取舍，留意隐私与记忆污染两道关。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/CopilotKit/OpenBot">CopilotKit/OpenBot</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">AI 同事</span><span class="badge">AG-UI</span><span class="badge">自托管</span></div>
+<div class="stats">今日新增 706 星，总星数 8,779，Fork 1,107</div>
+<p>开源的“AI 同事”平台：每个同事拥有一台自己的电脑——独立浏览器、独立文件、只被授予的工具；每一次操作都先决策、事后留痕，基于 AG-UI 协议接入 LangGraph、Mastra、CrewAI 等任意 Agent 框架。它的卖点不是更强的模型，而是可治理：数据落在自己的 PostgreSQL，模型自选，动作全部经过统一网关审批与审计。目前仍标注 Beta，官方也直言这是一个“模板而非成品”，需要自己部署改造。</p>
+<div class="verdict">💡 点评：当 Agent 从聊天框走向替你操作系统时，“能不能管住它”比“它有多聪明”更重要；OpenBot 把审计与边界做成一等公民，适合对数据主权敏感的团队评估。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/Renhuai123/ziwei-doushu">Renhuai123/ziwei-doushu</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">紫微斗数</span><span class="badge">排盘引擎</span><span class="badge">传统文化数字化</span></div>
+<div class="stats">今日新增 1,126 星，总星数 11,195，Fork 2,233</div>
+<p>开源的紫微斗数排盘引擎，基于倪海厦《天纪》体系，包含完整排盘算法、四化系统、格局知识库与古籍原文数据。它的走红说明开源社区的兴趣并不只在 AI 工具：把一套规则复杂、口传心授的传统推算体系做成可验证、可复用的代码，本身就是有价值的数字化工作。需要注意的是，排盘是命理计算工具，其推算结果不具备科学预测效力，适合当作文化与算法研究项目看待。</p>
+<div class="verdict">💡 点评：传统文化题材 + 扎实的知识库工程，是一条容易被低估的开源路线；对传统文化数字化感兴趣的开发者可以重点看它的数据组织方式。</div>
+</div>
+</section>
+<section><h2>日榜其余一句话点评</h2>
+<ul class="tight">
+<li><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a>：开源版 Grok Bot 替代品，给机器人配一台可用的虚拟机，今日新增 895 星。</li>
+<li><a href="https://github.com/expo/skills">expo/skills</a>：Expo 官方的 Agent 技能合集，帮 Agent 正确调用 Expo 项目与应用服务。</li>
+<li><a href="https://github.com/macro-inc/macro">macro-inc/macro</a>：把邮件、聊天、文档、任务、CRM 统一到一个带共享 AI 记忆的工作区，Rust 编写。</li>
+<li><a href="https://github.com/mattpocock/skills">mattpocock/skills</a>：作者个人 <code>.agents</code> 目录里的工程技能合集，总星数已达 307,470，典型的“个人工作流开源化”案例。</li>
+<li><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>：日榜新增 930 星的老面孔，仓库简介为空，热度更多来自社区传播而非公开说明。</li>
+<li><a href="https://github.com/JetBrains/thinkrail">JetBrains/thinkrail</a>：JetBrains 出品的轻量 IDE，主打“围着你的工作方式定制自己”的 Vibe Coding 体验，面向 Pi 用户。</li>
+<li><a href="https://github.com/togg53192-cmd/jailbreaks">togg53192-cmd/jailbreaks</a>：越狱提示词合集，今日新增 2,055 星，热度高但使用风险自担，不建议用于生产模型。</li>
+<li><a href="https://github.com/obra/superpowers">obra/superpowers</a>：Agent 技能框架与开发方法论，总星数 309,419，是本轮“技能热”里体量最大的项目之一。</li>
+<li><a href="https://github.com/lightpanda-io/browser">lightpanda-io/browser</a>：为 AI 与自动化设计的无头浏览器，Zig 编写，瞄准 Agent 规模化浏览网页的成本与速度问题。</li>
+</ul>
+</section>
+<section><h2>周榜与月榜</h2>
+<ul class="tight">
+<li>周榜第一是 <a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>，周新增 12,838 星：给编码 Agent 的多阶段安全审计技能，输出可机读、可独立验证的审计结论，安全类技能同样搭上了这波技能热。</li>
+<li>月榜最值得注意的是 <a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>，月新增 49,116 星：号称完全本地的 ElevenLabs 替代品，覆盖语音克隆、配音与有声书，本地化语音工具的需求正在爆发。</li>
+<li>月榜另有 <a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（月新增 22,149 星），“写 HTML、渲染视频、为 Agent 而生”，与本系列视频生产方向的思路颇为接近。</li>
+</ul>
+</section>
+<section><h2>开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/pbakaus">pbakaus</a>：凭借 impeccable 登上开发者榜，设计技能赛道的代表人物。</li>
+<li><a href="https://github.com/mitchellh">mitchellh</a>：代表作 vouch 等，长青的基础设施型开发者。</li>
+<li><a href="https://github.com/poteto">poteto</a>：代表作 hiring-without-whiteboards，关注更人性化的技术招聘方式。</li>
+</ul>
+</section>
+<section><h2>分语言榜亮点</h2>
+<ul class="tight">
+<li>Python 榜除 DeepTutor 外，记忆类项目扎堆：<a href="https://github.com/MemPalace/mempalace">MemPalace/mempalace</a> 与 <a href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a> 都在做“会学习的 Agent 记忆”，与 claude-mem 形成对照。</li>
+<li>Go 榜出现一匹黑马 <a href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a>：用“穴居人式短句”给 Agent 省 Token 的技能与代理，今日新增 296 星、总星数 116,329，省 Token 也能做成显学。</li>
+</ul>
+</section>
+<section><h2>数据口径</h2>
+<p>数据来源为 github.com/trending 未登录抓取的 HTML 解析，采集时间 2026-10-31 08:21（Asia/Shanghai）；日榜 15 条、周榜 13 条、月榜 22 条，开发者榜 25 位；“新增星数”为榜单周期内的新增值，总星数与 Fork 数为采集时刻的仓库数值，未登录抓取的榜单条数有限，仅供参考。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
