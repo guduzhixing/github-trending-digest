@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 11月2日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月2日</h1><div class="sub">今日主题：Agent 的“操作系统层”正在成型——管 Agent 的控制台、给 Agent 记笔记的记忆层、供 Agent 上网的轻量浏览器齐齐霸榜，再加一个金融专用的基础模型和一个本地语音输入工具。今天的榜单几乎就是一张 Agent 工作台的零件清单。</div></header>
+<div><section><h2>重点项目</h2>
+<div class="card"><h3><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">Agent 控制台</span><span class="badge">桌面 / 网页 / 移动端</span><span class="badge">多 Agent 统一调度</span></div>
+<div class="stats">今日新增 3,094 星，总星数 37,953，Fork 8,913；日榜第四，周榜新增 6,926 星，月榜新增 12,629 星</div>
+<p>今日单日涨幅最大的项目，也是一张“Agent 遥控器”：它本身不是模型，而是一个 Agent 操控台，让本机上已经装好的 Claude Code、Codex、Cursor、Grok Build、OpenCode、Google Antigravity 等 Agent 共用一套桌面、网页与移动端界面。最近发布的 v0.1.0 稳定了 Orchestrator V2，Agent 可以跨供应商委派子任务、通过 MCP 管理会话线程，并支持 Git worktree 与一键提交 PR。它火的原因很直白：人手里的 Agent 越来越多，缺的不是又一个助手，而是一个能把它们统一管起来的操作面。</p>
+<div class="verdict">💡 点评：同时在用多个编码 Agent 的开发者值得一试；但项目自认仍处于非常早期阶段，上车前要按“会遇到 bug”的预期来评估。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">Agent 记忆</span><span class="badge">会话上下文</span><span class="badge">跨工具</span></div>
+<div class="stats">今日新增 1,526 星，总星数 109,238，Fork 9,564；日榜第一，周榜新增 5,852 星，月榜新增 14,011 星</div>
+<p>继续霸榜的 Agent 长期记忆层：把每次会话中 Agent 的所作所为记录下来，用 AI 压缩成结构化记忆，在未来会话中按需注入，支持 Claude Code、Codex、Gemini、Copilot、OpenCode 等多种工具。它在日、周、月三榜同时居前排，总星数突破十万后仍在快速上涨，说明它已从尝鲜工具变成不少人工作流里的默认配置。当 Agent 开始承担多天、跨项目的连续工作时，上下文窗口再大也装不下全部历史，外部记忆就成了刚需。</p>
+<div class="verdict">💡 点评：记忆正在成为 Agent 基础设施的标配层；上车前先想清楚两道关：记什么、不记什么，以及旧记忆出错时如何纠正。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/lightpanda-io/browser">lightpanda-io/browser</a></h3>
+<div><span class="badge">Zig</span><span class="badge">无头浏览器</span><span class="badge">AI 自动化</span><span class="badge">CDP / MCP</span></div>
+<div class="stats">今日新增 825 星，总星数 40,106，Fork 1,960；日榜第二</div>
+<p>为 AI 与自动化从零写起的无头浏览器：不用 Chromium 分支、不用 WebKit 补丁，Zig 编写，跳过图形渲染，只保留 DOM、JavaScript 执行（V8）与自动化真正需要的部分。它兼容 Chrome DevTools 协议，现有 Puppeteer、Playwright 脚本改个接入点就能试用，还自带 MCP 服务器与“用自然语言描述任务”的 Agent 模式。项目自称比无头 Chrome 省约 16 倍内存、快约 9 倍——这是项目方自己的基准数据，未经独立复现，引用时要带上这个限定。它在 10 月刚发布 1.0，Agent 大规模上网的成本问题正好撞上它的卖点。</p>
+<div class="verdict">💡 点评：做大规模抓取、表单自动化或浏览器 Agent 的团队值得做一次对照测试；但它没有渲染引擎，不适合视觉验收类场景，复杂页面的兼容性仍需实测。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a></h3>
+<div><span class="badge">Python</span><span class="badge">金融基础模型</span><span class="badge">K 线预测</span><span class="badge">量化研究</span></div>
+<div class="stats">今日新增 630 星，总星数 45,364，Fork 7,499；日榜第三</div>
+<p>把 K 线当成“语言”来建模的基础模型：专用分词器把连续的 OHLCV（开高低收量）行情离散成 token 序列，再用自回归 Transformer 在来自 45 家全球交易所、超过 120 亿条 K 线的语料上预训练，论文已被 AAAI 2026 接收。用法上既可以直接加载预训练模型预测未来一段 K 线，也能用自己的行情数据微调。它今天上榜的背景，是“专用基础模型”这条路线正在从通用大模型里分化出来：与其让通用模型现学金融，不如直接给市场语言训一个原生模型。</p>
+<div class="verdict">💡 点评：量化研究者与金融数据开发者最值得关注；但要按研究工具定位它——作者与第三方评测都提醒，原始预测信号离可交易策略还有距离，不能直接当成赚钱机器。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/anomalyco/hex">anomalyco/hex</a></h3>
+<div><span class="badge">Rust</span><span class="badge">本地语音听写</span><span class="badge">跨平台</span><span class="badge">隐私优先</span></div>
+<div class="stats">今日新增 1,179 星，总星数 3,252，Fork 189；日榜第十二</div>
+<p>按住快捷键、说话、松开，文字就粘贴到当前应用——来自 OpenCode 背后团队 Anomaly 的本地语音听写工具，Rust 编写，覆盖 Mac、Windows 与 Linux。首次运行下载本地语音模型后，日常听写不再经过云端，录音默认不保存，Mac 版历史记录默认只保留七天且不含音频。单日新增星数已接近其总星数的三分之一，说明它正处在刚被发现的爬坡期，10 月 31 日刚宣布稳定版可用也是直接导火索。</p>
+<div class="verdict">💡 点评：对云端语音转写有隐私顾虑、又想用说的代替打字的人可以先装来试；但要注意自定义模型支持与部分平台的快捷键问题仍是社区反馈中的短板。</div>
+</div>
+</section>
+<section><h2>日榜其余一句话点评</h2>
+<ul class="tight">
+<li><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a>：开源版 Grok Bot 替代品，给机器人配一台可操作的虚拟机，今日新增 922 星。</li>
+<li><a href="https://github.com/public-apis/public-apis">public-apis/public-apis</a>：免费 API 合集长青树，总星数已达 494,584，今日新增 324 星。</li>
+<li><a href="https://github.com/cjpais/Handy">cjpais/Handy</a>：完全离线运行的开源语音转文字应用，Rust 编写，今日新增 339 星，与 Hex 同属“本地语音”这条线。</li>
+<li><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a>：把 Claude Code 变成游戏工作室的 49 Agent 模板，今日新增 967 星。</li>
+<li><a href="https://github.com/kornia/kornia">kornia/kornia</a>：面向空间 AI 的几何计算机视觉库，今日新增 101 星。</li>
+<li><a href="https://github.com/beenuar/AiSOC">beenuar/AiSOC</a>：开源 AI 安全运营中心，告警融合加 LLM 智能体研判，今日新增 446 星。</li>
+<li><a href="https://github.com/Renhuai123/ziwei-doushu">Renhuai123/ziwei-doushu</a>：紫微斗数开源排盘引擎，今日新增 941 星，传统文化数字化路线仍在涨。</li>
+<li><a href="https://github.com/CopilotKit/OpenBot">CopilotKit/OpenBot</a>：每个 AI 同事各配一台电脑的开源方案，今日新增 175 星。</li>
+<li><a href="https://github.com/patchy631/ai-engineering-hub">patchy631/ai-engineering-hub</a>：LLM、RAG 与真实 Agent 应用的深度教程合集，今日新增 1,191 星。</li>
+<li><a href="https://github.com/FlashML-org/FreeToken">FlashML-org/FreeToken</a>：把数据中心级模型服务搬到桌面的本地推理方案，今日新增 242 星。</li>
+<li><a href="https://github.com/hyprwm/Hyprland">hyprwm/Hyprland</a>：高度可定制的动态平铺 Wayland 合成器，今日新增 38 星。</li>
+</ul>
+</section>
+<section><h2>周榜与月榜</h2>
+<ul class="tight">
+<li>周榜新增最高的是 <a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>，周新增 12,017 星、总星数 99,309：给编码 Agent 的设计词汇与反 AI 味检测器，“给 Agent 立审美规矩”这条线仍在领跑。</li>
+<li>周榜另有 <a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>，周新增 11,566 星：面向 Claude Code、Cursor 与 Codex 的反 AI 味设计技能，与 impeccable 同属一个方向。</li>
+<li><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> 周新增 10,069 星、月新增 32,599 星居月榜第一：给编码 Agent 的多阶段安全审计技能，输出可机读、可独立验证的审计结论。</li>
+<li>月榜单月增量最大的是 <a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>，月新增 47,055 星、总星数 97,905，号称完全本地的 ElevenLabs 替代品，本地化语音工具的需求仍在爆发。</li>
+<li>月榜另有 <a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（月新增 22,225 星），“写 HTML、渲染视频、为 Agent 而生”。</li>
+</ul>
+</section>
+<section><h2>开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/thdxr">thdxr</a>：代表作 thdxr/environment。</li>
+<li><a href="https://github.com/jayleaton">jayleaton</a>：代表作 deepseek-v41-tensorfold-spark。</li>
+<li><a href="https://github.com/maziyarpanahi">maziyarpanahi</a>：代表作 openmed。</li>
+</ul>
+</section>
+<section><h2>分语言榜亮点</h2>
+<ul class="tight">
+<li>Python 榜除 Kronos 外，<a href="https://github.com/ifixai-ai/iFixAi">ifixai-ai/iFixAi</a> 今日新增 1,584 星居该榜单日增量首位：对 AI Agent 做独立审计，回答“Agent 有没有按要求做事”。</li>
+<li>TypeScript 榜首仍是 claude-mem，Rust 榜首是 Hex（1,179 星），其次是 impeccable（1,140 星），Rust 榜也被 Agent 与语音工具占据。</li>
+<li>Go 榜整体平淡，榜首 <a href="https://github.com/MHSanaei/3x-ui">MHSanaei/3x-ui</a> 今日新增 86 星。</li>
+</ul>
+<p>数据口径：GitHub Trending 未登录抓取，日榜 17 条、周榜 16 条、月榜 19 条；周期新增星数为榜单页面标注值，总星数为抓取时仓库数值。采集时间：2026 年 11 月 2 日 08:21（Asia/Shanghai）。完整数据见 ~/workspace/github-trending/data/2026-11-02.json。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
