@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 11月3日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月3日</h1><div class="sub">今日主题：Agent 从“会写代码”走向“会用电脑、记得住事、有统一控制台”——Vercel 的桌面操作 CLI 登顶日榜，T3 Code 单日涨星最多，记忆层、游戏工作室模板与纯 C 本地推理紧随其后。今天的榜单像一张 Agent 工作台的扩建清单。</div></header>
+<div><section><h2>重点项目</h2>
+<div class="card"><h3><a href="https://github.com/vercel-labs/agent-desktop">vercel-labs/agent-desktop</a></h3>
+<div><span class="badge">Rust</span><span class="badge">桌面 Computer Use</span><span class="badge">无障碍树</span><span class="badge">跨 Agent</span></div>
+<div class="stats">今日新增 2,275 星，总星数 9,614，Fork 651；日榜第一</div>
+<p>Vercel Labs 在 10 月底发布的桌面版 computer-use 工具：它本身不是 Agent、也不内置模型，而是一个 Rust CLI，让 Claude Code、Codex、Cursor 这类编码 Agent 通过操作系统的无障碍树读取并操作 macOS、Windows、Linux 上的原生桌面应用。Agent 不再靠截图猜像素坐标，而是拿到带引用的 JSON 界面快照，按引用点击、输入、滚动，再读一遍界面确认结果；默认不抢鼠标、不夺焦点，多个 Agent 可以并行。它是此前 agent-browser 的桌面延伸，1.0 版 10 月 27 日发布、1.0.2 紧随其后，正好撞上 Agent 从终端走向整个桌面的窗口期。</p>
+<div class="verdict">💡 点评：做桌面自动化或 Agent 工具链的人值得第一时间试；但要先接受它的硬边界——不暴露无障碍树的应用，它够不着。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">Agent 操控台</span><span class="badge">桌面 / 网页 / 移动端</span><span class="badge">多 Agent 统一调度</span></div>
+<div class="stats">今日新增 3,229 星，总星数 41,883，Fork 9,090；日榜第七、单日涨幅第一，周榜新增 9,770 星，月榜新增 15,731 星</div>
+<p>今日单日涨星最多的项目：Theo Browne 的 Ping Labs 出品的开源 Agent 操控台，本身不卖模型、不收订阅，驱动的是你本机已有的 Codex、Claude Code、Cursor、Grok Build、OpenCode 等 Agent，把它们收进同一套桌面、网页与移动端界面。每个线程写进自己的分支，一键提交 PR；最近版本稳定了跨供应商委派子任务与 Git worktree 支持。它火的逻辑与 agent-desktop 呼应：Agent 越来越多、越来越能干，缺的不是新助手，而是一个把它们统一管起来的操作面——昨天它已是日榜常客，今天直接冲到单日涨幅第一。</p>
+<div class="verdict">💡 点评：同时在用多个编码 Agent 的开发者值得一试；但项目自认仍处于非常早期阶段，上车前要按“会遇到 bug”的预期来评估。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">Agent 记忆</span><span class="badge">会话上下文</span><span class="badge">跨工具</span></div>
+<div class="stats">今日新增 1,803 星，总星数 110,730，Fork 9,653；日榜第二，周榜新增 7,255 星，月榜新增 15,681 星</div>
+<p>连续多日霸榜的 Agent 长期记忆层：把每次会话中 Agent 的工具调用、决策与结果记录下来，用 AI 压缩成结构化记忆，在未来会话中按需注入，覆盖 Claude Code、Codex、Gemini、Copilot、OpenCode 等工具。它在日、周、月三榜同时居前，总星数突破 11 万后单日仍涨 1,800 星，说明它已从尝鲜工具变成不少人工作流里的默认配置。逻辑很直白：Agent 开始承担多天、跨项目的连续工作时，再大的上下文窗口也装不下全部历史，外部记忆就从加分项变成了刚需。</p>
+<div class="verdict">💡 点评：记忆正在成为 Agent 基础设施的标配层；上车前先想清楚两道关：记什么、不记什么，以及旧记忆出错时如何纠正。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a></h3>
+<div><span class="badge">Shell</span><span class="badge">游戏开发模板</span><span class="badge">多 Agent 协作</span><span class="badge">Godot / Unity / Unreal</span></div>
+<div class="stats">今日新增 1,379 星，总星数 33,535，Fork 4,518；日榜第五</div>
+<p>把 Claude Code 变成一家游戏工作室的开源模板：49 个专职 Agent 按总监、部门负责人、专家的三层架构分工，配 74 个斜杠技能（README 口径），覆盖设计、编程、美术、音频、叙事、QA 与制作，另有 Godot、Unity、Unreal 三套引擎专属配置。用法是克隆仓库后在项目根目录打开 Claude Code、跑 /start，从点子一路走到可测试的游戏。项目方自己的对照实验颇诚实：流程最重的那版多写了 29 份文档，却在盲评与真人试玩中垫底——文档买来的是可追溯性，不是更好玩的游戏，轻量档才是默认档。</p>
+<div class="verdict">💡 点评：想用 Agent 做独立游戏的人可以直接拿它当脚手架；但别被 49 个 Agent 的排面迷惑，真正决定成败的仍是玩法本身。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/JustVugg/colibri">JustVugg/colibri</a></h3>
+<div><span class="badge">C</span><span class="badge">本地推理</span><span class="badge">MoE</span><span class="badge">零依赖</span></div>
+<div class="stats">今日新增 675 星，总星数 46,524，Fork 5,378；日榜第十</div>
+<p>纯 C、零依赖的本地推理引擎，目标是把 744B 参数的 MoE 前沿模型搬上普通消费级机器：只把约 17B 参数的稠密部分（注意力、共享专家、词嵌入，int4 约 9.9GB）常驻内存，其余两万多个路由专家（约 370GB）按 token 需要从 NVMe 磁盘按需流式加载，辅以分层 LRU 缓存与推测解码。它证明的是可行性而非速度——作者自测的低配机冷启动只有 0.05–0.1 token/秒，离实时对话还很远；但对想在本地跑前沿大模型做研究的人，它把硬件门槛从“多卡机房”降到了“一台带大硬盘的电脑”。</p>
+<div class="verdict">💡 点评：本地大模型爱好者与推理引擎开发者必看；但先算好 370GB 磁盘与龟速出词的账，再决定要不要动手。</div>
+</div>
+</section>
+<section><h2>日榜其余一句话点评</h2>
+<ul class="tight">
+<li><a href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a>：从单次请求到全量爬取一站式包办的 Python 爬虫框架，今日新增 706 星，总星数 92,827。</li>
+<li><a href="https://github.com/hyprwm/Hyprland">hyprwm/Hyprland</a>：高度可定制、颜值在线的动态平铺 Wayland 合成器，今日新增 509 星。</li>
+<li><a href="https://github.com/FlashML-org/FreeToken">FlashML-org/FreeToken</a>：把数据中心级模型服务搬到桌面的本地推理方案，今日新增 653 星。</li>
+<li><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a>：把 K 线当语言建模的金融基础模型，今日新增 857 星，总星数 46,008。</li>
+<li><a href="https://github.com/kornia/kornia">kornia/kornia</a>：面向空间 AI 的几何计算机视觉库，今日新增 412 星。</li>
+<li><a href="https://github.com/mattpocock/skills">mattpocock/skills</a>：出自作者 .agents 目录的实战派技能合集，总星数已达 310,214，今日新增 858 星。</li>
+<li><a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a>：为并行 Agent 工作流设计的 Git worktree 管理 CLI，今日新增 77 星。</li>
+<li><a href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a>：号称“人人都在用的 Agent 工作管理开源应用”，总星数 110,385，今日新增 412 星。</li>
+<li><a href="https://github.com/karpathy/nanochat">karpathy/nanochat</a>：Karpathy 的“100 美元能买到的最好 ChatGPT”，今日新增 321 星。</li>
+<li><a href="https://github.com/p-e-w/heretic">p-e-w/heretic</a>：无需训练即可改写语言模型行为的工具：去审查、降谄媚、抑废话，今日新增 420 星。</li>
+</ul>
+</section>
+<section><h2>周榜与月榜</h2>
+<ul class="tight">
+<li>周榜前排仍是反 AI 味设计线：<a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a> 居周榜首位，周新增 10,517 星；<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a> 周新增 11,754 星、总星数 100,461，给编码 Agent 的设计词汇与反 AI 味检测器。</li>
+<li><a href="https://github.com/JetBrains/thinkrail">JetBrains/thinkrail</a> 周新增 4,812 星、总星数 7,178：JetBrains 给 Pi 做的轻量 IDE 方向，让氛围编程落在真正的编辑器里。</li>
+<li><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> 周新增 9,155 星、月新增 33,474 星：给编码 Agent 的多阶段安全审计技能，输出可机读、可独立验证的审计结论。</li>
+<li>月榜首位易主：<a href="https://github.com/morluto/rea">morluto/rea</a> 月新增 422,104 星、总星数 422,866，用 Agent 从应用行为一路逆向到原生二进制；月增量接近总星数，说明几乎全部星数都在本月内获得，是本月最异常的爆发。</li>
+<li>月榜另有 <a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（月新增 47,605 星），号称完全本地的 ElevenLabs 替代品；<a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（月新增 22,290 星），“写 HTML、渲染视频、为 Agent 而生”。</li>
+</ul>
+</section>
+<section><h2>开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/jayleaton">jayleaton</a>：代表作 jayleaton/deepseek-v41-tensorfold-spark。</li>
+<li><a href="https://github.com/ccch1mneyyy">ccch1mneyyy</a>：代表作 ccch1mneyyy/dsh-Go。</li>
+<li><a href="https://github.com/thdxr">thdxr</a>：代表作 thdxr/environment，连续两日上榜。</li>
+</ul>
+</section>
+<section><h2>分语言榜亮点</h2>
+<ul class="tight">
+<li>Python 榜单日增量首位是 <a href="https://github.com/public-apis/public-apis">public-apis/public-apis</a>，今日新增 1,311 星、总星数 495,519，免费 API 合集长青树；其次是 Kronos（857 星）。</li>
+<li>TypeScript 榜首是 t3code（3,229 星），其次是 claude-mem（1,803 星），Agent 工具线包揽前二。</li>
+<li>Rust 榜首是 agent-desktop（2,275 星），其次是本地语音听写工具 <a href="https://github.com/anomalyco/hex">anomalyco/hex</a>（1,134 星）。</li>
+<li>Go 榜整体平淡，榜首 <a href="https://github.com/warmbly/warmbly">warmbly/warmbly</a> 今日新增 296 星。</li>
+</ul>
+<p>数据口径：GitHub Trending 未登录抓取，日榜 15 条、周榜 16 条、月榜 18 条；周期新增星数为榜单页面标注值，总星数为抓取时仓库数值。采集时间：2026 年 11 月 3 日约 08:23（Asia/Shanghai）。完整数据见 ~/workspace/github-trending/data/2026-11-03.json。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
