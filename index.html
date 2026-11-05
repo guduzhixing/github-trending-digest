@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub 热榜解说 · 11月4日</title><style>
+<title>GitHub 热榜解说 · 11月5日</title><style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
 .wrap{max-width:720px;margin:0 auto}
@@ -26,76 +26,64 @@ code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
 footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
 </style></head>
 <body><div class="wrap">
-<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月4日</h1><div class="sub">今日主题：Agent 工作台继续扩建——桌面操作 CLI 单日暴涨近 3,800 星，记忆层稳坐日榜首位，爬虫、本地大模型推理与免费 AWS 模拟器各补一块拼图。今天的榜单仍是同一条主线：让 Agent 在真实世界里干活的成本，一项一项被打下来。</div></header>
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月5日</h1><div class="sub">今日主题：Agent 的“上下文层”与“并行工作台”双线并进——NVIDIA 出手给 Agent 补语义地基，Kimi K3 被塞进纯 C 引擎跑在单 CPU 上，Git 工作树工具则为多 Agent 并行铺好跑道。今天的榜单不再是某个单点爆款，而是一整套 Agent 工程化拼图在同时补齐。</div></header>
 <div><section><h2>重点项目</h2>
-<div class="card"><h3><a href="https://github.com/vercel-labs/agent-desktop">vercel-labs/agent-desktop</a></h3>
-<div><span class="badge">Rust</span><span class="badge">桌面 Computer Use</span><span class="badge">无障碍树</span><span class="badge">跨 Agent</span></div>
-<div class="stats">今日新增 3,791 星，总星数 12,692，Fork 875；日榜第二、单日涨幅第一</div>
-<p>昨天刚登顶的 Vercel 桌面操作 CLI，今天以单日最大涨幅续写热度：它本身不内置模型，而是让 Claude Code、Codex、Cursor 这类编码 Agent 通过操作系统的无障碍树读取并操作 macOS、Windows、Linux 上的原生桌面应用。Agent 拿到带引用的 JSON 界面快照，按引用点击、输入、滚动，再读一遍界面确认结果，默认不抢鼠标、不夺焦点，多个 Agent 可以并行。短短两天总星数从 9,614 涨到 12,692，说明“Agent 走出终端、接管整个桌面”这个方向正在从概念验证变成多数人愿意动手试的工具。</p>
-<div class="verdict">💡 点评：做桌面自动化或 Agent 工具链的人值得第一时间试；但要先接受它的硬边界——不暴露无障碍树的应用，它够不着。</div>
+<div class="card"><h3><a href="https://github.com/NVIDIA/auto-ontology">NVIDIA/auto-ontology</a></h3>
+<div><span class="badge">Python</span><span class="badge">Agent 语义层</span><span class="badge">知识图谱</span><span class="badge">NL-to-SQL</span></div>
+<div class="stats">今日新增 2,050 星，总星数 4,938，Fork 395；日榜第一</div>
+<p>NVIDIA 官方出品的语义层框架：从企业数据库元数据自动生成“本体”——业务术语、指标口径、表间关系构成的知识图谱，再经 MCP、CLI 或 API 供 Agent 调用。核心卖点是“可验证的问答”：Agent 回答业务问题时，先把“收入”“客户”这类词解析到本体中经人工认证的定义上，再生成 SQL，答案附带 SQL 与推导步骤；答不出来的问题会明确说数据不支持，而不是编一个数。推理默认走 NVIDIA NIM 模型，适合把 Agent 接入企业内部数据、被“数字对不上”折磨的数据团队关注。</p>
+<div class="verdict">💡 点评：Agent 从“能聊天”走向“能算账”，最大的拦路虎就是口径不一致；NVIDIA 这一步是把语义层从各家私有实现里抽出来做成开源基础设施。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
-<div><span class="badge">TypeScript</span><span class="badge">Agent 记忆</span><span class="badge">会话上下文</span><span class="badge">跨工具</span></div>
-<div class="stats">今日新增 1,139 星，总星数 111,878，Fork 9,736；日榜第一，周榜新增 7,995 星，月榜新增 16,740 星</div>
-<p>连续多日霸榜的 Agent 长期记忆层：把每次会话中 Agent 的工具调用、决策与结果记录下来，用 AI 压缩成结构化记忆，在未来会话中按需注入，覆盖 Claude Code、Codex、Gemini、Copilot、OpenCode 等工具。日、周、月三榜同时居前，总星数突破 11 万后单日仍涨过千星，说明它已从尝鲜工具变成不少人工作流里的默认配置。逻辑很直白：Agent 开始承担多天、跨项目的连续工作时，再大的上下文窗口也装不下全部历史，外部记忆就从加分项变成了刚需。</p>
-<div class="verdict">💡 点评：记忆正在成为 Agent 基础设施的标配层；上车前先想清楚两道关：记什么、不记什么，以及旧记忆出错时如何纠正。</div>
-</div>
-<div class="card"><h3><a href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a></h3>
-<div><span class="badge">Python</span><span class="badge">网络爬虫</span><span class="badge">全量爬取</span><span class="badge">反爬对抗</span></div>
-<div class="stats">今日新增 1,658 星，总星数 94,805，Fork 9,942；日榜第十一</div>
-<p>从单次请求到全量爬取一站式包办的 Python 爬虫框架，今天以 1,658 星的单日增量回到日榜前排，总星数逼近 10 万。它把请求、解析、反爬对抗、并发调度这些爬虫工程里最磨人的部分收进同一套框架，目标是让“写个爬虫”不再从拼散件开始。在 Agent 需要自己上网找资料、做调研的今天，一个趁手的爬取层恰好是数据入口的刚需——这也是它在总星数已近 10 万的情况下仍能单日大涨的原因。</p>
-<div class="verdict">💡 点评：需要稳定、可规模化抓取的开发者可以直接评估；但合规边界要自己先划清，框架给能力、不给免责。</div>
-</div>
-<div class="card"><h3><a href="https://github.com/JustVugg/colibri">JustVugg/colibri</a></h3>
+<div class="card"><h3><a href="https://github.com/FareedKhan-dev/kimi-k3-in-c">FareedKhan-dev/kimi-k3-in-c</a></h3>
 <div><span class="badge">C</span><span class="badge">本地推理</span><span class="badge">MoE</span><span class="badge">零依赖</span></div>
-<div class="stats">今日新增 802 星，总星数 47,239，Fork 5,464；日榜第四</div>
-<p>纯 C、零依赖的本地推理引擎，目标是把 744B 参数的 MoE 前沿模型搬上普通消费级机器：只把约 17B 参数的稠密部分（注意力、共享专家、词嵌入，int4 约 9.9GB）常驻内存，其余两万多个路由专家（约 370GB）按 token 需要从 NVMe 磁盘按需流式加载，辅以分层 LRU 缓存与推测解码。它证明的是可行性而非速度——作者自测的低配机冷启动只有 0.05–0.1 token/秒，离实时对话还很远；但对想在本地跑前沿大模型做研究的人，它把硬件门槛从“多卡机房”降到了“一台带大硬盘的电脑”。</p>
-<div class="verdict">💡 点评：本地大模型爱好者与推理引擎开发者必看；但先算好 370GB 磁盘与龟速出词的账，再决定要不要动手。</div>
+<div class="stats">今日新增 351 星，总星数 10,282，Fork 1,628；日榜第十一</div>
+<p>把 2.78 万亿参数的 Kimi K3 搬到单颗 CPU 上跑、内存占用只要 8.24GB 的纯 C99 推理引擎：无 BLAS、无框架、无 GPU 依赖。关键是 MoE 红利叠加四层压缩：专家权重已是半字节量化，每 token 只激活 896 个专家中的 16 个；注意力改用不随序列增长的 KDA 与单隐向量 MLA；主干 93 层打包成“每层只读一次”的流式结构，专家按需从 1.56TB 检查点经 LRU 缓存加载。代价也写在明处：1.56TB 检查点与磁盘流式加载，决定了它更像研究向概念验证，而非日常聊天后端。</p>
+<div class="verdict">💡 点评：继昨日纯 C 跑 744B 模型之后，本地推理的“极限挑战”赛道又添一员；看热闹要看门道——它证明的是 MoE 时代“参数量≠内存量”，不是“人人都能在笔记本上跑 K3”。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/floci-io/floci">floci-io/floci</a></h3>
-<div><span class="badge">Java</span><span class="badge">AWS 本地模拟</span><span class="badge">LocalStack 平替</span><span class="badge">免费开源</span></div>
-<div class="stats">今日新增 482 星，总星数 28,755，Fork 3,202；日榜第八</div>
-<p>免费开源的本地 AWS 模拟器，定位直指 LocalStack 的平替：无需云账号、无需认证令牌、没有付费功能门，一条 <code>docker compose up</code> 就能在本机跑起 AWS 形态的服务，SDK、CLI、Terraform、CDK 指向 <code>http://localhost:4566</code> 即可沿用原有工作流。按项目 README 的说法，Lambda、RDS、ElastiCache、ECS、EC2 等重活不用浅层 mock，而是走真实 Docker 执行；另有 Azure、GCP、OCI 的同系列模拟器。它火的背景很现实：本地开发与 CI 本来就不该为“测一下云”付云账单、等云配额。</p>
-<div class="verdict">💡 点评：常年被云端测试环境拖慢的后端与 DevOps 团队值得一试；但迁移前先对照官方服务清单核对自己用到的服务覆盖度。</div>
+<div class="card"><h3><a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a></h3>
+<div><span class="badge">Rust</span><span class="badge">Git 工作树</span><span class="badge">并行 Agent</span><span class="badge">开发者工具</span></div>
+<div class="stats">今日新增 531 星，总星数 11,014，Fork 411；日榜第二、周榜第七（周增 1,261 星）</div>
+<p>为并行 Agent 工作流而生的 Git 工作树管理 CLI，作者自称已是“最受欢迎的工作树管理器”。痛点很具体：原生 <code>git worktree</code> 建一个工作树要把分支名敲三遍；而 Agent 时代一个人同时管 5–10 个 Agent，每个各占一个工作目录，手工管理很快失控。Worktrunk 把工作树当分支操作：<code>wt switch feat</code> 一条命令建分支、建工作树并切过去，<code>wt switch -x claude feat</code> 直接在新工作树里启动 Agent，另有钩子、合并流程、交互式选择器、共享构建缓存等周边。适合已用多 Agent 并行开发、被工作树目录淹没的开发者。</p>
+<div class="verdict">💡 点评：Agent 数量上去之后，瓶颈先出现在最不起眼的地方——目录管理；这类“小工具、大刚需”正是它登榜的原因。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></h3>
+<div><span class="badge">Shell</span><span class="badge">Agent Skills</span><span class="badge">工程实践</span><span class="badge">提示词</span></div>
+<div class="stats">今日新增 1,379 星，总星数 313,293，Fork 26,280；日榜第三</div>
+<p>出自 Matt Pocock 个人 <code>.agents</code> 目录的 Agent Skills 合集，副标题直言“给真正的工程师的 Skills”。它不是花哨框架，而是作者日常沉淀的技能包：让编码 Agent 按既定套路做事，而不是每次自由发挥。总星数突破 31 万，是今日日榜体量最大的仓库——说明“Skills”已从潮流词变成多数 Agent 用户的默认装备：与其争论哪个 Agent 更强，不如先把好实践写成可复用的技能文件，适合在 Claude Code、Cursor 里配工作流的工程师直接抄作业。</p>
+<div class="verdict">💡 点评：榜单这周被各类 Skills 刷屏不是偶然——Agent 能力的上限，正在从模型参数转向“你给它的工作手册写得有多好”。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/harry0703/MoneyPrinterTurbo">harry0703/MoneyPrinterTurbo</a></h3>
+<div><span class="badge">Python</span><span class="badge">AI 短视频</span><span class="badge">自动化工作流</span><span class="badge">AIGC</span></div>
+<div class="stats">今日新增 617 星，总星数 138,940，Fork 22,169；日榜第九</div>
+<p>国产开源的 AI 短视频“一键生成”工具：输入一个主题或关键词，就自动走完选题、文案、大模型配音、素材匹配、剪辑合成的整条流水线，输出高清短视频。它火的原因不难理解：短视频仍是流量最大的内容形态，而这条工具链把“做一条视频”从半天手工活压缩成一次自动任务。总星数近 14 万、Fork 超 2.2 万，说明它早已不是昙花一现的 Demo，而是被大量个人创作者与小团队实际用起来的生产工具。适合想批量做短视频内容、但不想逐条剪片的创作者与运营者评估。</p>
+<div class="verdict">💡 点评：AIGC 工具的竞争已经从“能不能生成”转到“能不能端到端交付成品”；MoneyPrinterTurbo 正是后一种路线的代表。</div>
 </div>
 </section>
 <section><h2>日榜其余一句话点评</h2>
 <ul class="tight">
-<li><a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a>：为并行 Agent 工作流设计的 Git worktree 管理 CLI，今日新增 438 星，总星数 10,471，较昨日的 77 星明显加速。</li>
-<li><a href="https://github.com/mattpocock/skills">mattpocock/skills</a>：出自作者 .agents 目录的实战派技能合集，总星数已达 311,433，今日新增 1,164 星。</li>
-<li><a href="https://github.com/p-e-w/heretic">p-e-w/heretic</a>：无需训练即可改写语言模型行为的工具：去审查、降谄媚、抑废话，今日新增 701 星。</li>
-<li><a href="https://github.com/spotify/portal-ai-plugins">spotify/portal-ai-plugins</a>：Spotify 开发者门户 Backstage 的 AI 插件集，今日新增 91 星，总星数 3,032，日榜新面孔。</li>
-<li><a href="https://github.com/Usagi-org/ai-goofish-monitor">Usagi-org/ai-goofish-monitor</a>：基于 Playwright 与 AI 的闲鱼多任务实时/定时监控与智能分析系统，今日新增 228 星。</li>
-<li><a href="https://github.com/anomalyco/hex">anomalyco/hex</a>：本地语音听写工具，覆盖 macOS、Windows 与 Linux，今日新增 410 星。</li>
-<li><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a>：把 K 线当语言建模的金融基础模型，今日新增 503 星，总星数 46,505。</li>
-<li><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a>：把 Claude Code 变成一家游戏工作室的模板，今日新增 1,182 星，总星数 34,648。</li>
+<li><a href="https://github.com/vercel-labs/agent-desktop">vercel-labs/agent-desktop</a>：昨日重点的桌面操作 CLI 今天再涨 2,470 星、总星数 15,050，续热势头未减，Agent 走出终端仍是主线。</li>
+<li><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a>：Agent 长期记忆层今日再涨 1,172 星、总星数 112,834，周榜第一，记忆层已成 Agent 标配。</li>
+<li><a href="https://github.com/floci-io/floci">floci-io/floci</a>：免费开源的 AWS 本地模拟器今日涨 1,090 星、总星数 29,595，云开发本地化需求持续旺盛。</li>
+<li><a href="https://github.com/github/spec-kit">github/spec-kit</a>：GitHub 官方的规格驱动开发工具包今日涨 808 星、总星数 147,292，SDD 方法论仍在扩散。</li>
+<li><a href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a>：Python 爬虫框架今日大涨 2,005 星、总星数 96,507，距 10 万星只差一步，Agent 数据入口需求托底。</li>
+<li><a href="https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio">JiaFeiMiao-K-Cat/DiscImageStudio</a>：今日涨 1,778 星、总星数 6,589，单日涨幅居前，值得留意其后续走势。</li>
+<li><a href="https://github.com/garrytan/gstack">garrytan/gstack</a>：Garry Tan 的 Claude Code 配置合集今日涨 290 星、总星数 139,327，名人工作流仍有稳定受众。</li>
+<li><a href="https://github.com/The-PR-Agent/pr-agent">The-PR-Agent/pr-agent</a>：开源 PR 自动评审工具今日涨 280 星、总星数 14,749，代码评审自动化是长青需求。</li>
+<li><a href="https://github.com/scenario-labs/skills">scenario-labs/skills</a>：面向图像、视频、音频与 3D 生成的 Agent Skills，今日涨 224 星、总星数 2,420，多媒体生成也开始吃 Skills 红利。</li>
+<li><a href="https://github.com/MichaelCade/90DaysOfDevOps">MichaelCade/90DaysOfDevOps</a>：DevOps 学习路线图今日涨 97 星、总星数 30,411，经典学习资源细水长流。</li>
+<li><a href="https://github.com/Thysrael/Horizon">Thysrael/Horizon</a>：AI 新闻雷达、支持中英双语日报，今日涨 121 星、总星数 12,479。</li>
 </ul>
 </section>
-<section><h2>周榜与月榜</h2>
+<section><h2>周榜 / 月榜 / 开发者榜</h2>
 <ul class="tight">
-<li>周榜增量最大的是 <a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>，周新增 12,542 星、总星数 44,365：把多个编码 Agent 收进同一操控台的思路仍在发酵。</li>
-<li>周榜首位仍是反 AI 味设计线：<a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a> 周新增 8,765 星；<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a> 周新增 11,405 星、总星数 101,522，刚过 10 万星。</li>
-<li><a href="https://github.com/obra/superpowers">obra/superpowers</a> 周新增 5,994 星、总星数 311,856：Agent 技能框架与开发方法论仍是周榜常客。</li>
-<li><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> 周新增 8,598 星、月新增 34,248 星：给编码 Agent 的多阶段安全审计技能，输出可机读、可独立验证的审计结论。</li>
-<li>月榜首位仍是 <a href="https://github.com/morluto/rea">morluto/rea</a>，月新增 426,427 星、总星数 427,019，用 Agent 从应用行为一路逆向到原生二进制；月增量接近总星数，仍是本月最异常的爆发。</li>
-<li>月榜另有 <a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（月新增 48,168 星、总星数 100,045，刚过 10 万星），号称完全本地的 ElevenLabs 替代品；<a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（月新增 22,387 星），“写 HTML、渲染视频、为 Agent 而生”。</li>
+<li>周榜：<a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a> 以周增 8,822 星居首，<a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a> 周增 14,580 星为本周最大增量；Skills 类项目继续占据周榜半壁江山。</li>
+<li>月榜：<a href="https://github.com/morluto/rea">morluto/rea</a>（Agent 逆向工程工具）以页面显示的月增 430,285 星居首，但该量级远超常规，需注意页面口径异常、仅按显示值引用；<a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（本地开源 ElevenLabs 替代品）月增 48,420 星、总星数 100,987，本地语音赛道同样火热。</li>
+<li>开发者榜：今日前三为 <a href="https://github.com/code-yeongyu">code-yeongyu</a>（oh-my-openagent）、<a href="https://github.com/kgoedecke">kgoedecke</a>（doop）、<a href="https://github.com/doobidoo">doobidoo</a>（mcp-memory-service），三者均围绕 Agent 工具与记忆服务。</li>
+<li>分语言榜：Python 榜由 auto-ontology 领跑；Rust 榜由 agent-desktop 与 worktrunk 包揽前二，Agent 工具链的 Rust 化趋势明显；Go 榜今日整体偏冷，榜首单日增量不足 100 星。</li>
 </ul>
 </section>
-<section><h2>开发者榜</h2>
-<ul class="tight">
-<li><a href="https://github.com/JustVugg">JustVugg</a>：代表作 JustVugg/colibri，本地 MoE 推理引擎作者本人上榜。</li>
-<li><a href="https://github.com/code-yeongyu">code-yeongyu</a>：代表作 code-yeongyu/oh-my-openagent。</li>
-<li><a href="https://github.com/thdxr">thdxr</a>：代表作 thdxr/environment，连续多日上榜。</li>
-</ul>
-</section>
-<section><h2>分语言榜亮点</h2>
-<ul class="tight">
-<li>Python 榜单日增量首位是 Scrapling（1,658 星），其次是开源 Agent 视频生产系统 <a href="https://github.com/calesthio/OpenMontage">calesthio/OpenMontage</a>（814 星）；Karpathy 的 <a href="https://github.com/karpathy/nanochat">karpathy/nanochat</a> 新增 479 星。</li>
-<li>TypeScript 榜首是 t3code（3,173 星），其次是 claude-mem（1,139 星），Agent 工具线包揽前二。</li>
-<li>Rust 榜首是 agent-desktop（3,791 星），其次是 worktrunk（438 星）与本地语音听写工具 hex（410 星）。</li>
-<li>Go 榜整体平淡，榜首是病毒式传播的技能加代理项目 <a href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a>（266 星），其次是沙箱平台 <a href="https://github.com/keploy/keploy">keploy/keploy</a>（221 星）。</li>
-</ul>
-<p>数据口径：GitHub Trending 未登录抓取，日榜 13 条、周榜 16 条、月榜 17 条；周期新增星数为榜单页面标注值，总星数为抓取时仓库数值。采集时间：2026 年 11 月 4 日约 08:21（Asia/Shanghai）。完整数据见 ~/workspace/github-trending/data/2026-11-04.json。</p>
+<section><h2>数据口径</h2>
+<p>数据来源为 github.com/trending 未登录抓取的 HTML 页面解析（无官方 API），由采集脚本于北京时间 2026-11-05 08:21 抓取；当日榜单共 16 条、周榜 15 条、月榜 14 条。文中“今日新增”指日榜周期新增星数，“总星数”为仓库累计星数；月榜 rea 的月增量为页面显示值，量级异常，已作标注。重点项目背景除榜单描述外，另核对了 auto-ontology、kimi-k3-in-c、worktrunk 的仓库主页。</p>
 </section>
 <footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
 </div></div></body></html>
