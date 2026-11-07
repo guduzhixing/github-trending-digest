@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 11月7日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月7日</h1><div class="sub">今日主题：Skills 热潮进入“分工细化”阶段——Cloudflare 的安全审计技能登顶日榜、Matt Pocock 的工程技能库逼近 32 万星、Google 官方技能库稳步爬升；NVIDIA 的 auto-ontology 连续第三天站上日榜前三；周榜最大增量属于 Agent 操控台 T3 Code。今天的榜单主线仍是 Agent 工程化，只是竞争点从“有没有技能”变成了“技能够不够专业”。</div></header>
+<div><section><h2>重点项目</h2>
+<div class="card"><h3><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h3>
+<div><span class="badge">JavaScript</span><span class="badge">Agent 安全审计</span><span class="badge">漏洞发现</span><span class="badge">Cloudflare 官方</span></div>
+<div class="stats">今日新增 2,548 星，总星数 63,965，Fork 4,145；日榜第一，月增 38,004 星</div>
+<p>Cloudflare 官方出品的编码 Agent 安全审计技能，目标是把 Agent 变成一名“安全审计员”。它按六个阶段组织一次审计：侦察（画架构、信任边界与输入面，记入覆盖台账）、覆盖驱动的猎取（隔离的猎手 Agent 按台账分工找漏洞）、候选验证（每个疑似漏洞交给一个全新的验证 Agent 尝试证伪）、结构化输出（结论只分 confirmed、needs_validation、rejected 三档，写入 findings.json 并过 JSON Schema 校验）、独立复核（再派新人核对最终报告里的每一条源码引用）、中立报告（从已验证记录派生报告）。设计原则写得很硬：只有确立的边界失效才算确认；查的人和验的人不能是同一个 Agent；严重度看影响而非偏离清单；单层缺失不算漏洞；多跑几遍覆盖率会上升（实测单次只找到重复跑总数的约一半）。这个技能正是 Cloudflare 漏洞发现流水线（harness）的单仓库起点，2026 年 6 月 18 日建仓，至今只有 14 次提交，MIT 开源。</p>
+<div class="verdict">💡 点评：代码生成技能遍地之后，安全审计是 Agent 技能最自然的下一个专业分工——能写代码的 Agent 迟早要为自己写的代码负责。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></h3>
+<div><span class="badge">Shell</span><span class="badge">Agent Skills</span><span class="badge">工程方法</span><span class="badge">效率工具</span></div>
+<div class="stats">今日新增 2,070 星，总星数 316,699，Fork 26,493；日榜第二，连续三日位列日榜前三</div>
+<p>TypeScript 教育者 Matt Pocock 把自己每天真正在用的 Agent 技能直接开源，定位是“给真正做工程的人，不是给 vibe coding 的”。它针对编码 Agent 的四个典型翻车点各给一套打法：对不上需求用 <code>/grill-me</code>、<code>/grill-with-docs</code> 先“拷问”对齐并沉淀领域术语表；话太多用共享语言（GLOSSARY.md）与 ADR 收敛；代码跑不通靠 <code>/tdd</code> 红绿重构循环与 <code>/diagnosing-bugs</code> 分阶段诊断；越写越烂用 <code>/improve-codebase-architecture</code> 定期扫描深模块机会。技能分用户调用与模型自动调用两类，覆盖 Claude Code、Codex、Copilot、Gemini CLI 等多家 Agent，安装后每仓库跑一次 <code>/setup-matt-pocock-skills</code> 即可。仓库 2026 年 2 月建仓，已有 553 次提交，MIT 开源。</p>
+<div class="verdict">💡 点评：Skills 热潮里它是最“反潮流”的一个——不追新功能，只把几十年工程基本功压成可复用的套路；总星数逼近 32 万，说明开发者要的不是更聪明的 Agent，而是更靠谱的工作方式。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/NVIDIA/auto-ontology">NVIDIA/auto-ontology</a></h3>
+<div><span class="badge">Python</span><span class="badge">Agent 语义层</span><span class="badge">知识图谱</span><span class="badge">NL-to-SQL</span></div>
+<div class="stats">今日新增 2,015 星，总星数 9,002，Fork 724；日榜第三，连续第三天站上日榜前三</div>
+<p>NVIDIA 官方出品的语义层框架：从企业数据库元数据自动生成“本体”——业务术语、指标口径、表间关系构成的知识图谱，再经 MCP、CLI 或 API 供 Agent 调用。核心卖点是“可验证的问答”：Agent 回答业务问题时，先把“收入”“客户”这类词解析到本体中经人工认证的定义上，再生成 SQL，答案附带 SQL 与推导步骤；答不出来的问题会明确说数据不支持，而不是编一个数。推理默认走 NVIDIA NIM 模型。11 月 5 日首登榜首（单日涨 2,050 星），11 月 6 日再涨 2,679 星蝉联榜首，今天以 2,015 星守住前三，三天合计吸星约 6,700 颗。</p>
+<div class="verdict">💡 点评：Agent 接入企业数据的最大拦路虎是口径不一致；NVIDIA 把语义层做成开源基础设施，等于给所有 Agent 发了一本“企业词典”。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/google/skills">google/skills</a></h3>
+<div><span class="badge">Python</span><span class="badge">Agent Skills</span><span class="badge">Google Cloud</span><span class="badge">官方技能库</span></div>
+<div class="stats">今日新增 534 星，总星数 22,829，Fork 1,920；日榜第十</div>
+<p>Google 在 Cloud Next 2026 上发布的官方 Agent Skills 仓库：把 Google Cloud 与 Workspace 的领域知识打包成 Markdown 技能文件，供 AI 编码 Agent 按需加载。首批 13 个技能，覆盖 BigQuery、GKE、Cloud Run、Firebase、Gemini API、AlloyDB、Cloud SQL 七个产品，外加安全、可靠性、成本优化三条架构支柱与上手配方；每条技能入库前要过内部 CI/CD 验证，优先引用远程 MCP 工具。安装只需 <code>npx skills install github.com/google/skills</code>，兼容所有支持 Skills 规范的 Agent。发布时首波反响即超 1.5 万星，之后稳步爬到 2.2 万；同一赛道的 Anthropic 官方技能库本周增 3,159 星、总星数已达 188,169。</p>
+<div class="verdict">💡 点评：Anthropic、Google、NVIDIA 纷纷亲自下场写“工作手册”，说明 Skills 之争已从社区自发变成平台标配——谁定义技能，谁就定义 Agent 怎么干活。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">Agent 操控台</span><span class="badge">多 Agent 管理</span><span class="badge">移动端</span></div>
+<div class="stats">本周新增 16,782 星，总星数 49,793，Fork 9,746；本周最大增量，月增 23,406 星</div>
+<p>T3 Code 是一个“Agent 操控台”（agent harness control surface）：用手机 App、网页或 Electron 桌面端，统一操控本机上跑着的多个编码 Agent——Claude Code、Codex、Cursor、Grok Build、OpenCode、Google Antigravity、fx，用的是你自己的订阅。作者是知名开发者 Theo（pingdotgg），立项动机写在 README 里：受 Codex 桌面端、Conductor、Claude Desktop 等启发，但没有一个达到他们的标准，于是自己做了一个“高性能、可远程、真正开源”的。仓库 2026 年 2 月建仓，已有 9,657 次提交、788 个 Release，更新极其活跃；安装一条命令 <code>curl -fsSL https://t3.codes/install.sh | sh</code>，MIT 开源。</p>
+<div class="verdict">💡 点评：Agent 从一个变成一群之后，缺的不是更强的模型，而是一个能同时管住它们的“控制台”——手机上随时看 Agent 干活，是这波热度的直接卖点。</div>
+</div>
+</section>
+<section><h2>日榜其余一句话点评</h2>
+<ul class="tight">
+<li><a href="https://github.com/zed-industries/zed">zed-industries/zed</a>：高性能多人协作编辑器今日涨 306 星、总星数 93,614，Rust 阵营的常青树。</li>
+<li><a href="https://github.com/rails/rails">rails/rails</a>：Ruby on Rails 今日涨 142 星、总星数 59,023，老牌框架靠生态地位零星上榜。</li>
+<li><a href="https://github.com/mpv-player/mpv">mpv-player/mpv</a>：命令行播放器今日涨 37 星、总星数 37,873，工具类项目的长尾热度。</li>
+<li><a href="https://github.com/rust-lang/rust">rust-lang/rust</a>：Rust 语言本身今日涨 192 星、总星数 121,440，语言本体稳定在榜。</li>
+<li><a href="https://github.com/react/react">react/react</a>：React 今日涨 248 星、总星数 252,252，前端基建的日常存在感。</li>
+<li><a href="https://github.com/angular/angular">angular/angular</a>：Angular 今日涨 135 星、总星数 101,355，总星数刚过 10 万。</li>
+<li><a href="https://github.com/symfony/symfony">symfony/symfony</a>：PHP 框架今日涨 128 星、总星数 31,426。</li>
+<li><a href="https://github.com/prometheus/prometheus">prometheus/prometheus</a>：监控系统今日涨 148 星、总星数 67,178，可观测性基建持续在榜。</li>
+<li><a href="https://github.com/microsoft/vscode">microsoft/vscode</a>：VS Code 今日涨 301 星、总星数 195,022，逼近 20 万星。</li>
+<li><a href="https://github.com/nushell/nushell">nushell/nushell</a>：新一代 Shell 今日涨 131 星、总星数 40,979。</li>
+<li><a href="https://github.com/etcd-io/etcd">etcd-io/etcd</a>：分布式键值存储今日涨 128 星、总星数 52,614，云原生基建的压舱石。</li>
+<li><a href="https://github.com/openssl/openssl">openssl/openssl</a>：TLS 与加密库今日涨 26 星、总星数 31,286，涨幅最小但地位无人替代。</li>
+<li><a href="https://github.com/astral-sh/ruff">astral-sh/ruff</a>：Rust 写的极速 Python 检查与格式化工具今日涨 169 星、总星数 50,687，刚过 5 万星。</li>
+</ul>
+</section>
+<section><h2>周榜 / 月榜 / 开发者榜</h2>
+<ul class="tight">
+<li>周榜：首位仍是 <a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a>（跨会话持久上下文，周增 8,726 星、总星数 114,015），但本周最大增量属于 <a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>（16,782 星）；设计类 Skills 继续领跑，<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>（给编码 Agent 的设计词汇）周增 8,172 星、总星数破 10 万，<a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>（反 AI 味设计技能）周增 6,900 星；<a href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a>（自适应爬虫）周增 8,372 星、总星数 98,837，距 10 万只差一步；<a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a>（开源 Grok Bot 替代品）周增 6,395 星；<a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a>（49 个 Agent 的游戏开发工作室）周增 6,018 星；<a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a>（港大 AI 家教）周增 4,588 星；<a href="https://github.com/calesthio/OpenMontage">calesthio/OpenMontage</a>（开源 Agent 视频制作系统）周增 4,405 星；<a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a>（金融市场基础模型）周增 2,984 星；<a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a>（并行 Agent 的 Git 工作树管理 CLI）周增 2,184 星。</li>
+<li>月榜：<a href="https://github.com/morluto/rea">morluto/rea</a>（Agent 逆向工程工具）以页面显示的月增 431,436 星居首，但该量级与总星数 437,979 几乎相等、远超常规，且与昨日显示值几乎相同，需注意页面口径异常、仅按显示值引用；<a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（本地开源 ElevenLabs 替代品）月增 49,078 星、总星数 102,885，刚破 10 万；新面孔 <a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a>（PS5 可执行文件自动移植到 Linux/Windows）月增 46,561 星；<a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> 月增 38,004 星；<a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a> 月增 23,406 星；<a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（写 HTML 渲视频）月增 22,718 星；<a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a> 月增 19,792 星。</li>
+<li>开发者榜：今日前三为 <a href="https://github.com/mattsse">mattsse</a>（chromiumoxide）、<a href="https://github.com/pl4nty">pl4nty</a>（winget-extras）、<a href="https://github.com/jeong-sik">jeong-sik</a>（figma-mcp）；另值得留意 <a href="https://github.com/dhh">dhh</a>（Rails 之父，omarchy-giants-theme）、<a href="https://github.com/mitchellh">mitchellh</a>（vouch）、<a href="https://github.com/coleam00">coleam00</a>（Archon）与 <a href="https://github.com/code-yeongyu">code-yeongyu</a>（oh-my-openagent），四者均围绕 Agent 工具链。</li>
+<li>分语言榜：Python 榜由 auto-ontology 领跑，<a href="https://github.com/sherlock-project/sherlock">sherlock-project/sherlock</a>（按用户名跨社交网络找账号）单日涨 1,761 星，Scrapling 单日涨 1,324 星、<a href="https://github.com/microsoft/VibeVoice">microsoft/VibeVoice</a> 单日涨 1,004 星；Rust 榜由 zed 领跑，<a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a>（Agent 浏览器自动化 CLI）单日涨 622 星，worktrunk 单日涨 422 星；TypeScript 榜首为 <a href="https://github.com/stablyai/orca">stablyai/orca</a>（多 Agent 编排桌面端）单日涨 1,155 星；Go 榜由 <a href="https://github.com/kubernetes/kubernetes">kubernetes/kubernetes</a>（单日涨 201 星）领跑，整体偏冷。</li>
+</ul>
+</section>
+<section><h2>数据口径</h2>
+<p>数据来源为 github.com/trending 未登录抓取的 HTML 页面解析（无官方 API），由采集脚本于北京时间 2026-11-07 08:21 抓取；当日榜单共 17 条、周榜 18 条、月榜 13 条、开发者榜 25 条。文中“今日新增”指日榜周期新增星数，“总星数”为仓库累计星数；月榜 rea 的月增量为页面显示值，量级异常，已作标注。重点项目背景除榜单描述外，另核对了 security-audit-skill、mattpocock/skills、t3code 的仓库主页，auto-ontology 与 google/skills 背景沿用昨日已核实内容并更新今日数据。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
