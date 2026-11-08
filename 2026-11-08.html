@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 11月8日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月8日</h1><div class="sub">今日主题：Agent 从“会干活”走向“记得住、管得住”——开源 Grok Bot 替代品 OpenMausBot 与跨会话记忆 claude-mem 各自领跑日榜与周榜，Sherlock 破 10 万星，爬虫框架 Scrapling 距 10 万只差一步；Skills 热潮仍在，但主角开始换成记忆层与操控台。</div></header>
+<div><section><h2>重点项目</h2>
+<div class="card"><h3><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">Grok Bot 开源替代</span><span class="badge">多 Agent 聊天</span><span class="badge">Jev 决策路由</span></div>
+<div class="stats">今日新增 1,955 星，总星数 16,963，Fork 2,401；日榜第三，周增 7,077 星</div>
+<p>开源的 Grok Bot 替代品，思路是把“一队 AI 机器人装进聊天 App”：侧边栏里的每个机器人都是真实 Agent（本机跑 Claude、Codex 或 Grok CLI），自带人设、模型、自己的云端电脑与已连接应用，用你自己的订阅、不经过中间代理。本地优先：记录、密钥与事件都存在本机 <code>~/.openmausbot</code>。每个机器人可配云端 Linux 桌面、本地隔离虚拟机或经明确授权的本机，Shell 命令与文件编辑会以审批卡片先问过你；频道机制把工作、个人与各项目分开；消息该由哪个机器人回，由 Jev 决策模型在数百毫秒内路由；整支团队能从一个 Markdown 文件一键装入，也能把整个部门导出分享。仓库 2026 年 8 月 11 日建仓，已有 8,704 次提交、105 个 Release，Apache 2.0 开源。</p>
+<div class="verdict">💡 点评：Grok Bot、Muse、dots、Cue 四款闭源个人 Agent 七周内密集发布之后，开源世界给出的回应不是再造一个助手，而是一整个“机器人通讯录”——模型、电脑与数据都留在自己手里；Jev 决策模型在这里是真实落地的路由环节，值得留意。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/sherlock-project/sherlock">sherlock-project/sherlock</a></h3>
+<div><span class="badge">Python</span><span class="badge">OSINT</span><span class="badge">用户名检索</span><span class="badge">安全工具</span></div>
+<div class="stats">今日新增 1,766 星，总星数 100,430，Fork 11,863；日榜第四，总星数刚破 10 万</div>
+<p>开源社区的老牌 OSINT 工具，解决的问题很具体：只知道一个用户名时，快速查出它在哪些社交网络注册过账号，拼出一幅公开账号版图。Python 写成，用法就是命令行里给一个用户名、等它逐站比对返回结果。适用场景是安全研究、招聘背调与记者核查一类的公开信息核验，使用时须遵守各平台规则与当地法律。它在 Agent 时代翻红并不意外：Agent 满世界替人办事之前，先要确认对面是谁。</p>
+<div class="verdict">💡 点评：工具本身没有新功能，火的是需求——身份核查从安全圈的手艺活，正在变成 Agent 工作流的前置步骤。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">Agent 记忆</span><span class="badge">跨会话上下文</span><span class="badge">本地优先</span></div>
+<div class="stats">本周新增 7,482 星，总星数 114,471，Fork 9,927；周榜首位，月增 17,493 星</div>
+<p>解决“Agent 每换一次会话就失忆”：用钩子把 Agent 的每一步工具调用交给本地小 worker，第二位“观察者 Agent”边干活边记笔记，会话结束写摘要；下次开会话先给一份分层索引，需要时再展开细节，不用把历史全塞进上下文。支持 Claude Code、Codex、Cursor、OpenCode 等十余种 Agent；记忆存在本机 <code>~/.claude-mem</code>（SQLite + Chroma 向量库），云同步需主动开启，<code>&lt;private&gt;</code> 标签包裹的内容不会被存下来。仓库 2025 年 8 月 31 日建仓，4,023 次提交，Apache 2.0 开源。</p>
+<div class="verdict">💡 点评：Skills 解决“会不会干活”，claude-mem 解决“记不记得干过”——Agent 从一次性工具变成长期协作者，记忆层是绕不过去的一环；周榜首位说明开发者已经在为这件事投票。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a></h3>
+<div><span class="badge">Python</span><span class="badge">爬虫框架</span><span class="badge">反爬</span><span class="badge">MCP</span></div>
+<div class="stats">本周新增 8,712 星，总星数 99,320，Fork 10,397；周增第二，距 10 万星只差 680</div>
+<p>Python 爬虫框架，把“能抓、能扛、能交给 Agent”做进同一个库：Fetcher 做快速请求（可模拟浏览器 TLS 指纹、支持 HTTP/3），StealthyFetcher 处理 JavaScript 渲染与 Cloudflare Turnstile 之类的反爬，Spider 式并发爬取带暂停/恢复、代理轮换、自动限流与 robots.txt 遵守；解析支持 CSS、XPath 与自适应元素追踪，导出 JSON/CSV/XML；还带 MCP 服务器与 Agent Skill，AI Agent 可以直接调用它抓取。仓库 2024 年 10 月 13 日建仓，1,823 次提交，BSD-3 开源。</p>
+<div class="verdict">💡 点评：爬虫框架的竞争点已经从“能不能抓”移到“Agent 能不能直接用”——MCP 与 Skill 成了新标配；按本周增速，破 10 万星就在这几天。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/Renhuai123/ziwei-doushu">Renhuai123/ziwei-doushu</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">紫微斗数</span><span class="badge">排盘引擎</span><span class="badge">传统文化</span></div>
+<div class="stats">本周新增 4,906 星，总星数 16,722，Fork 3,240；周榜新面孔</div>
+<p>紫微斗数开源排盘引擎，仓库自述基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库与古籍原文数据。TypeScript 写成，周榜新上榜即拿到近 5,000 星，是今天榜单里最出圈的非 Agent 项目。传统文化内容一旦有了可复用的开源实现，就会在开发者社区找到自己的读者。</p>
+<div class="verdict">💡 点评：技术圈的“玄学”项目向来不缺关注，关键看排盘准确性能不能经得起行家检验；先把它当作传统文化数字化的一个有趣样本。</div>
+</div>
+</section>
+<section><h2>日榜其余一句话点评</h2>
+<ul class="tight">
+<li><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a>：Rust 写的 Agent 浏览器自动化 CLI，今日新增 190 星、总星数 46,818，周增 1,476 星。</li>
+<li><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>：今日新增 2,085 星、全日最大增量，总星数 65,701，连续两天领跑，月增 39,571 星。</li>
+<li><a href="https://github.com/mattpocock/skills">mattpocock/skills</a>：今日新增 1,100 星、总星数 317,693，逼近 32 万星。</li>
+<li><a href="https://github.com/google/skills">google/skills</a>：Google 官方技能库今日新增 443 星、总星数 23,390。</li>
+<li><a href="https://github.com/anthropics/skills">anthropics/skills</a>：Anthropic 官方技能库今日新增 390 星、总星数 188,778，今日新上日榜。</li>
+<li><a href="https://github.com/meta/astryx">meta/astryx</a>：Meta 开源的可定制设计系统、主打 agent ready，今日新增 96 星、总星数 14,500，今日新上日榜。</li>
+<li><a href="https://github.com/zed-industries/zed">zed-industries/zed</a>：高性能多人协作编辑器今日新增 1,114 星、总星数 94,268。</li>
+<li><a href="https://github.com/astral-sh/ruff">astral-sh/ruff</a>：Rust 写的极速 Python 检查与格式化工具今日新增 350 星、总星数 50,973。</li>
+<li><a href="https://github.com/tailwindlabs/tailwindcss">tailwindlabs/tailwindcss</a>：今日新增 122 星、总星数 98,462。</li>
+<li><a href="https://github.com/prometheus/prometheus">prometheus/prometheus</a>：监控系统今日新增 322 星、总星数 67,443。</li>
+<li><a href="https://github.com/mbillow/localthings">mbillow/localthings</a>：三星家电本地接入 Home Assistant、无需云账号，今日新增 186 星、总星数 1,055，今日新上日榜。</li>
+<li><a href="https://github.com/ranxianglei/billion-context">ranxianglei/billion-context</a>：上下文压缩插件（月级长会话、100K 上下文够用、省 5 倍 token），今日新增 191 星、总星数 4,601，今日新上日榜。</li>
+<li><a href="https://github.com/dsx-ai-factory/nvke">dsx-ai-factory/nvke</a>：NVIDIA Kubernetes Engine（裸金属 GPU 的 K8s 管理面），今日新增 123 星、总星数 552，今日新上日榜。</li>
+</ul>
+</section>
+<section><h2>周榜 / 月榜 / 开发者榜</h2>
+<ul class="tight">
+<li>周榜：最大增量仍是 <a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>（Agent 操控台，周增 17,100 星、总星数 51,260）；<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>（给编码 Agent 的设计词汇）周增 7,623 星、总星数 105,530，刚破 10 万；<a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>（反 AI 味设计技能）周增 6,624 星、总星数 50,270；<a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a>（49 个 Agent 的游戏开发工作室）周增 5,719 星；<a href="https://github.com/calesthio/OpenMontage">calesthio/OpenMontage</a>（开源 Agent 视频制作系统）周增 4,369 星；<a href="https://github.com/github/spec-kit">github/spec-kit</a>（规格驱动开发工具包）新上周榜，周增 4,280 星；<a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a>（金融市场基础模型）周增 2,937 星；<a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a>（并行 Agent 的 Git 工作树管理 CLI）周增 2,292 星；<a href="https://github.com/obra/superpowers">obra/superpowers</a>（Agent 技能框架与开发方法论）周增 4,466 星。</li>
+<li>月榜：<a href="https://github.com/morluto/rea">morluto/rea</a>（Agent 逆向工程工具）仍居首，但页面显示的月增 429,845 星与总星数 441,000 几乎相等、远超常规，口径异常、仅按显示值引用；<a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（本地开源 ElevenLabs 替代品）月增 49,671 星、总星数 103,863；<a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a>（PS5 可执行文件自动移植到 Linux/Windows）月增 43,690 星；<a href="https://github.com/storytold/artcraft">storytold/artcraft</a>（面向艺术家的有意创作引擎）月增 35,633 星；<a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> 月增 39,571 星；<a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a> 月增 24,785 星；<a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（写 HTML 渲视频）月增 22,531 星。</li>
+<li>开发者榜：今日前三为 <a href="https://github.com/ranxianglei">ranxianglei</a>（billion-context）、<a href="https://github.com/andrewnakas">andrewnakas</a>（gtav-recomp）、<a href="https://github.com/abue-ammar">abue-ammar</a>（tinycast）；另值得留意 <a href="https://github.com/morluto">morluto</a>（rea）、<a href="https://github.com/mitchellh">mitchellh</a>（vouch）、<a href="https://github.com/tt-a1i">tt-a1i</a>（archify）。</li>
+<li>分语言榜：Python 榜由 sherlock 与 <a href="https://github.com/NVIDIA/auto-ontology">NVIDIA/auto-ontology</a>（单日涨 1,155 星）领跑；TypeScript 榜由 OpenMausBot 与 rea（单日涨 3,286 星）居前；Rust 榜由 zed 领跑；Go 榜由 prometheus 领跑，<a href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a>（极简表达省 token 的技能与代理）单日涨 205 星、总星数 118,169。</li>
+</ul>
+</section>
+<section><h2>数据口径</h2>
+<p>数据来源为 github.com/trending 未登录抓取的 HTML 页面解析（无官方 API），由采集脚本于北京时间 2026-11-08 08:21 抓取；当日榜单共 15 条、周榜 19 条、月榜 10 条、开发者榜 25 条；分语言榜 Python 15 条、TypeScript 19 条、Rust 17 条、Go 19 条。文中“今日新增”指日榜周期新增星数，“总星数”为仓库累计星数；月榜 rea 的月增量为页面显示值，量级异常，已作标注。重点项目背景除榜单描述外，另核对了 OpenMausBot、claude-mem、Scrapling、security-audit-skill 的仓库主页。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
