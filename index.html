@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub 热榜解说 · 11月9日</title><style>
+<title>GitHub 热榜解说 · 11月10日</title><style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
 .wrap{max-width:720px;margin:0 auto}
@@ -26,59 +26,62 @@ code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
 footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
 </style></head>
 <body><div class="wrap">
-<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月9日</h1><div class="sub">今日主题：Agent 基础设施继续领跑——NVIDIA 的语义层 auto-ontology 空降周榜首位，T3 Code 周增 1.5 万星仍是全榜最大赢家；Sherlock 连续两天领跑日榜并加速；上下文压缩插件 billion-context 与 Meta 设计系统 Astryx 成为新面孔。</div></header>
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月10日</h1><div class="sub">今日主题：REA 月增 41 万星断层登顶月榜，Vercel 的 agent-desktop 把 computer use 搬上整个桌面；Meta Astryx 与 Sherlock 单日增量双双翻倍，Agent 基础设施继续领跑。</div></header>
 <div><section><h2>重点项目</h2>
-<div class="card"><h3><a href="https://github.com/NVIDIA/auto-ontology">NVIDIA/auto-ontology</a></h3>
-<div><span class="badge">Python</span><span class="badge">语义层</span><span class="badge">NL-to-SQL</span><span class="badge">Agent 推理</span></div>
-<div class="stats">本周新增 9,327 星，总星数 10,373，Fork 837；周榜首位，本周新增占总星数九成</div>
-<p>NVIDIA 开源的 Python 框架，给企业数据建一层“语义推理层”：从数据库元数据自动生成本体（术语、关系、SQL 属性），再由人认证，最后 Agent 通过 MCP、CLI 或 API 用它回答自然语言问题、生成 SQL。解决的核心痛点是 Agent 查数“快但不一定对”——各系统里指标口径不一致时，先统一定义再查数；答案附带 SQL 与推导步骤、可溯源，数据里答不了的问题会先说“没有”而不是编一个。技术栈为 FastAPI + LangChain 后端、Next.js 前端、Postgres + pgvector 存本体，推理默认走 NVIDIA NIM（Nemotron 系列模型），支持 Helm/K8s 与 Docker Compose 部署。仓库 2026 年 4 月建仓、1,367 次提交，Apache 2.0 开源。</p>
-<div class="verdict">💡 点评：Skills 管“会干活”、记忆层管“记得住”，auto-ontology 补的是“算得对”——Agent 从写代码走向查数、做分析时，口径统一的语义层是绕不过去的一环；NVIDIA 这次直接把自家 NIM 模型与开源框架绑在一起推。</div>
+<div class="card"><h3><a href="https://github.com/morluto/rea">morluto/rea</a></h3>
+<div><span class="badge">TypeScript</span><span class="badge">逆向工程</span><span class="badge">MCP</span><span class="badge">Agent 工具</span></div>
+<div class="stats">月新增 413,718 星，总星数 446,926，Fork 110,239；月榜断层第一，月增量接近总星数</div>
+<p>REA（Reverse Engineer Anything）是一个 MCP 服务器加命令行工具，让 AI 编码 Agent 直接调用真正的逆向工程工具：Ghidra、IDA、Hopper 做原生二进制反编译，另有内置读取器处理 JavaScript、.NET、Android APK、网站与固件。用法是一行命令 <code>npx rea-agents setup</code>，把它注册进 Claude Code、Codex、Cursor、Gemini CLI 等支持本地 MCP 的 Agent；之后向 Agent 提问“这个 App 的某个功能怎么实现的”，Agent 自己决定查什么，把伪代码、汇编、字符串与引用连同证据一起交回来，分析全在本地跑。仓库 2026 年 4 月建仓、MIT 开源，最新版 rea-agents 6.8.0（10 月 25 日）。爆发点在 10 月中旬：第三方统计显示 10 月 13 日约 13 万星、10 月 28 日已近 40 万星，一个月涨 40 万星是 GitHub 罕见量级。适用人群是安全研究员、做兼容性与软件考古的开发者，以及想搞懂竞品某个功能怎么实现的工程师。提醒两点：README 明确只限合法用途（自己拥有或获授权分析的软件），且市面已有仿冒仓库，只认 morluto/rea、rea.tools 与 npm 上的 rea-agents。</p>
+<div class="verdict">💡 点评：Agent 的手已经伸进二进制世界——以前逆向是少数人的手艺，现在变成向 Agent 提一个问题的事；但能力越强，合法使用的边界越要先讲清楚。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a></h3>
-<div><span class="badge">TypeScript</span><span class="badge">Agent 操控台</span><span class="badge">多 Agent 管理</span><span class="badge">远程开发</span></div>
-<div class="stats">本周新增 15,379 星，总星数 52,481，Fork 10,014；本周全榜最大增量，月增 25,840 星</div>
-<p>“Agent 操控台”：一个控制面统一管本机上的所有编码 Agent——Claude Code、Codex、Cursor、Grok Build、OpenCode、Google Antigravity、fx，用你自己的订阅，不经过中间代理。提供手机 App、Web App 与 Electron 桌面端，远程也能操控。仓库 2026 年 2 月建仓，至今 9,756 次提交、795 个 Release，MIT 开源。</p>
-<div class="verdict">💡 点评：Skills、记忆层之后，操控台成了 Agent 工具链的下一个争夺点——谁管得住一屋子 Agent，谁就管得住开发者的工作流；连续两周周增过万，说明这不是一日热度。</div>
-</div>
-<div class="card"><h3><a href="https://github.com/sherlock-project/sherlock">sherlock-project/sherlock</a></h3>
-<div><span class="badge">Python</span><span class="badge">OSINT</span><span class="badge">用户名检索</span><span class="badge">安全工具</span></div>
-<div class="stats">今日新增 2,373 星，总星数 103,446，Fork 12,125；日榜第一，连续两天领跑且今日增量高于昨日</div>
-<p>开源社区的老牌 OSINT 工具，解决的问题很具体：只知道一个用户名时，快速查出它在哪些社交网络注册过账号，拼出一幅公开账号版图。Python 写成，用法就是命令行里给一个用户名、等它逐站比对返回结果。适用场景是安全研究、招聘背调与记者核查一类的公开信息核验，使用时须遵守各平台规则与当地法律。</p>
-<div class="verdict">💡 点评：工具本身没有新功能，火的是需求——Agent 满世界替人办事之前，先要确认对面是谁；身份核查正从安全圈的手艺活变成 Agent 工作流的前置步骤。</div>
-</div>
-<div class="card"><h3><a href="https://github.com/ranxianglei/billion-context">ranxianglei/billion-context</a></h3>
-<div><span class="badge">TypeScript</span><span class="badge">上下文压缩</span><span class="badge">长会话</span><span class="badge">Token 节省</span></div>
-<div class="stats">今日新增 460 星，总星数 5,133，Fork 404；日榜第九，作者同时登上今日开发者榜第二</div>
-<p>上下文压缩插件，解决长会话“上下文爆掉、账单爆掉”：坐在 Agent 与模型 API 之间，由模型自己决定何时、把哪段对话压成高保真摘要，可逆、可按需解压、可关键词检索；压缩后前缀缓存命中率仓库自述 95–97%。宣称 100K 上下文就够用、省 5 倍 token、单会话可跑月级、累计数十亿 token。支持 20 余种客户端（Pi、Claude、Codex、Gemini、Qwen、Antigravity 等），2026 年 8 月建仓，8,102 次提交、206 个 Release。仓库自述的 1,500 项第三方评测称 ContextBench 第一、LongMemEval-S 超最佳 RAG 16.6%，为自述数据、待独立复核。</p>
-<div class="verdict">💡 点评：claude-mem 管“跨会话记得住”，billion-context 管“单会话装得下”——记忆与压缩正在成为 Agent 长跑的两条腿；中国开发者在这一赛道的存在感值得留意。</div>
+<div class="card"><h3><a href="https://github.com/vercel-labs/agent-desktop">vercel-labs/agent-desktop</a></h3>
+<div><span class="badge">Rust</span><span class="badge">Computer Use</span><span class="badge">无障碍树</span><span class="badge">Agent 工具</span></div>
+<div class="stats">本周新增 12,120 星，总星数 20,441，Fork 1,514；周榜第二，今日新增 916 星</div>
+<p>Vercel Labs 的 computer use CLI：让编码 Agent 操作真实桌面应用，办法不是截屏猜像素，而是读操作系统无障碍树——屏幕阅读器用的那套结构，每个按钮、输入框、菜单都有角色与标签。快照命令返回一份 JSON，每个可操作元素带一个稳定引用，Agent 按引用点按、输入、滚动，再读一遍界面验证结果、循环执行。60 个命令覆盖观察、操作、键盘鼠标、窗口管理、剪贴板与会话；工具本身不含模型，推理全在调用它的 Agent 里。支持 macOS、Windows、Linux，1.0 版 10 月 27 日发布，Apache-2.0 开源，<code>npm install -g agent-desktop</code> 即装。它是 agent-browser 的姊妹项目——浏览器那套思路搬到了整个桌面。注意：macOS 需授予无障碍权限；快照与剪贴板可能含私人内容，别进公开日志。</p>
+<div class="verdict">💡 点评：Agent 的操作面从终端、浏览器扩到了整个桌面；无障碍树这条路比截屏更稳、更省 token，computer use 正在从演示走向可用的工具。</div>
 </div>
 <div class="card"><h3><a href="https://github.com/meta/astryx">meta/astryx</a></h3>
 <div><span class="badge">TypeScript</span><span class="badge">设计系统</span><span class="badge">Agent Ready</span><span class="badge">React 19</span></div>
-<div class="stats">今日新增 875 星，总星数 16,704，Fork 1,319；日榜第六，今日增量较昨日的 96 星大幅回升</div>
-<p>Meta 开源的设计系统，在公司内部打磨 8 年、支撑 13,000+ 应用，150+ 无障碍组件、7 套可定制主题、深色模式与现成模板，基于 React 19 + StyleX，MIT 开源，目前 Beta 阶段。卖点是“为人和 Agent 一起建”：API、文档与 CLI 按同一套约定设计，组件内部开放、可任意层级组合，swizzle 能把组件源码整个弹进自己项目；主题只是一组 CSS 变量覆盖，不用 fork 也不用包一层。</p>
+<div class="stats">今日新增 3,278 星，总星数 19,993，Fork 1,524；日榜第二，单日增量较昨日 875 星翻近四倍</div>
+<p>Meta 内部打磨 8 年、支撑 13,000+ 应用的设计系统开源版，150+ 无障碍组件、7 套主题、深色模式与现成模板，基于 React 19 + StyleX，MIT 开源，目前 Beta 阶段。卖点是“为人和 Agent 一起建”：API、文档与 CLI 按同一套约定设计，仓库自带 AGENTS.md 与 CLAUDE.md，CLI 能让 Agent 像工程师一样查组件文档、列组件、搭模板；组件内部开放、可任意层级组合，swizzle 能把组件源码整个弹进自己项目。安装 <code>npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex</code>，另需 <code>@astryxdesign/cli</code>。限制：图表包只有 canary 版、无稳定发布；实验性 lab 包未上 npm；React 19 是硬门槛。</p>
 <div class="verdict">💡 点评：设计系统也开始按“Agent 能读、能改、能搭”来设计，UI 库的竞争维度多了一条；Meta 把内部最大设计系统开源，是在抢 Agent 时代前端基建的话语权。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/sherlock-project/sherlock">sherlock-project/sherlock</a></h3>
+<div><span class="badge">Python</span><span class="badge">OSINT</span><span class="badge">用户名检索</span><span class="badge">安全工具</span></div>
+<div class="stats">今日新增 4,267 星，总星数 106,986，Fork 12,376；日榜第一，单日增量较昨日 2,373 星继续放大</div>
+<p>开源社区的老牌 OSINT 工具，做法极简：给一个用户名，它按内置的 400+ 站点检测规则逐站问“这个用户名存在吗”，返回一份公开账号清单，覆盖社交网络、论坛、游戏与开发者社区。Python 命令行工具，<code>pipx install sherlock-project</code> 即装，<code>sherlock 用户名</code> 即可跑；只查公开资料，不碰登录墙后的数据、不做背景调查。作者 Siddharth Dushantha，社区维护，MIT 开源，当前稳定版 v0.16.0（2025 年 9 月）。最近 7 天新增 11,145 星，是全榜罕见的“老树开花”——工具本身没有新功能，涨的是需求。</p>
+<div class="verdict">💡 点评：工具本身没有新功能，火的是需求——Agent 满世界替人办事之前，先要确认对面是谁；身份核查正从安全圈的手艺活变成 Agent 工作流的前置步骤。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/NVIDIA/auto-ontology">NVIDIA/auto-ontology</a></h3>
+<div><span class="badge">Python</span><span class="badge">语义层</span><span class="badge">NL-to-SQL</span><span class="badge">Agent 推理</span></div>
+<div class="stats">本周新增 10,159 星，总星数 11,008，Fork 898；周榜首位，本周新增占总星数九成以上</div>
+<p>NVIDIA 开源的 Python 框架，给企业数据建一层“语义推理层”：从数据库元数据自动生成本体（术语、关系、SQL 属性），再由人认证，最后 Agent 通过 MCP、CLI 或 API 用它回答自然语言问题、生成 SQL。解决的核心痛点是 Agent 查数“快但不一定对”——各系统里指标口径不一致时，先统一定义再查数；答案附带 SQL 与推导步骤、可溯源，数据里答不了的问题会先说“没有”而不是编一个。技术栈为 FastAPI + LangChain 后端、Next.js 前端、Postgres + pgvector 存本体，推理默认走 NVIDIA NIM（Nemotron 系列模型），支持 Databricks、Postgres、Snowflake、DuckDB。11 月 4 日左右开源，首日约 2,000 星，Hacker News 讨论帖约 291 分、139 条评论；Apache 2.0 开源，但目前不接受外部贡献。</p>
+<div class="verdict">💡 点评：Skills 管“会干活”、记忆层管“记得住”，auto-ontology 补的是“算得对”——Agent 从写代码走向查数、做分析时，口径统一的语义层是绕不过去的一环；NVIDIA 这次直接把自家 NIM 模型与开源框架绑在一起推。</div>
 </div>
 </section>
 <section><h2>日榜其余一句话点评</h2>
 <ul class="tight">
-<li><a href="https://github.com/dsx-ai-factory/nvke">dsx-ai-factory/nvke</a>：NVIDIA Kubernetes Engine（裸金属 GPU 的 K8s 管理面），今日新增 345 星、总星数 842，今日新上日榜第二——总星数还很小，涨幅全靠新鲜度。</li>
-<li><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a>：开源 Grok Bot 替代品，今日新增 1,439 星、总星数 18,234，周增 7,621 星，昨日重点、今日仍居日榜第三。</li>
-<li><a href="https://github.com/anthropics/claude-quickstarts">anthropics/claude-quickstarts</a>：Anthropic 官方 Claude API 快速上手项目合集，今日新增 32 星、总星数 19,406，今日新上日榜（日榜名次不完全按星数排）。</li>
-<li><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a>：Rust 写的 Agent 浏览器自动化 CLI，今日新增 815 星、总星数 47,575，周增 2,190 星。</li>
-<li><a href="https://github.com/anthropics/skills">anthropics/skills</a>：Anthropic 官方技能库，今日新增 792 星、总星数 189,625，周增 3,169 星。</li>
-<li><a href="https://github.com/google-deepmind/mujoco">google-deepmind/mujoco</a>：Google DeepMind 的通用物理仿真器，今日新增 41 星、总星数 16,405。</li>
+<li><a href="https://github.com/anthropics/skills">anthropics/skills</a>：Anthropic 官方技能库，今日新增 1,038 星、总星数 190,944。</li>
+<li><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a>：开源 Grok Bot 替代品，今日新增 1,587 星、总星数 19,653，周增 8,325 星，连续多日上榜。</li>
+<li><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a>：Rust 写的 Agent 浏览器自动化 CLI，agent-desktop 的姊妹项目，今日新增 916 星、总星数 48,448，周增 2,994 星。</li>
+<li><a href="https://github.com/google-deepmind/mujoco">google-deepmind/mujoco</a>：Google DeepMind 的通用物理仿真器，今日新增 574 星、总星数 16,898。</li>
+<li><a href="https://github.com/anthropics/claude-quickstarts">anthropics/claude-quickstarts</a>：Anthropic 官方 Claude API 快速上手项目合集，今日新增 551 星、总星数 20,007。</li>
+<li><a href="https://github.com/ZhuLinsen/daily_stock_analysis">ZhuLinsen/daily_stock_analysis</a>：LLM 驱动的多市场股票智能分析系统，支持零成本定时运行，今日新增 506 星、总星数 68,826。</li>
+<li><a href="https://github.com/garrytan/gbrain">garrytan/gbrain</a>：Garry Tan 的 OpenClaw/Hermes Agent Brain，今日新增 216 星、总星数 32,127，作者本人今日也在开发者榜。</li>
+<li><a href="https://github.com/ruvnet/RuView">ruvnet/RuView</a>：用普通 WiFi 信号做实时空间感知与生命体征监测，不用摄像头，今日新增 172 星、总星数 103,434。</li>
+<li><a href="https://github.com/homeassistant-ai/ha-mcp">homeassistant-ai/ha-mcp</a>：用 Claude、ChatGPT 等 AI 助手配置与自动化 Home Assistant，今日新增 31 星、总星数 5,953。</li>
 </ul>
 </section>
 <section><h2>周榜 / 月榜 / 开发者榜</h2>
 <ul class="tight">
-<li>周榜：最大增量仍是 <a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>（周增 15,379 星）；<a href="https://github.com/mattpocock/skills">mattpocock/skills</a>（工程师技能库）周增 9,635 星、总星数 318,506；<a href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a>（爬虫框架）周增 8,342 星、总星数 99,870，距 10 万星只差 130；<a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a>（跨会话记忆）周增 6,443 星、总星数 114,896，月增 17,296 星；<a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>（反 AI 味设计技能）周增 6,356 星、总星数 50,955；<a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a>（49 个 Agent 的游戏开发工作室）周增 5,235 星；<a href="https://github.com/Renhuai123/ziwei-doushu">Renhuai123/ziwei-doushu</a>（紫微斗数排盘引擎）周增 4,191 星；<a href="https://github.com/github/spec-kit">github/spec-kit</a>（规格驱动开发工具包）周增 4,045 星；<a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a>（并行 Agent 的 Git 工作树管理 CLI）周增 2,313 星；<a href="https://github.com/blader/humanizer">blader/humanizer</a>（去 AI 味写作技能）周增 3,118 星。</li>
-<li>月榜：<a href="https://github.com/morluto/rea">morluto/rea</a>（Agent 逆向工程工具）仍居首，但页面显示的月增 425,123 星与总星数 443,744 几乎相等、远超常规，口径异常、仅按显示值引用；<a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（本地开源 ElevenLabs 替代品）月增 50,169 星、总星数 104,983；<a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>（多阶段安全审计技能）月增 40,289 星；<a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a>（PS5 可执行文件自动移植到 Linux/Windows）月增 39,354 星；<a href="https://github.com/storytold/artcraft">storytold/artcraft</a>（面向艺术家的有意创作引擎）月增 33,780 星；<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>（给编码 Agent 的设计词汇）月增 28,008 星、总星数 106,206；<a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（写 HTML 渲视频）月增 22,360 星；<a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a>（终身个性化家教）月增 16,065 星；<a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a>（逆向工程框架）月增 17,344 星。</li>
-<li>开发者榜：今日前三为 <a href="https://github.com/pl4nty">pl4nty</a>（winget-extras）、<a href="https://github.com/ranxianglei">ranxianglei</a>（billion-context）、<a href="https://github.com/mantrakp04">mantrakp04</a>（ardia，Mac 免费 Chromium 浏览器）；另值得留意 <a href="https://github.com/morluto">morluto</a>（rea）、<a href="https://github.com/Gaurav-Gosain">Gaurav-Gosain</a>（tuios，终端窗口管理器）。</li>
-<li>分语言榜：Python 榜由 sherlock 与 auto-ontology 领跑，<a href="https://github.com/rohitg00/ai-engineering-from-scratch">rohitg00/ai-engineering-from-scratch</a>（AI 工程从零学）单日涨 449 星、总星数 77,814，<a href="https://github.com/jamiepine/voicebox">jamiepine/voicebox</a>（开源 AI 语音工作室）单日涨 208 星；TypeScript 榜由 OpenMausBot 与 billion-context 居前，<a href="https://github.com/Albert-Weasker/niubigeo">Albert-Weasker/niubigeo</a>（AI 品牌可见度报告）单日涨 228 星；Rust 榜由 agent-browser 领跑，<a href="https://github.com/zed-industries/zed">zed-industries/zed</a> 单日涨 350 星、总星数 94,475，<a href="https://github.com/jub0t/Concat">jub0t/Concat</a>（免费开源本地视频编辑器）单日涨 488 星；Go 榜由 nvke 领跑，<a href="https://github.com/prometheus/prometheus">prometheus/prometheus</a> 单日涨 213 星、总星数 67,565。</li>
+<li>周榜：最大增量仍是 <a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>（周增 13,448 星）；<a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>（多阶段安全审计技能）周增 10,695 星；<a href="https://github.com/mattpocock/skills">mattpocock/skills</a>（工程师技能库）周增 9,800 星、总星数 319,720；<a href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a>（爬虫框架）周增 8,226 星、总星数 100,543，刚过 10 万星；<a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a>（跨会话记忆）周增 5,130 星、总星数 115,393；<a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>（反 AI 味设计技能）周增 5,987 星；<a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a>（49 个 Agent 的游戏开发工作室）周增 4,324 星；<a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a>（并行 Agent 的 Git 工作树管理 CLI）周增 2,395 星。</li>
+<li>月榜：<a href="https://github.com/morluto/rea">morluto/rea</a>（Agent 逆向工程工具）月增 413,718 星断层第一；<a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a>（本地开源 ElevenLabs 替代品）月增 50,585 星、总星数 106,158；<a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a>（PS5 可执行文件自动移植到 Linux/Windows）月增 34,260 星；<a href="https://github.com/storytold/artcraft">storytold/artcraft</a>（面向艺术家的有意创作引擎）月增 30,753 星；<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>（给编码 Agent 的设计词汇）月增 28,285 星；<a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a> 月增 26,993 星；<a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>（写 HTML 渲视频）月增 22,344 星；<a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a> 月增 21,862 星；<a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a>（逆向工程框架）月增 17,387 星；<a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a>（终身个性化家教）月增 16,710 星。</li>
+<li>开发者榜：今日前三为 <a href="https://github.com/pl4nty">pl4nty</a>（winget-extras）、<a href="https://github.com/mantrakp04">mantrakp04</a>（ardia，Mac 免费 Chromium 浏览器）、<a href="https://github.com/fzn0x">fzn0x</a>（mixmusic）；另值得留意 <a href="https://github.com/morluto">morluto</a>（rea）、<a href="https://github.com/ZhuLinsen">ZhuLinsen</a>（daily_stock_analysis）、<a href="https://github.com/garrytan">garrytan</a>（gbrain）。</li>
+<li>分语言榜：Python 榜 <a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a> 单日涨 1,262 星；TypeScript 榜 <a href="https://github.com/ranxianglei/billion-context">ranxianglei/billion-context</a>（上下文压缩插件）单日涨 760 星、总星数 5,735；Rust 榜 <a href="https://github.com/jub0t/Concat">jub0t/Concat</a>（免费开源本地视频编辑器）单日涨 493 星；Go 榜 <a href="https://github.com/dsx-ai-factory/nvke">dsx-ai-factory/nvke</a>（NVIDIA Kubernetes Engine）单日涨 333 星、总星数 1,036。</li>
 </ul>
 </section>
 <section><h2>数据口径</h2>
-<p>数据来源为 github.com/trending 未登录抓取的 HTML 页面解析（无官方 API），由采集脚本于北京时间 2026-11-09 08:21（UTC 00:21）抓取；日榜 9 条、周榜 17 条、月榜 12 条、开发者榜 25 条；分语言榜 Python 11 条、TypeScript 16 条、Rust 12 条、Go 18 条。文中“今日新增”指日榜周期新增星数，“总星数”为仓库累计星数；月榜 rea 的月增量为页面显示值，量级异常，已作标注；billion-context 的评测成绩为仓库自述。重点项目背景除榜单描述外，另核对了 auto-ontology、t3code、billion-context、astryx 的仓库主页。</p>
+<p>数据来源为 github.com/trending 未登录抓取的 HTML 页面解析（无官方 API），由采集脚本于北京时间 2026-11-10 08:21（UTC 00:21）抓取；日榜 11 条、周榜 14 条、月榜 13 条、开发者榜 25 条；分语言榜 Python 15 条、TypeScript 15 条、Rust 12 条、Go 16 条。文中“今日新增”指日榜周期新增星数，“总星数”为仓库累计星数；rea 的月增量为页面显示值，其 10 月 13 日约 13 万星、10 月 28 日近 40 万星的第三方统计与该量级一致，反映的是 10 月中旬的集中爆发。重点项目背景除榜单描述外，另核对了 rea、auto-ontology、astryx、sherlock、agent-desktop 的仓库说明与第三方报道。</p>
 </section>
 <footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
 </div></div></body></html>
