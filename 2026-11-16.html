@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 11月16日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月16日</h1><div class="sub">今日主题：Agent 技能潮进入“质检与交付”阶段——英伟达给技能打分、腾讯把交付编成 SOP；办公套件也开始为 Agent 而生。</div></header>
+<div><section><h2>重点项目</h2>
+<div class="card"><h3><a href="https://github.com/dream-num/univer">dream-num/univer</a></h3>
+<div><span class="badge">Office SDK</span><span class="badge">表格文档</span><span class="badge">AI Agent</span><span class="badge">Apache-2.0</span></div>
+<div class="stats">今日新增 988 星，总星数 25,600，Fork 2,339；日榜第一</div>
+<p>DreamNum 出品的开源 Office SDK：把真正能算公式的表格、文档、幻灯片嵌进自己的产品，而不是再套一层 Google Sheets 或商业表格控件。核心是微内核加插件架构、Canvas 渲染与自研公式引擎（500 多个函数），同一套 Facade API 在浏览器与 Node.js 无头运行时通用。9 月 24 日发布 1.0 后团队把定位改成“The Office Harness for AI Agents”：Agent 通过结构化 API 读写表格文档，在隔离的 worktree 草稿里改、由人审阅合并，还能截图校验结果。它是该团队旧项目 Luckysheet（约 1.66 万星，已归档）的继任者。注意开源核心只含基础编辑与计算，实时协作、导入导出 xlsx、图表与透视表属于付费的 Univer Pro 层。</p>
+<div class="verdict">💡 点评：当 Agent 开始替人做表、写文档，就需要一个“Agent 能读写的 Office”；Univer 押的就是这个缺口。连续多日近千星，说明“给 Agent 配办公套件”已从概念变成采购清单上的一项。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/backnotprop/plannotator">backnotprop/plannotator</a></h3>
+<div><span class="badge">Agent 审阅</span><span class="badge">批注反馈</span><span class="badge">本地优先</span><span class="badge">Apache-2.0</span></div>
+<div class="stats">今日新增 866 星，总星数 11,823，Fork 1,082；日榜第四，本周新增 1,719 星</div>
+<p>给编码 Agent 补“人工复核层”的本地浏览器工具：通过插件与钩子接进 Claude Code、Codex、Copilot CLI、Gemini CLI、OpenCode、Kiro、Droid、Amp、Pi 等 Agent，当 Agent 拿出方案、写完代码或生成 HTML 成品时，自动在浏览器里打开审阅面——你可以直接在方案、Markdown、HTML 或 diff 上批注，点一下发送，意见就作为下一轮输入回给 Agent。还支持 Git、GitButler、Jujutsu、Perforce 与 GitHub/GitLab 的 PR/MR 审阅，以及一个 Inbox 收拢多 Agent 的提问与文件。数据默认只留本地、不采集使用统计。作者 backnotprop 本人也在今日开发者榜上。</p>
+<div class="verdict">💡 点评：Agent 越能干，人越需要一个“看一眼再放行”的地方；plannotator 把 code review 的手感搬到了人机协作里。日周双榜齐涨，是多 Agent 并行干活正在变成常态的侧证。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a></h3>
+<div><span class="badge">代码评审</span><span class="badge">LLM Agent</span><span class="badge">阿里巴巴</span><span class="badge">混合架构</span></div>
+<div class="stats">今日新增 691 星，总星数 52,061，Fork 4,109；日榜第六，连续三日高位</div>
+<p>阿里巴巴开源的代码评审工具，主打“确定性流水线 + LLM Agent”的混合架构：先用确定性规则做精确的行级检查，再由 Agent 做语义判断，内置多语言规则集，覆盖空指针、线程安全、XSS、SQL 注入等常见问题，兼容 OpenAI 与 Anthropic 的模型接口。卖点是“在阿里规模下经过实战检验”——大厂内部评审工具开源，天然自带可信度背书。昨日新增 893 星、今日 691 星，热度没有一日游。</p>
+<div class="verdict">💡 点评：代码评审是 Agent 落地最先被验证的场景之一；阿里把内部工具开源，等于把“Agent 审代码”这件事的门槛又拉低了一截。适合想在 CI 里加一层 AI 评审的团队关注。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/Tencent/LoopForge">Tencent/LoopForge</a></h3>
+<div><span class="badge">Agent 编排</span><span class="badge">团队交付</span><span class="badge">自托管</span><span class="badge">MIT</span></div>
+<div class="stats">今日新增 423 星，总星数 1,464，Fork 264；日榜第七，11 月 15 日刚开源</div>
+<p>腾讯 Lighthouse 团队刚开源的自托管团队级 AI 研发协作平台，解决的是“Agent 会写代码，但不会按团队流程交付”的断层：用户用一句话向 Main Bot 提需求，平台在 Docker 沙箱里拉代码、按角色分工（规划、实现、评审、测试）编排 CodeBuddy、Codex、Claude Code 干活，全程留痕、关键节点设人工审批，最后开 PR；跑通的工作方式可以存成 SOP（标准作业程序），下次同类需求照此复用。另有 LoopForge Local：一行 npx 命令把同一套分阶段交付流程装进已有的 Claude Code、Codex、Cursor、CodeBuddy 或 Pi，85 个文件、不需要服务器。注意提示词主体目前是中文，11 月 9 日至 13 日已连发五个版本。</p>
+<div class="verdict">💡 点评：从“一个 Agent 帮我写代码”到“一套 SOP 管一群 Agent 交活”，LoopForge 是大厂把内部研发流程产品化的典型动作；总星数还小，但刚开源一天就上日榜，值得持续观察。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/NVIDIA/SkillEvaluator">NVIDIA/SkillEvaluator</a></h3>
+<div><span class="badge">技能评测</span><span class="badge">Agent Skills</span><span class="badge">三层框架</span><span class="badge">Apache-2.0</span></div>
+<div class="stats">今日新增 122 星，总星数 1,665，Fork 228；日榜第十二，11 月 13 日刚发 v0.9.0</div>
+<p>英伟达开源的 Agent 技能评测框架，回答的是技能潮里最缺的一问：这个 SKILL.md 到底有没有用。三层各司其职：Tier 1 静态质检（格式、密钥与 PII 扫描、隐藏 Unicode、脚本 lint，集成 SkillSpector 做安全扫描）；Tier 2 语义去重（技能之间是否重复）；Tier 3 实测（在沙箱里让 Agent 同一任务跑两次——装技能与不装——算出 Skill Lift 提升值）。配套论文（arXiv:2608.20614）称 947 组配对实测平均 Skill Lift 为 0.2134，72.8% 的技能确有正向提升；官方博客称 300 多个已验证技能平均正确率提升 41 分。标注为 Experimental（实验性，无 SLA），Tier 1 不用 API key 就能跑。</p>
+<div class="verdict">💡 点评：技能从“人人都会写”走向“写完要测”，评测框架是生态成熟的标志；不过论文里的提升数字来自英伟达自家已验证技能目录，别直接当成自己技能的承诺。写技能、管技能库的团队可以先从 Tier 1 用起。</div>
+</div>
+</section>
+<section><h2>日榜其余一句话点评</h2>
+<ul class="tight">
+<li><a href="https://github.com/GoogleChrome/modern-web-guidance-src">GoogleChrome/modern-web-guidance-src</a>：今日新增 1,219 星、总星数 7,149，连续第三天单日破千星，Chrome 官方的现代 Web 开发指南技能源仓库热度不减。</li>
+<li><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a>：今日新增 717 星、总星数 56,909，Chrome DevTools 官方 MCP，Agent 直接操控真实浏览器做调试与性能分析。</li>
+<li><a href="https://github.com/tradermonty/claude-trading-skills">tradermonty/claude-trading-skills</a>：今日新增 706 星、总星数 5,538，面向散户的 Claude Code 交易技能包，连续三日高位。</li>
+<li><a href="https://github.com/ag-ui-protocol/ag-ui">ag-ui-protocol/ag-ui</a>：今日新增 355 星、总星数 17,842，把 Agent 接进前端应用的交互协议（AG-UI）。</li>
+<li><a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a>：今日新增 247 星、总星数 9,284，Google Stitch 的 Agent Skills 库，兼容 Antigravity、Gemini CLI、Claude Code、Cursor。</li>
+<li><a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a>：今日新增 98 星、总星数 6,421，82 个漏洞挖掘技能、681 个已披露报告模式的安全技能包。</li>
+<li><a href="https://github.com/ggml-org/ggml">ggml-org/ggml</a>：今日新增 43 星、总星数 15,902，机器学习张量库，老牌底座偶尔回榜。</li>
+</ul>
+</section>
+<section><h2>周榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/meta/astryx">meta/astryx</a>：本周新增 13,501 星、总星数 28,845，继续稳坐周榜第一，Meta 八年内部设计系统开源版的热度尚未退潮。</li>
+<li><a href="https://github.com/sherlock-project/sherlock">sherlock-project/sherlock</a>：本周新增 10,412 星、总星数 112,475，老牌用户名社媒追踪工具强势回榜，月榜同样新增 18,371 星。</li>
+<li><a href="https://github.com/anthropics/skills">anthropics/skills</a>：本周新增 6,077 星、总星数 195,355，Anthropic 官方 Agent Skills 仓库仍是技能潮的源头活水。</li>
+<li><a href="https://github.com/ZhuLinsen/daily_stock_analysis">ZhuLinsen/daily_stock_analysis</a>：本周新增 4,548 星、总星数 72,500，LLM 驱动的多市场股票分析系统，Fork 数高达 57,568，值得留意。</li>
+<li><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a>：本周新增 5,463 星、总星数 23,385，带虚拟机的开源 Grok Bot 替代品。</li>
+<li><a href="https://github.com/google/elephant-goldfish-model">google/elephant-goldfish-model</a>：本周新增 5,060 星、总星数 19,754，Google 开源的 Agent 辅助软件设计与评审插件。</li>
+</ul>
+</section>
+<section><h2>月榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>：本月新增 43,540 星、总星数 73,225，月榜第二，Cloudflare 的多阶段安全审计技能是本月最大黑马。</li>
+<li><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>：本月新增 33,583 星、总星数 61,524，随时随地操控 Claude Code、Codex 的远程工具。</li>
+<li><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>：本月新增 29,631 星、总星数 110,748，给编码 Agent 的设计品味词典，防 AI 味设计。</li>
+<li><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>：本月新增 25,448 星、总星数 55,490，反 AI 味设计技能，月榜第一。</li>
+<li><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>：本月新增 20,878 星、总星数 84,743，写 HTML 就能渲染视频，为 Agent 而生的视频框架。</li>
+<li>月榜主线仍是 Agent Skills：前十里技能类占大半，安全审计、设计品味、视频制作三条线各自跑出头部。</li>
+</ul>
+</section>
+<section><h2>开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/pbakaus">pbakaus</a>：凭借 impeccable（月榜新增近 3 万星）上榜，设计品味正在成为 Agent 时代的新显学。</li>
+<li><a href="https://github.com/backnotprop">backnotprop</a>：plannotator 的作者，日榜与开发者榜双上榜。</li>
+<li><a href="https://github.com/ersinkoc">ersinkoc</a>：代表作 ersinkoc/phonebox，登顶今日开发者榜。</li>
+</ul>
+</section>
+<section><h2>分语言榜亮点</h2>
+<ul class="tight">
+<li>Python：<a href="https://github.com/bojieli/ai-infra-book">bojieli/ai-infra-book</a> 今日新增 127 星、总星数 7,820，李博杰《深入理解 AI Infra》开源书稿，中文 AI Infra 读物里少见的系统性作品。</li>
+<li>Rust：<a href="https://github.com/martin-olivier/airgorah">martin-olivier/airgorah</a> 今日新增 684 星、总星数 6,250，WiFi 安全审计工具，Rust 日榜第一。</li>
+<li>Go：<a href="https://github.com/tailscale/tailcat">tailscale/tailcat</a> 今日新增 238 星、总星数 9,941，像 netcat 但走 Tailscale 数据平面、不要控制平面。</li>
+<li>TypeScript：<a href="https://github.com/tashfeenahmed/freellmapi">tashfeenahmed/freellmapi</a> 今日新增 579 星、总星数 52,904，号称聚合 87 个免费 LLM 渠道的统一入口（仅供个人实验）。</li>
+</ul>
+<p>数据口径：未登录抓取 github.com/trending 的日榜、周榜、月榜、开发者榜与分语言榜（Python / TypeScript / Rust / Go）；星数为各榜单周期内新增，采集时间 2026-11-16 08:21（Asia/Shanghai）。日榜约 12 条、周榜约 11 条为未登录抓取可见范围。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
