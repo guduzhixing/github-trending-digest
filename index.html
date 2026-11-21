@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub 热榜解说 · 11月20日</title><style>
+<title>GitHub 热榜解说 · 11月21日</title><style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
 .wrap{max-width:720px;margin:0 auto}
@@ -26,87 +26,77 @@ code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
 footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
 </style></head>
 <body><div class="wrap">
-<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月20日</h1><div class="sub">Agent Skills 仍是绝对主角：日榜前三全是技能类项目，安全审计与红队技能包同时霸榜；Chrome 官方的现代 Web 指导与 Cloudflare 的审计技能延续强势。</div></header>
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月21日</h1><div class="sub">Agent Skills 持续霸榜，腾讯 LoopForge 异军突起，安全与编排成今日主线</div></header>
 <div><section><h2>重点项目</h2>
 <div class="card"><h3><a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a></h3>
-<p>把 Claude Code 变成有纪律的漏洞赏金猎手与外部红队操作员。作者是安全研究员 Sachin Sharma，仓库 2026 年 5 月创建、MIT 开源，内含 82 个技能、15 个斜杠命令，方法论来自 681 份公开披露的 HackerOne 报告（433 份逐条引用），覆盖 24 类核心漏洞：58 个 hunt 技能分管 XSS、SQLi、SSRF、IDOR、SSTI 等 Web 漏洞类，另有企业身份与基础设施攻击矩阵、侦察与报告技能。工作流是侦察、建图排序、狩猎、验证、报告五步，范围检查写进代码：只做互联网可达的外部攻击面，内网 AD、后渗透、C2、免杀明确排除，每条发现须过七问验证门才写报告。支持 Claude Code 插件安装，技能本身兼容 OpenCode、Codex、Antigravity 等 Agent Skills 标准格式。</p>
-<div><span class="badge">Python</span><span class="badge">安全技能包</span><span class="badge">MIT</span></div>
-<div class="stats">日榜第 1，今日新增 1,349 星，总星 12,503，月榜新增 6,708</div>
-<div class="verdict">💡 技能生态里少见的&quot;进攻型&quot;代表作：火的不是噱头，是把真实披露报告沉淀成可复用的狩猎方法论。提醒一句：只能测自己拥有或获书面授权的资产，Anthropic 模型对进攻性安全工作有实时防护，授权测试也可能被拦截，官方建议走 Cyber Verification Program。</div>
+<div><span class="badge">Agent Skills</span><span class="badge">安全红队</span><span class="badge">Claude Code</span></div>
+<div class="stats">今日新增 1,622 ⭐ · 总星 14,244 · Fork 1,698 · 日榜第 1 · 月新增 8,329</div>
+<div class="verdict">💡 连续第二天登顶日榜，热度没有半点回落。这是一套给 Claude Code 的漏洞挖掘与外部红队技能包：80 余个技能、15 条斜杠命令，核心素材来自 681 份已公开的 HackerOne 报告，覆盖 24 类漏洞、58 种 Web 漏洞打法，从 XSS、SSRF、IDOR 到 OAuth、GraphQL 注入都有现成检测模式与绕过表。更进一步的是企业边界攻击矩阵——M365/Entra、Okta、vCenter、SSL-VPN 设备都在覆盖范围，并用“7 问门禁”卡住提交前的授权与范围校验。作者是安全研究员 Sachin Sharma，技能本身是标准 SKILL.md 格式，可跨 Claude Code、OpenCode、Codex、Antigravity 等多个 Agent 框架复用。适合白帽子、安全研究员与红队从业者关注；仅限授权资产使用，作者在 README 里明确划了红线。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a></h3>
-<p>港大 HKUDS 数据智能实验室的作品，论点很直接：今天的软件服务人类，明天的用户是 Agent；别再教 Agent 截图点按钮，直接给软件生成命令行。七阶段流水线（HARNESS.md）读任意软件源码、把 GUI 操作映射到底层 API，生成基于 Click 的 CLI：结构化 JSON 输出、REPL、撤销/重做，并附测试与文档；生成的 CLI 调用真实软件后端——LibreOffice 出真 PDF、Blender 渲真 3D 场景，不是重实现。配套 CLI-Hub（clianything.cc）是注册表加包管理器，约百个 CLI、35 个品类，已覆盖 GIMP、Blender、Inkscape、LibreOffice、OBS、Zotero、FreeCAD、QGIS 等，仓库自称 2,461 个测试全过。同实验室还出过 RAG-Anything，6 月有 arXiv 技术报告。</p>
-<div><span class="badge">Python</span><span class="badge">Agent 原生接口</span><span class="badge">Apache-2.0</span></div>
-<div class="stats">日榜第 3，今日新增 898 星，总星 60,542，连续两天在榜</div>
-<div class="verdict">💡 &quot;Agent 原生&quot;这条路线上最有分量的学术派项目：MCP 补的是调用协议，它补的是被控软件根本没有 Agent 接口这个缺口。冷静一点看：仓库代码更新停在 2026 年 8 月，生成新 CLI 仍需前沿模型且耗时不短，先用 CLI-Hub 里现成的 GIMP、Blender 等套件试手最划算。</div>
+<div class="card"><h3><a href="https://github.com/Tencent/LoopForge">Tencent/LoopForge</a></h3>
+<div><span class="badge">腾讯开源</span><span class="badge">Agent 编排</span><span class="badge">自托管</span></div>
+<div class="stats">今日新增 1,216 ⭐ · 总星 5,273 · Fork 726 · Go 语言日榜第 1</div>
+<div class="verdict">💡 今日最大黑马：总星只有 5 千出头，单日却吸走 1,216 星，增速在全榜断层领先。这是腾讯开源的自托管编码 Agent 交付工作台，解决的是“让 Agent 写代码”从个人提效走向团队交付的问题。两种工作方式：跟 Main Bot 对话下需求，自动开 Docker 沙箱、拉仓库、派角色、提 PR；或把验证过的流程存成 SOP——Agent、脚本、人工审批节点按顺序跑，失败可回退重试。执行器覆盖 CodeBuddy、Codex、Claude Code、Cursor CLI、Antigravity 等 10 种编码 Agent CLI，内置后端、前端、修 Bug 等 starter SOP。项目 2026 年 7 月创建，已有 15 个 Release。适合想把 AI 编程沉淀为团队可重复流程的技术负责人；注意它要接管宿主机 Docker socket，官方定位是可信团队内部署，不适合多租户场景。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/obra/superpowers">obra/superpowers</a></h3>
-<p>Agent 技能生态的&quot;老大哥&quot;，给编码 Agent 加一套可组合的技能与结构化开发方法论：先问清真实目标、拆出规格、再动手，强调真正的红绿 TDD、YAGNI、DRY，以及按任务派发全新子 Agent、两阶段评审（规格合规、代码质量）的子 Agent 驱动开发。作者 obra（Jesse Vincent）是老牌开源人。安装覆盖 Claude Code、Antigravity、Codex、Cursor、Gemini CLI、GitHub Copilot CLI、OpenCode、Pi 等十余种 Agent，最新版 v6.3.0。本周它在技能排行榜上仍排第二，仅次于 mattpocock/skills。</p>
-<div><span class="badge">Shell</span><span class="badge">开发方法论</span><span class="badge">MIT</span></div>
-<div class="stats">日榜第 2，今日新增 2,028 星（全日最大增量），总星 322,067，近 7 日新增约 5,259 星</div>
-<div class="verdict">💡 32 万星的体量还能单日涨 2,000 星，说明&quot;给 Agent 立规矩&quot;仍是最大共识。适合刚把 Agent 接进团队流程的人直接照搬它的方法论；但注意它只是技能与指令集，不保证各宿主 Agent 的钩子与上下文行为一致，落地效果因工具而异。</div>
+<div class="card"><h3><a href="https://github.com/jingyaogong/minimind">jingyaogong/minimind</a></h3>
+<div><span class="badge">LLM 训练</span><span class="badge">教学项目</span><span class="badge">中文项目</span></div>
+<div class="stats">今日新增 847 ⭐ · 总星 67,679 · Fork 8,858 · Python 日榜前列</div>
+<div class="verdict">💡 口号很直白：“两小时从 0 训出你的 64M 大模型”。这是一个面向教学的极简 LLM 从零训练项目，把预训练的完整链路压缩到普通人一个下午能跑完的规模，总星已逼近 6.8 万，是中文原创教学项目里少见的长青款。今天再度冲进日榜前列，说明“自己动手训一个模型”的需求仍在升温——大家不只想调用模型，更想理解模型是怎么来的。适合 AI 学习者、学生与想补 LLM 训练基本功的开发者；64M 参数只是教学规模，别指望它直接干活，价值在过程而非产出。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/GoogleChrome/modern-web-guidance-src">GoogleChrome/modern-web-guidance-src</a></h3>
-<p>Chrome、Edge、Firefox 与 MDN 四方联合维护的官方项目，解决一个具体毛病：LLM 训练数据里遗留代码太多，编码 Agent 写前端总默认用老套路。做法不是改模型，而是在 Agent 干活时把专家审定的现代 Web 指南喂进上下文：CLI 提供 search、retrieve、legacy-scan 三个命令，可检索指南、按 ID 取回单条（如 animate-to-from-top-layer），或扫描代码库找 legacy 模式。内容覆盖 250 个现代 Web 特性（CSS 与布局 140、JS 与 API 74、HTML 与 DOM 36）与 203 个真实开发场景，分属用户体验、CSS 布局、性能、表单与 UI、无障碍、内置 AI 六大学科，附 Baseline 兼容性标注。2026 年 5 月 Google I/O 首次发布，11 月 10 日刚发 v1.0.0。本仓库是作者与评测用的源码库，正式发布的技能在同名 release 仓库与 npm 包。</p>
-<div><span class="badge">TypeScript</span><span class="badge">Web 开发技能</span><span class="badge">Apache-2.0</span></div>
-<div class="stats">周榜新增 6,858 星，总星 9,113——本周新增占总星四分之三，连续两天居周榜前列</div>
-<div class="verdict">💡 浏览器厂商亲自下场给 Agent&quot;补课&quot;，信号意义大于功能本身：前端最佳实践正在从文档变成 Agent 可直接消费的技能。效果数字是项目方自评（自称约 +27 至 +36 个百分点），尚无第三方验证，先当查漏工具用，别当银弹。</div>
+<div class="card"><h3><a href="https://github.com/XiaoYouChR/Ghost-Downloader-3">XiaoYouChR/Ghost-Downloader-3</a></h3>
+<div><span class="badge">下载器</span><span class="badge">桌面工具</span><span class="badge">中文项目</span></div>
+<div class="stats">今日新增 1,082 ⭐ · 总星 13,688 · Fork 838 · 日榜第 4</div>
+<div class="verdict">💡 自称“下载器的集大成者”，单日新增破千、总星仅 1.3 万，增速比体量亮眼得多。Python 写的桌面下载工具，定位是把各类网络资源下载需求收进一个入口。这类工具的走红路径很固定：先在中文用户圈子里口口相传，再被热榜放大。适合经常需要批量保存网络资源的用户；下载类工具务必注意版权与来源合规，只下载自己有权保存的内容。</div>
 </div>
-<div class="card"><h3><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h3>
-<p>Cloudflare 开源的编码 Agent 安全审计技能，MIT 协议。它不是扫描器，而是一套指令集：把审计拆成六个阶段，由相互隔离的子 Agent 分工——侦察建架构图与覆盖台账、猎手按覆盖面找漏洞、对抗验证者独立复核发现，全程用覆盖台账（coverage-ledger.json）与结构化 findings 做确定性追踪，另附两个零依赖 Node 校验器。项目自述是 Cloudflare 内部漏洞发现流水线的单仓起点：据 Cloudflare 博客，该流水线处理了 128 个仓库，20,799 条原始候选压缩为 7,245 条可行动发现。需要支持并行子 Agent 的编码工具（Claude Code、Cursor、OpenCode、Codex 等）与 Node.js，审计只读代码、不碰线上系统。</p>
-<div><span class="badge">JavaScript</span><span class="badge">安全审计</span><span class="badge">MIT</span></div>
-<div class="stats">月榜第 1，月新增 44,608 星，总星 75,830</div>
-<div class="verdict">💡 与今日日榜第一的 BugHunter 正好一攻一守：一个教 Agent 找漏洞拿赏金，一个教 Agent 审代码防漏洞。Cloudflare 官方背书加可复现的内部战绩，是它一个月涨 4.4 万星的底气。注意它不自带沙箱，跑审计务必把 Agent 关进沙箱再执行目标代码。</div>
+<div class="card"><h3><a href="https://github.com/zhouxiaoka/autoclip">zhouxiaoka/autoclip</a></h3>
+<div><span class="badge">AI 视频剪辑</span><span class="badge">桌面工具</span><span class="badge">内容创作</span></div>
+<div class="stats">今日新增 979 ⭐ · 总星 12,171 · Fork 2,012 · 日榜第 5</div>
+<div class="verdict">💡 “一个链接，一键出片”：把播客、访谈、课程等长视频自动剪成短视频，顺带生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。开源桌面工具，Python 编写。长视频转短视频是创作者最耗时的环节之一，这类工具直接对准了“素材复用”的刚需。适合播客主、课程与访谈类创作者，以及做矩阵号的内容团队关注。</div>
 </div>
 </section>
 <section><h2>日榜其余一句话点评</h2>
 <ul class="tight">
-<li><a href="https://github.com/jingyaogong/minimind">jingyaogong/minimind</a>：两小时从零训出 64M 小模型的老牌中文教学项目，今日新增 238 星，总星 66,845。</li>
-<li><a href="https://github.com/cursor/plugins">cursor/plugins</a>：Cursor 官方插件规范与插件集，今日新增 384 星，总星 17,551，昨日日榜第一、今日仍在前五。</li>
-<li><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a>：给 Agent 用的搜索、抓取与 550+ 数据源统一 API，今日新增 825 星，总星 204,199。</li>
-<li><a href="https://github.com/nginx/nginx">nginx/nginx</a>：NGINX 官方开源仓库，今日新增 73 星，总星 32,325。</li>
-<li><a href="https://github.com/openvinotoolkit/openvino">openvinotoolkit/openvino</a>：英特尔 AI 推理优化部署工具包，今日新增 246 星，总星 11,556。</li>
-<li><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a>：给 Claude Code 等 Agent 用的编辑级图表设计技能，45 种图型、自包含 HTML+SVG，今日新增 271 星，总星 68,622。</li>
-<li><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a>：跨 Reddit、X、YouTube、HN 与 Polymarket 做主题调研并综合成 grounded 摘要的 Agent 技能，今日新增 954 星，总星 70,782。</li>
-<li><a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a>：Google Labs 出品的 Stitch MCP 技能库，兼容 Antigravity、Gemini CLI、Claude Code 等，今日新增 302 星，总星 10,714。</li>
-<li><a href="https://github.com/mjmirza/app-store-compliance">mjmirza/app-store-compliance</a>：防 App Store 与 Google Play 被拒的开源手册，117 种被拒模式与修复、95 个合规截止日期，今日新增 377 星，总星 1,828。</li>
-<li><a href="https://github.com/Tracer-Cloud/opensre">Tracer-Cloud/opensre</a>：面向 CI/CD 可靠性的开源 Agent，今日新增 38 星，总星 13,115。</li>
-<li><a href="https://github.com/toeverything/AFFiNE">toeverything/AFFiNE</a>：隐私优先、开源可定制的下一代知识库，今日新增 182 星，总星 75,157。</li>
-<li><a href="https://github.com/XiaoYouChR/Ghost-Downloader-3">XiaoYouChR/Ghost-Downloader-3</a>：号称&quot;一个就够&quot;的下载器集大成者，今日新增 341 星，总星 12,690。</li>
-<li><a href="https://github.com/zhouxiaoka/autoclip">zhouxiaoka/autoclip</a>：一键把长视频剪成短视频的开源 AI 剪辑桌面工具，带字幕、封面与发布文案，今日新增 126 星，总星 11,203。</li>
+<li><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a> — 今日新增 1,241，总星 20.5 万；给 Agent 用的知识基础设施，一个 API 接入 550+ 数据源的搜索与抓取。</li>
+<li><a href="https://github.com/obra/superpowers">obra/superpowers</a> — 新增 890，总星 32.3 万；Agent 开发方法论框架，榜单常客，热度仍在高位。</li>
+<li><a href="https://github.com/mjmirza/app-store-compliance">mjmirza/app-store-compliance</a> — 新增 869，总星仅 2,729；上架避坑手册，收录 117 种应用商店被拒模式与修复方法，小体量高增速。</li>
+<li><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a> — 新增 773，总星 6.1 万；港大团队出品，让所有软件都 Agent 原生化，连续两天上榜。</li>
+<li><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a> — 新增 681，总星 7.1 万；跨 Reddit、X、YouTube、HN 与 Polymarket 做主题调研再合成摘要的 Agent 技能。</li>
+<li><a href="https://github.com/toeverything/AFFiNE">toeverything/AFFiNE</a> — 新增 676，总星 7.6 万；隐私优先的开源知识库，Notion + Miro 的替代品。</li>
+<li><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a> — 新增 636，总星 6.9 万；给编码 Agent 的 45 种图表设计规范，专治 Mermaid 味的丑图。</li>
+<li><a href="https://github.com/Tracer-Cloud/opensre">Tracer-Cloud/opensre</a> — 新增 466，总星 1.36 万；面向 CI/CD 可靠性的开源 Agent。</li>
+<li><a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a> — 新增 315，总星 1.1 万；Google Stitch 的 Agent Skills 库，兼容多家编码 Agent。</li>
+<li><a href="https://github.com/cursor/plugins">cursor/plugins</a> — 新增 299，总星 1.78 万；Cursor 官方插件规范与插件集。</li>
+<li><a href="https://github.com/nginx/nginx">nginx/nginx</a> — 新增 246，总星 3.26 万；NGINX 官方开源仓库。</li>
+<li><a href="https://github.com/openvinotoolkit/openvino">openvinotoolkit/openvino</a> — 新增 217，总星 1.18 万；英特尔的 AI 推理优化与部署工具包。</li>
 </ul>
 </section>
-<section><h2>周榜</h2>
+<section><h2>周榜 / 月榜</h2>
 <ul class="tight">
-<li><a href="https://github.com/dream-num/univer">dream-num/univer</a>：周新增 7,248 星居周榜首，把办公套件编辑、计算与协作能力带进产品与 Agent 的开源 Office SDK。</li>
-<li><a href="https://github.com/GoogleChrome/modern-web-guidance-src">GoogleChrome/modern-web-guidance-src</a>：周新增 6,858 星，见重点项目。</li>
-<li><a href="https://github.com/meta/astryx">meta/astryx</a>：Meta 开源的可定制、Agent 就绪设计系统，周新增 4,977 星。</li>
-<li><a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a>：阿里巴巴开源的混合架构代码评审工具，确定性流水线加 LLM Agent，周新增 4,492 星。</li>
-<li><a href="https://github.com/backnotprop/plannotator">backnotprop/plannotator</a>：让人在环上管理 Agent 的工作台，周新增 3,468 星。</li>
-<li>新上榜：<a href="https://github.com/pookjw/HermesEnabler">pookjw/HermesEnabler</a>（给任意 Apple Watch 解锁爱马仕表盘，周新增 904 星）、<a href="https://github.com/kajisho5/ffmpeg-skill">kajisho5/ffmpeg-skill</a>（给编码 Agent 的 42 个 FFmpeg 工具，周新增 2,998 星）。</li>
-</ul>
-</section>
-<section><h2>月榜</h2>
-<ul class="tight">
-<li>月榜仍由安全与技能主导：<a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>（44,608 星）与 <a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>（37,642 星，手机电脑远程操控 Claude Code 等）分列前二；<a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a>（30,843 星，给编码 Agent 的设计词表）与 <a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>（27,756 星，反 AI 味设计技能）紧随其后。</li>
-<li>新上榜：<a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a>（6,708 星）、<a href="https://github.com/kajisho5/ffmpeg-skill">kajisho5/ffmpeg-skill</a>（6,206 星）、<a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a>（2,107 星）。</li>
+<li>周榜领跑是 <a href="https://github.com/dream-num/univer">dream-num/univer</a>，周新增 7,539，总星 3.1 万：可嵌入产品的 AI 办公套件 SDK，编辑、计算、协作与文件处理一次给齐。</li>
+<li><a href="https://github.com/GoogleChrome/modern-web-guidance-src">GoogleChrome/modern-web-guidance-src</a> 周新增 5,224，总星 9,527：让编码 Agent 跟上最新 Web 最佳实践的指南库，昨天日榜重点，今天仍在周榜前三。</li>
+<li><a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a> 周新增 4,457，总星 5.5 万：阿里巴巴开源的混合架构代码评审工具，确定性流水线 + LLM Agent，内置 NPE、线程安全、XSS、SQL 注入等多语言规则。</li>
+<li><a href="https://github.com/meta/astryx">meta/astryx</a> 周新增 4,131，总星 3.1 万：Meta 开源的 Agent-ready 设计系统。</li>
+<li>月榜仍由 <a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> 领跑，月新增 43,310，总星 7.6 万：Cloudflare 出品的多阶段安全审计技能，安全方向的 Agent Skills 已成月度级现象。</li>
+<li><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a> 月新增 38,744，总星 6.8 万：用手机远程操控 Claude Code、Codex 的工具。</li>
+<li><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a> 月新增 30,831，总星 11.4 万：给编码 Agent 的设计词汇表，专治 AI 味设计。</li>
+<li><a href="https://github.com/anthropics/skills">anthropics/skills</a> 月新增 16,149，总星 19.8 万：Anthropic 官方 Agent Skills 仓库。</li>
 </ul>
 </section>
 <section><h2>开发者榜</h2>
 <ul class="tight">
-<li><a href="https://github.com/mvanhorn">mvanhorn</a>：凭 last30days-skill 上榜（日榜 954 星、周榜 3,179 星），做跨平台主题调研的 Agent 技能。</li>
-<li><a href="https://github.com/ryansolid">ryansolid</a>：SolidJS 作者，现身开发者榜。</li>
-<li><a href="https://github.com/colbymchenry">colbymchenry</a>：codegraph 作者，给 Claude Code 等 Agent 用的预索引代码知识图谱，本地运行、省 token。</li>
+<li><a href="https://github.com/ryansolid">ryansolid</a> — SolidJS 作者，今日开发者榜前列。</li>
+<li><a href="https://github.com/78">78</a> — 代表作 <a href="https://github.com/78/xiaozhi-esp32">xiaozhi-esp32</a>，热门开源语音助手硬件项目作者。</li>
+<li><a href="https://github.com/musistudio">musistudio</a> — 代表作 <a href="https://github.com/musistudio/claude-code-router">claude-code-router</a>，Claude Code 模型路由工具作者。</li>
 </ul>
 </section>
 <section><h2>分语言榜</h2>
 <ul class="tight">
-<li>Python：<a href="https://github.com/google-research/paper-orchestra">google-research/paper-orchestra</a>（谷歌研究院多 Agent 自动写论文框架，今日新增 1,196 星）与 <a href="https://github.com/microsoft/markitdown">microsoft/markitdown</a>（文件转 Markdown，今日新增 434 星）亮眼。</li>
-<li>TypeScript：<a href="https://github.com/solidjs/solid">solidjs/solid</a> 今日新增 459 星；<a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a> 新增 249 星。</li>
-<li>Rust：<a href="https://github.com/rustdesk/rustdesk">rustdesk/rustdesk</a>（开源远程桌面，新增 221 星）、<a href="https://github.com/t8y2/dbx">t8y2/dbx</a>（支持 100+ 数据库的轻量客户端，新增 155 星）。</li>
-<li>Go：<a href="https://github.com/getarcaneapp/arcane">getarcaneapp/arcane</a>（现代 Docker 管理，新增 497 星）、<a href="https://github.com/Tencent/LoopForge">Tencent/LoopForge</a>（腾讯开源的编码 Agent 交付编排，新增 276 星）。</li>
+<li>Go 榜由腾讯 LoopForge 领跑，单日新增 1,216，远超同榜其他项目。</li>
+<li>Python 榜前列是 Claude-BugHunter 与 minimind，安全技能与 LLM 教学各占一席。</li>
+<li>TypeScript 榜由 firecrawl 领跑，单日新增 1,241，总星 20.5 万。</li>
+<li>Rust 榜前列是老牌远程桌面 <a href="https://github.com/rustdesk/rustdesk">rustdesk/rustdesk</a>，今日新增 250，总星 13.1 万。</li>
 </ul>
-<p>数据口径：未登录抓取 github.com/trending（日榜/周榜/月榜、开发者榜、分语言榜），周期新增星数为榜单所示值；采集时间 2026-11-20 08:21（北京时间）。重点项目背景经公开资料交叉核实，未核实的信息未写入。</p>
+<p>数据口径：未登录抓取 github.com/trending 页面解析；日榜 16 条、周榜 13 条、月榜 17 条、开发者榜 25 位；星数为采集时刻的页面数值，“今日新增”指该榜单周期内的新增星数；采集时间 2026-11-21 08:21（Asia/Shanghai），采集成功，无错误。</p>
 </section>
 <footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
 </div></div></body></html>
