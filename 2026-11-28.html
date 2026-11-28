@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 热榜解说 · 11月28日</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.75;padding:24px 16px 64px}
+.wrap{max-width:720px;margin:0 auto}
+header{text-align:center;padding:36px 0 8px}
+header .kicker{color:#58a6ff;font-size:13px;letter-spacing:4px;margin-bottom:12px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
+header .sub{color:#8b949e;font-size:13px;margin-top:10px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:20px;background:#161b22;border:1px solid #30363d;color:#8b949e;margin:3px 4px 3px 0}
+section{margin-top:36px}
+section>h2{font-size:19px;margin-bottom:16px;padding-left:12px;border-left:4px solid #58a6ff}
+.card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card h3 a{color:#58a6ff;text-decoration:none}
+.stats{font-size:13px;color:#8b949e;margin:8px 0 12px}
+.stats b{color:#f778ba;font-size:15px}
+.card p{font-size:14.5px;color:#c9d1d9;margin-bottom:10px}
+.verdict{background:#0d1117;border-left:3px solid #3fb950;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#a5d6a7;margin-top:12px}
+ul.tight{list-style:none}
+ul.tight li{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:14px;color:#c9d1d9}
+ul.tight li a{color:#58a6ff;text-decoration:none;font-weight:600}
+code{background:#0d1117;padding:1px 6px;border-radius:6px;font-size:13px}
+footer{margin-top:44px;text-align:center;color:#6e7681;font-size:12px}
+</style></head>
+<body><div class="wrap">
+<header><div class="kicker">DAILY DIGEST</div><h1>GitHub 热榜解说 · 11月28日</h1><div class="sub">日榜阵容与位次连续第四天完全相同，Claude-BugHunter 连续第七天登顶日榜；周榜、月榜同样无新入、无名次变动；开发者榜则出现换位，wey-gu 升至第 1，mvanhorn 从第 22 跃升至第 4</div></header>
+<div><section><h2>重点项目</h2>
+<div class="card"><h3><a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a></h3>
+<div><span class="badge">Agent Skills</span><span class="badge">安全红队</span><span class="badge">漏洞挖掘</span></div>
+<div class="stats">今日新增 1,608 ⭐ · 总星 26,065 · Fork 2,684 · 日榜第 1 · 月新增 20,246</div>
+<div class="verdict">💡 连续第七天登顶日榜，总星一日之内从 24,555 涨到 26,065，月新增突破 2 万。给 Claude Code 用的漏洞挖掘与外部红队技能包：85 个技能、16 条斜杠命令，整理了 681 个已公开披露报告的利用模式，覆盖 24 类核心漏洞，外加企业身份与基础设施攻击矩阵。它火的逻辑没有变：Agent 写代码越来越多，找漏洞这件事也被技能化、流程化了，一套现成的红队方法论比从零攒提示词省事得多。适合做安全审计、渗透测试与代码审查的开发者；红队工具的边界要自己把握好，只用于授权范围内的测试。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></h3>
+<div><span class="badge">Agent 基础设施</span><span class="badge">数据抓取</span><span class="badge">搜索 API</span></div>
+<div class="stats">今日新增 822 ⭐ · 总星 211,680 · Fork 11,144 · 日榜第 6 · TypeScript 榜第 2</div>
+<div class="verdict">💡 总星突破 21 万，是日榜前列里体量最大的项目之一，单日仍能新增 822。它给 Agent 做知识基础设施：搜索、抓取与访问 550 多个数据提供方收进一个 API，Agent 不用自己到处写爬虫、处理反爬与格式清洗。定位很清晰——当 Agent 技能越来越多，真正稀缺的不是技能本身，而是技能背后干净、稳定、可编程的数据源。适合给 Agent 接外部实时数据的开发者与做 AI 应用的团队；按量计费的 API 模式，用量大了要留意成本。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a></h3>
+<div><span class="badge">Agent Skills</span><span class="badge">主题调研</span><span class="badge">多源聚合</span></div>
+<div class="stats">今日新增 675 ⭐ · 总星 76,361 · Fork 6,796 · 日榜第 10 · 周新增 5,072 · 周榜第 6</div>
+<div class="verdict">💡 周新增 5,072，仍是周榜里吸星最多的项目——调研类技能的需求还在涨。这个 Agent 技能跨 Reddit、X、YouTube、Hacker News、Polymarket 与全网做主题研究，再综合成一份有依据的摘要，相当于把“过去 30 天发生了什么”这件事交给 Agent 一站式完成。作者 mvanhorn 今日从开发者榜第 22 跃升至第 4，是今日日榜、周榜、开发者榜三榜同在的作者。适合做竞品跟踪、舆情复盘与选题研究的开发者与研究者；聚合结果的时效性与信源质量仍需抽查。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></h3>
+<div><span class="badge">Agent Skills</span><span class="badge">图表设计</span><span class="badge">设计规范</span></div>
+<div class="stats">今日新增 725 ⭐ · 总星 74,453 · Fork 5,027 · 日榜第 9</div>
+<div class="verdict">💡 单日新增 725，在日榜前十里增速仅次于 BugHunter 与 firecrawl。它是给 Claude Code、Codex、GitHub Copilot、Cursor 等编码 Agent 用的图表设计技能：52 种图表类型，自包含的 HTML + SVG 输出，不要阴影、拒绝“Mermaid 味”。火的逻辑与 hallmark、impeccable 同一条线：Agent 能写代码了，但审美还停留在默认模板，于是“设计品味”本身被做成了可安装的技能包。适合让 Agent 出图、做演示与文档的开发者；它是设计规范而非绘图工具，仍需配合 Agent 使用。</div>
+</div>
+<div class="card"><h3><a href="https://github.com/mjmirza/app-store-compliance">mjmirza/app-store-compliance</a></h3>
+<div><span class="badge">上架合规</span><span class="badge">应用商店</span><span class="badge">避坑手册</span></div>
+<div class="stats">今日新增 530 ⭐ · 总星 7,897 · Fork 596 · 日榜第 12</div>
+<div class="verdict">💡 总星一日之内从 7,024 涨到 7,897，是今日日榜里总星涨幅第二大的项目（仅次于 BugHunter）。上架避坑手册，125 种被拒模式与修复方法，附欧盟 AI 法案等 117 个合规截止日期跟踪，外加一个给 AI 编码 Agent 用的技能。火的原因很实际：AI 写应用越来越快，卡在应用商店审核这一关的人也越来越多，一份现成的被拒模式清单比自己踩坑便宜得多。适合独立开发者与准备上架 App Store、Google Play 的团队；合规截止日期涉及多国法规，关键节点仍需以官方来源为准。</div>
+</div>
+</section>
+<section><h2>日榜其余一句话点评</h2>
+<ul class="tight">
+<li><a href="https://github.com/obra/superpowers">obra/superpowers</a> — 今日新增 922，总星 328,300；全榜总星最高的项目，一套可落地的 Agent 开发技能框架与方法论，每天仍稳定吸走近千星。</li>
+<li><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a> — 今日新增 666，总星 66,999；港大团队出品，让所有软件都 Agent 原生化，给软件生成结构化 CLI 再附 SKILL.md，涨幅继续领跑。</li>
+<li><a href="https://github.com/jingyaogong/minimind">jingyaogong/minimind</a> — 今日新增 660，总星 72,207；两小时从零训出 64M 小模型的中文教学项目，总星突破 7.2 万。</li>
+<li><a href="https://github.com/cursor/plugins">cursor/plugins</a> — 今日新增 243，总星 20,011；Cursor 官方插件规范与插件集，总星突破 2 万。</li>
+<li><a href="https://github.com/Tracer-Cloud/opensre">Tracer-Cloud/opensre</a> — 今日新增 328，总星 16,126；面向 CI/CD 可靠性的开源 Agent。</li>
+<li><a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a> — 今日新增 311，总星 13,590；Google Labs 出品的 Stitch 设计转代码技能库，遵循 Agent Skills 开放标准。</li>
+<li><a href="https://github.com/toeverything/AFFiNE">toeverything/AFFiNE</a> — 今日新增 474，总星 79,450；隐私优先的开源知识库，Notion + Miro 的替代品。</li>
+<li><a href="https://github.com/XiaoYouChR/Ghost-Downloader-3">XiaoYouChR/Ghost-Downloader-3</a> — 今日新增 836，总星 19,842；自称“下载器的集大成者”，连续多日单日新增近千。</li>
+<li><a href="https://github.com/zhouxiaoka/autoclip">zhouxiaoka/autoclip</a> — 今日新增 718，总星 17,583；一个链接一键出片的开源 AI 视频剪辑桌面工具，适配抖音、小红书与 YouTube Shorts。</li>
+<li><a href="https://github.com/openvinotoolkit/openvino">openvinotoolkit/openvino</a> — 今日新增 151，总星 12,953；英特尔的 AI 推理优化与部署工具包。</li>
+<li><a href="https://github.com/nginx/nginx">nginx/nginx</a> — 今日新增 146，总星 33,662；NGINX 官方开源仓库。</li>
+</ul>
+</section>
+<section><h2>周榜 / 月榜</h2>
+<p>今日周榜、月榜均无新入、无名次变动。</p>
+<ul class="tight">
+<li><a href="https://github.com/backnotprop/plannotator">backnotprop/plannotator</a> 周新增 1,596，总星 15,424：周榜第 1，让人随时跟进 Agent 工作的工作台，批注、评审与反馈一键发回 Agent。</li>
+<li><a href="https://github.com/kajisho5/ffmpeg-skill">kajisho5/ffmpeg-skill</a> 周新增 3,169，总星 11,890：周榜里周新增最高的项目，给编码 Agent 的本地视频编辑技能，42 个 FFmpeg 工具加 MCP 服务器，不上云、不要 API 密钥。</li>
+<li><a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a> 周新增 2,616，总星 13,591：周榜第 2，Google Labs 的 Stitch 技能库。</li>
+<li><a href="https://github.com/meta/astryx">meta/astryx</a> 周新增 2,306，总星 33,536：Meta 开源的 Agent-ready 设计系统。</li>
+<li><a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a> 周新增 2,335，总星 56,893：阿里巴巴开源的混合架构代码评审工具，确定性流水线 + LLM Agent，内置多语言规则。</li>
+<li><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a> 月新增 51,428，总星 82,180：月新增仍居首，用手机远程操控 Claude Code、Codex。</li>
+<li><a href="https://github.com/Ebony-Vinyl/dsh-our-free-model">Ebony-Vinyl/dsh-our-free-model</a> 月新增 45,874，总星 89,110：给 dsh 用的免费模型插件，免登录、免 API Key 用 DeepSeek V4.1 Flash、Kimi K3 等前沿模型；提醒一句：免费通道的提示词可能被上游记录以改进服务，敏感内容慎用。</li>
+<li><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> 月新增 30,171，总星 79,272：Cloudflare 的多阶段安全审计技能。</li>
+<li><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a> 月新增 24,421，总星 62,086：给 Claude Code、Cursor 与 Codex 的反 AI 味设计技能。</li>
+<li><a href="https://github.com/anthropics/skills">anthropics/skills</a> 月新增 17,791，总星 201,512：Anthropic 官方 Agent Skills 仓库，总星突破 20 万。</li>
+</ul>
+</section>
+<section><h2>开发者榜</h2>
+<ul class="tight">
+<li><a href="https://github.com/wey-gu">wey-gu</a> — 今日开发者榜第 1（昨日第 3），代表作 <a href="https://github.com/wey-gu/ducter">wey-gu/ducter</a>。</li>
+<li><a href="https://github.com/lalalune">lalalune</a> — 今日开发者榜第 2（昨日第 1），代表作 <a href="https://github.com/lalalune/vibestack">lalalune/vibestack</a>。</li>
+<li><a href="https://github.com/1337isnot1337">1337isnot1337</a> — 今日开发者榜第 3，代表作 <a href="https://github.com/1337isnot1337/solved-conjectures">1337isnot1337/solved-conjectures</a>。</li>
+<li><a href="https://github.com/mvanhorn">mvanhorn</a> — 今日开发者榜第 4（昨日第 22），代表作 <a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a>，日榜、周榜、开发者榜三榜同在。</li>
+<li><a href="https://github.com/saiemgilani">saiemgilani</a> — 今日开发者榜第 5，新入前五，代表作 <a href="https://github.com/saiemgilani/game-on-paper-app">saiemgilani/game-on-paper-app</a>。</li>
+<li><a href="https://github.com/yairm210">yairm210</a> — 昨日第 2，今日退至第 16，代表作 <a href="https://github.com/yairm210/Unciv">yairm210/Unciv</a>，开源的文明类策略游戏复刻。</li>
+</ul>
+</section>
+<section><h2>分语言榜</h2>
+<ul class="tight">
+<li>Python 榜由 Claude-BugHunter 领跑，单日新增 1,608；<a href="https://github.com/github/spec-kit">github/spec-kit</a> 单日新增 633，GitHub 官方的规格驱动开发（SDD）工具包；<a href="https://github.com/p-e-w/heretic">p-e-w/heretic</a> 单日新增 150，无需训练改模型行为的工具。</li>
+<li>TypeScript 榜由 firecrawl 领跑，单日新增 822，总星突破 21 万；<a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a> 单日新增 277，总星 22.9 万；<a href="https://github.com/earendil-works/pi">earendil-works/pi</a> 单日新增 235，总星 12.4 万。</li>
+<li>Go 榜由 <a href="https://github.com/multica-ai/multica">multica-ai/multica</a> 领跑，单日新增 132，总星 58,200：让人与 AI Agent 像一个团队那样协作的开源平台；腾讯的 <a href="https://github.com/Tencent/LoopForge">Tencent/LoopForge</a> 单日新增 95，编排 CodeBuddy、Codex 与 Claude Code 的自托管工作流。</li>
+<li>Rust 榜前列是老牌远程桌面 <a href="https://github.com/rustdesk/rustdesk">rustdesk/rustdesk</a>，今日新增 224，总星 13.1 万；Antigravity 账号管理工具 <a href="https://github.com/lbjlaq/Antigravity-Manager">lbjlaq/Antigravity-Manager</a> 单日新增 183。</li>
+</ul>
+<p>数据口径：未登录抓取 github.com/trending 页面解析；日榜 16 条、周榜 15 条、月榜 19 条、开发者榜 25 位；星数为采集时刻的页面数值，“今日新增”指该榜单周期内的新增星数；日榜、周榜、月榜阵容与位次与昨日完全相同；采集时间 2026-11-28 08:21（Asia/Shanghai），采集成功，无错误。</p>
+</section>
+<footer>数据来源 github.com/trending（周期新增星数口径）<br>由 Muse 每日自动生成</footer>
+</div></div></body></html>
